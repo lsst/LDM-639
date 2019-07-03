@@ -328,7 +328,7 @@ Test Id & Test Name\tabularnewline
     \hyperref[lvv-t180]{LVV-T180} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T180}{Verify implementation of Data Management Unscheduled Downtime} \tabularnewline
     \hyperref[lvv-t181]{LVV-T181} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{Verify implementation of Summit Facility Data Communications} \tabularnewline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{Verify integration of Summit Facility Data Communications} \tabularnewline
     \hyperref[lvv-t182]{LVV-T182} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T182}{Verify implementation of Prefer Computing and Storage Down} \tabularnewline
     \hyperref[lvv-t183]{LVV-T183} &
@@ -15826,7 +15826,7 @@ unplanned downtime
     \end{longtable}
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{LVV-T181}
-    - Verify implementation of Summit Facility Data Communications}\label{lvv-t181}
+    - Verify integration of Summit Facility Data Communications}\label{lvv-t181}
 
 \begin{longtable}[]{llllll}
 \toprule
@@ -15844,8 +15844,13 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Demonstrate data acquisition, archiving and transfer from summit to
-base, along with monitoring systems exist and perform adequately.
+This verifies that the Summit Network is integrated properly with the
+Summit - Base Network. ~(The former is a TS deliverable, the latter a DM
+deliverable). ~Demonstrate data is transferred over the summit
+instrument data fibers, from the DAQ to the Summit - Base DWDM, along
+with monitoring network performance. ~This requirement does not include
+testing the DAQ buffering of the data, nor the transfer from summit to
+base which are covered elsewhere.
 
 
 
