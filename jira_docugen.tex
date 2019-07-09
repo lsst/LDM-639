@@ -399,6 +399,10 @@ Test Id & Test Name\tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T378}{Verify Calculation of Astrometric Performance Metrics} \tabularnewline
     \hyperref[lvv-t385]{LVV-T385} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T385}{Verify Retrieval of a CCD-sized image from a coadd} \tabularnewline
+    \hyperref[lvv-t1097]{LVV-T1097} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{Verify Summit to Base Network Implementation} \tabularnewline
+    \hyperref[lvv-t1168]{LVV-T1168} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1168}{Test Summit - Base Network Integration} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -13959,9 +13963,86 @@ community-standard formats.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t849]
+                {LVV-T849} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Navigate to the portal endpoint. ~The stable version should be used for
+this test and is currently located at:
+https://lsst-lsp-stable.ncsa.illinois.edu/portal/suit/.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Currently this drops the user into an active portal environment.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
+                {\scriptsize from \hyperref[lvv-t849]
+                {LVV-T849} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Though the current stable system does not authenticate currently, this
+step and the previous one should be updated as the system evolves.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    No-op.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t850]
+                {LVV-T850} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Currently, there is no logout mechanism on the portal.\\
+This should be updated as the system matures.\\
+~\\
+Simply close the browser window.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Closed browser window. ~When navigating to the portal endpoint, expect
+to execute the steps in LVV-T849.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to LSP
+            Execute an ADQL query using the TAP service.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13971,6 +14052,290 @@ community-standard formats.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Click the icon that looks like a floppy disk (it says "Save the content
+as an IPAC, CSV, or TSV table" when you mouse over it).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            \begin{itemize}
+\tightlist
+\item
+  Select "CSV", then specify a destination to save the file on your
+  local computer.
+\item
+  Select "VOTable", then specify a destination to save the file on your
+  local computer.
+\item
+  Select "FITS", then specify a destination to save the file on your
+  local computer.
+\end{itemize}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Open each of the files (either in TOPCAT, or using Astropy io tools).
+Confirm that the data tables are well-formed, and that each table
+contains the same columns and the same number of rows.~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 7-1
+                {\scriptsize from \hyperref[lvv-t837]
+                {LVV-T837} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Authenticate to the notebook aspect of the LSST Science Platform
+(NB-LSP). ~This is currently at
+https://lsst-lsp-stable.ncsa.illinois.edu/nb.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Redirection to the spawner page of the NB-LSP allowing selection of the
+containerized stack version and machine flavor.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 7-2
+                {\scriptsize from \hyperref[lvv-t837]
+                {LVV-T837} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Spawn a container by:\\
+1) choosing an appropriate stack version: e.g. the latest weekly.\\
+2) choosing an appropriate machine flavor: e.g. medium\\
+3) click "Spawn"
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Redirection to the JupyterLab environment served from the chosen
+container containing the correct stack version.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 8-1
+                {\scriptsize from \hyperref[lvv-t838]
+                {LVV-T838} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Open a new launcher by navigating in the top menu bar "File"
+-\textgreater{} "New Launcher"
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    A launcher window with several sections, potentially with several kernel
+versions for each.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 8-2
+                {\scriptsize from \hyperref[lvv-t838]
+                {LVV-T838} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Select the option under "Notebook" labeled "LSST" by clicking on the
+icon.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    An empty notebook with a single empty cell. ~The kernel show up as
+"LSST" in the top right of the notebook.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 9-1
+                {\scriptsize from \hyperref[lvv-t1207]
+                {LVV-T1207} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute a query in a notebook to select a small number of stars. In the
+example code below, we query the WISE catalog, then extract the results
+to an Astropy table.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 10 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Using the example code below, save the files to your storage space on
+the LSP Notebook Aspect.\\
+~\\
+Confirm that non-empty output files appear on disk.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ tab.write('test.csv', format='ascii.csv')\\
+tab.write('test.vot', format='votable')\\
+tab.write('test.fits', format='fits')
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                For the example given here, there should be the following files with the
+file size as listed:
+
+\begin{itemize}
+\tightlist
+\item
+  test.csv 5.7M
+\item
+  test.vot 16M
+\item
+  test.fits 4.5M
+\end{itemize}
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 11 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 12 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            ALTERNATIVE: DO THE QUERY/SAVE WITHIN THE PORTAL ASPECT:
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 13-1
+                {\scriptsize from \hyperref[lvv-t1208]
+                {LVV-T1208} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Under the `File' menu at the top of your Jupyter notebook session,
+select one of the following:\\
+~\\
+
+\begin{itemize}
+\tightlist
+\item
+  Save All, Exit, and Log Out
+\item
+  Exit and Log Out Without Saving
+\end{itemize}
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    You will be returned to the LSP landing page:
+\url{https://lsst-lsp-stable.ncsa.illinois.edu/} It is now safe to close
+the browser window.~
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
         \\ \midrule
     \end{longtable}
 
@@ -17971,6 +18336,259 @@ image users
         \\ \midrule
     \end{longtable}
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{LVV-T1097}
+    - Verify Summit to Base Network Implementation}\label{lvv-t1097}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeff Kantor
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} - DMS-REQ-0171-V-01: Summit to Base Network
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-71}{LVV-71} - DMS-REQ-0168-V-01: Summit Facility Data Communications
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that:
+
+\begin{itemize}
+\tightlist
+\item
+  Summit - Base Network has been properly implemented in Summit and Base
+  facilities
+\item
+  Summit - Base Network is properly integrated with Summit Control
+  Network and DAQ/Camera Data Backbone
+\end{itemize}
+
+
+
+\subsubsection{Predecessors}
+None.
+
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+OCS/DMCS test harness\\
+Simulated images and meta-data\\
+EFD\\
+DAQ client\\
+Archiver/forwarder (Data Backbone)
+
+
+\paragraph{Hardware}
+DAQ\\
+Base servers with archiver
+
+
+\subsubsection{Input Specification}
+\begin{enumerate}
+\tightlist
+\item
+  Summit Control Network and Camera Data Backbone installed and
+  operating properly.
+\item
+  Summit - Base Network installed and operating properly.
+\item
+  Simulated or real DAQ installed on summit and pre-loaded with image
+  data.
+\item
+  EFD installed on summit and pre-loaded with image meta-data.
+\item
+  Archiver/forwarders installed in Base and operating properly.
+\item
+  OCS/DMCS test harness installed and pre-configured to trigger read-out
+  and transfer.
+\end{enumerate}
+
+
+\subsubsection{Output Specification}
+Image and meta-data transferred to Base Archiver/Forwarders.
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify the available documentation in order to ensure that the Summit to
+Base Network has been set-up and is working.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                List of documents that demonstrate the network implementation
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1168}{LVV-T1168}
+    - Test Summit - Base Network Integration}\label{lvv-t1168}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Inspection & Jeff Kantor
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} - DMS-REQ-0171-V-01: Summit to Base Network
+
+\end{itemize}
+
+\subsubsection{Test Items}
+3 phases done (in collaboration with equipment/installation vendors):
+
+\begin{enumerate}
+\tightlist
+\item
+  Installation of fiber optic cables and Optical Time Domain Reflector
+  (OTDR) fiber testing (completed 20170602
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+  deliverable RD10})
+\item
+  Installation of AURA DWDM and Data Transfer Node (DTN) (completed
+  20171218
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/\citeds{DMTR-82}/\citeds{DMTR-82}.pdf}{\citeds{DMTR-82}})
+\item
+  Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
+  (completed 20190505
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743})
+\end{enumerate}
+
+
+
+\subsubsection{Predecessors}
+See pre-conditions by phase above.
+
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+perfsonar on DTN.
+
+
+\paragraph{Hardware}
+OTDR, DTN.
+
+
+\subsubsection{Input Specification}
+By phase:
+
+\begin{enumerate}
+\tightlist
+\item
+  Posts from Cerro Pachon to AURA Gatehouse repaired/improved. ~Fiber
+  installed on posts from Cerro Pachon to AURA Gatehouse. ~Fiber
+  installed from AURA Gatehouse to AURA compound in La Serena. OTDR
+  purchased.
+\item
+  AURA DWDM installed in caseta on Cerro Pachon and in existing computer
+  room in La Serena. ~DTN installed in La Serena. ~DTN loaded with
+  software and test data staged.
+\item
+  Base Data Center (BDC) ready for installation of LSST DWDM. ~Fiber
+  connecting existing computer room to BDC. ~LSST DWDM equipment
+  installed in Summit Computer Room and BDC.
+\end{enumerate}
+
+
+\subsubsection{Output Specification}
+Fiber tested to within acceptable Db. ~Bandwidth, latency within
+specifications.
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Test optical fiber with OTDR
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                OTDR generated optical data
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Fiber tested to within acceptable Db.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Test AURA DWDM
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                DTN perfSonar generated data
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Summit - Base bandwidth and latency within specifications
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Test LSST DWDM
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                BERT generated data
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Summit - Base bandwidth, latency, bit error rate within specifications
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
 \appendix
 % generated from JIRA project LVV
 % using template at /var/jenkins_home/.local/lib/python3.7/site-packages/docsteady/templates/dm-spec-appendix.latex.jinja2.
@@ -18856,6 +19474,7 @@ Order
 }
 & {
 \hyperref[lvv-t181]{LVV-T181}
+\hyperref[lvv-t1097]{LVV-T1097}
 } \\
 \href{https://jira.lsstcorp.org/browse/LVV-72}{LVV-72 - DMS-REQ-0170-V-01: Prefer Computing and Storage Down
 }
@@ -18871,6 +19490,8 @@ Order
 }
 & {
 \hyperref[lvv-t184]{LVV-T184}
+\hyperref[lvv-t1097]{LVV-T1097}
+\hyperref[lvv-t1168]{LVV-T1168}
 } \\
 \href{https://jira.lsstcorp.org/browse/LVV-74}{LVV-74 - DMS-REQ-0172-V-01: Summit to Base Network Availability
 }
