@@ -513,9 +513,6 @@ Availability
     \hyperref[lvv-t183]{LVV-T183} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T183}{Verify implementation of DMS Communication with OCS
 } \tabularnewline
-    \hyperref[lvv-t184]{LVV-T184} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T184}{Verify implementation of Summit to Base Network
-} \tabularnewline
     \hyperref[lvv-t185]{LVV-T185} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T185}{Verify implementation of Summit to Base Network Availability
 } \tabularnewline
@@ -16776,65 +16773,6 @@ Early Integration activities and during AuxTel commissioning.
         \\ \midrule
     \end{longtable}
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T184}{LVV-T184}
-    - Verify implementation of Summit to Base Network
-}\label{lvv-t184}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Robert Gruendl
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} - DMS-REQ-0171-V-01: Summit to Base Network
-
-\end{itemize}
-
-\subsubsection{Test Items}
-Monitor transfer time of crosstalk corrected images and all related
-metadata from summit to base and verify that time per exposure is less
-than summToBaseMaxTransferTime (2 seconds).
-
-
-
-\subsubsection{Predecessors}
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T185}{LVV-T185}
     - Verify implementation of Summit to Base Network Availability
 }\label{lvv-t185}
@@ -20580,13 +20518,6 @@ Order
 & {
 \hyperref[lvv-t183]{LVV-T183}
 } \\
-\href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73 - DMS-REQ-0171-V-01: Summit to Base Network
-}
-& {
-\hyperref[lvv-t184]{LVV-T184}
-\hyperref[lvv-t1097]{LVV-T1097}
-\hyperref[lvv-t1168]{LVV-T1168}
-} \\
 \href{https://jira.lsstcorp.org/browse/LVV-74}{LVV-74 - DMS-REQ-0172-V-01: Summit to Base Network Availability
 }
 & {
@@ -20750,6 +20681,12 @@ image users
 }
 & {
 \hyperref[lvv-t385]{LVV-T385}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73 - DMS-REQ-0171-V-01: Summit to Base Network
+}
+& {
+\hyperref[lvv-t1097]{LVV-T1097}
+\hyperref[lvv-t1168]{LVV-T1168}
 } \\
 \tabularnewline
 \bottomrule
