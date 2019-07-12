@@ -411,7 +411,7 @@ Software
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T150}{Verify implementation of Maintain Archive Publicly Accessible
 } \tabularnewline
     \hyperref[lvv-t151]{LVV-T151} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T151}{Verify implementation of Catalog Export Formats
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T151}{Verify Implementation of Catalog Export Formats From the Notebook Aspect
 } \tabularnewline
     \hyperref[lvv-t152]{LVV-T152} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T152}{Verify implementation of Keep Historical Alert Archive
@@ -623,6 +623,12 @@ processing
 } \tabularnewline
     \hyperref[lvv-t1168]{LVV-T1168} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1168}{Test Summit - Base Network Integration
+} \tabularnewline
+    \hyperref[lvv-t1232]{LVV-T1232} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1232}{Verify Implementation of Catalog Export Formats From the Portal Aspect
+} \tabularnewline
+    \hyperref[lvv-t1240]{LVV-T1240} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1240}{Verify implementation of minimum astrometric standards per CCD
 } \tabularnewline
 \bottomrule
 \end{longtable}
@@ -3059,9 +3065,103 @@ bounds of the image.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Alert Production
+            Ingest the data from the most recent reprocessing of HSC RC2 data
+(identify the path to these data on the LSST Development Cluster at
+\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
+Confluence page}.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Select a single visit from the dataset, and extract its WCS object and
+the source list.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Starting from the XY pixel coordinates of the sources, apply the WCS to
+obtain RA, Dec coordinates.\\
+~\\
+We will assume that Gaia provides a source of "truth." Match the source
+list to Gaia DR2, and calculate the positional offset between the HSC
+data and the Gaia catalog.~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Apply appropriate cuts to extract the optimal dataset for comparison,
+then calculate statistics (median, 1-sigma range, etc.; also plot a
+histogram) of the offsets in milliarcseconds. Confirm that the offset is
+less than astrometricAccuracy.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Repeat Step 5, but for subregions of the image, to confirm that the
+accuracy criterion is met at all positions.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -12488,7 +12588,10 @@ Test & Robert Lupton
 \end{itemize}
 
 \subsubsection{Test Items}
-Alert Production, Data Release Production, Science Algorithms~
+Verify that the DMS provides source detection software that can be
+applied to calibrated images, including both difference images and
+coadds. This will be verified using simulated data, but could also be
+done by inserting artificial sources into existing datasets.
 
 
 
@@ -12512,7 +12615,26 @@ Alert Production, Data Release Production, Science Algorithms~
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to AP and DRP
+            Run DRP and AP processing, including source detection and measurement
+algorithms, on a small portion of the data from the simulated Twinkles
+dataset.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the output repos contain catalogs of source detections.
+Compare these output catalogs to the original simulated source catalogs,
+and confirm that a large fraction of the sources within a reasonable
+signal-to-noise range were recovered.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -12603,8 +12725,9 @@ Test & Robert Lupton
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the DMS provides photometry calibrated in AB for all
-measured objects and sources.
+Verify that the DMS provides photometry calibrated in AB mags and fluxes
+(in nJy) for all measured objects and sources. Must be tested for both
+DRP and AP products.
 
 
 
@@ -12626,9 +12749,84 @@ measured objects and sources.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to AP and DRP
+            Ingest the data products resulting from the "ci\_hsc" daily DRP
+processing.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that AB-calibrated magnitudes and fluxes are available for all
+measured Sources and Objects. {[}An enhanced verification could include
+matching the sources to an external source catalog and comparing the
+magnitudes to show that they are well-calibrated.{]}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Ingest the data products resulting from the "ap\_verify" daily AP
+processing.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that AB-calibrated magnitudes and fluxes are available for all
+measured Sources, DIASources, and Objects. {[}An enhanced verification
+could include matching the sources to an external source catalog and
+comparing the magnitudes to show that they are well-calibrated.{]}
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13137,7 +13335,24 @@ and organized for access through the Data Butler Access Client. ~
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Execute AP and DRP on non-LSST data
+            Confirm that the CI jobs known as "ci\_hsc" (DRP processing on HSC data)
+and "ap\_verify" (Alert Production processing on a small amount of HiTS
+2015 DECam data) successfully run.~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            For each of these two datasets, instantiate the Butler, ingest the data
+products, and confirm that they exist as expected.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14290,7 +14505,7 @@ Verify that prior data releases remain accessible.
     \end{longtable}
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T151}{LVV-T151}
-    - Verify implementation of Catalog Export Formats
+    - Verify Implementation of Catalog Export Formats From the Notebook Aspect
 }\label{lvv-t151}
 
 \begin{longtable}[]{llllll}
@@ -14309,8 +14524,8 @@ Test & Colin Slater
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that catalog data is exportable in a variety of
-community-standard formats.
+Verify that catalog data is exportable from the notebook aspect in a
+variety of community-standard formats.
 
 
 
@@ -14497,7 +14712,38 @@ file size as listed:
                 } \end{minipage}
         \\ \midrule
 
-                \multirow{3}{*}{\parbox{1.3cm}{ 5-1
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Check that these files contain the same number of rows:
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ from astropy.table import Table\\
+dat\_csv = Table.read('test.csv', format='ascii.csv')\\
+dat\_vot = Table.read('test.vot', format='votable')\\
+dat\_fits = Table.read('test.fits', format='fits')\\
+~\\
+import numpy as np\\
+print(np.size(dat\_csv), np.size(dat\_vot), np.size(dat\_fits))
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Print statement produces output "97058 97058 97058".
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 6-1
                 {\scriptsize from \hyperref[lvv-t1208]
                 {LVV-T1208} } } }
 
@@ -14525,180 +14771,6 @@ select one of the following:\\
                     You will be returned to the LSP landing page:
 \url{https://lsst-lsp-stable.ncsa.illinois.edu/} It is now safe to close
 the browser window.~
-
-                    \vspace{\dp0}
-                    } \end{minipage}
-                \\ \hdashline
-
-
-        \\ \midrule
-
-            \multirow{3}{*}{ 6 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 7 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            ALTERNATIVE: DO THE QUERY/SAVE WITHIN THE PORTAL ASPECT:
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 8-1
-                {\scriptsize from \hyperref[lvv-t849]
-                {LVV-T849} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Navigate to the portal endpoint. ~The stable version should be used for
-this test and is currently located at:
-https://lsst-lsp-stable.ncsa.illinois.edu/portal/suit/.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                    \begin{minipage}[t]{13cm}{\scriptsize
-                    Currently this drops the user into an active portal environment.
-
-                    \vspace{\dp0}
-                    } \end{minipage}
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 8-2
-                {\scriptsize from \hyperref[lvv-t849]
-                {LVV-T849} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Though the current stable system does not authenticate currently, this
-step and the previous one should be updated as the system evolves.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                    \begin{minipage}[t]{13cm}{\scriptsize
-                    No-op.
-
-                    \vspace{\dp0}
-                    } \end{minipage}
-                \\ \hdashline
-
-
-        \\ \midrule
-
-            \multirow{3}{*}{ 9 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute an ADQL query using the TAP service.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 10 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Click the icon that looks like a floppy disk (it says "Save the content
-as an IPAC, CSV, or TSV table" when you mouse over it).
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 11 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            \begin{itemize}
-\tightlist
-\item
-  Select "CSV", then specify a destination to save the file on your
-  local computer.
-\item
-  Select "VOTable", then specify a destination to save the file on your
-  local computer.
-\item
-  Select "FITS", then specify a destination to save the file on your
-  local computer.
-\end{itemize}
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 12 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Open each of the files (either in TOPCAT, or using Astropy io tools).
-Confirm that the data tables are well-formed, and that each table
-contains the same columns and the same number of rows.~
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 13-1
-                {\scriptsize from \hyperref[lvv-t850]
-                {LVV-T850} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Currently, there is no logout mechanism on the portal.\\
-This should be updated as the system matures.\\
-~\\
-Simply close the browser window.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                    \begin{minipage}[t]{13cm}{\scriptsize
-                    Closed browser window. ~When navigating to the portal endpoint, expect
-to execute the steps in LVV-T849.
 
                     \vspace{\dp0}
                     } \end{minipage}
@@ -18978,6 +19050,344 @@ specifications.
         \\ \midrule
     \end{longtable}
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1232}{LVV-T1232}
+    - Verify Implementation of Catalog Export Formats From the Portal Aspect
+}\label{lvv-t1232}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-35}{LVV-35} - DMS-REQ-0078-V-01: Catalog Export Formats
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that catalog data is exportable from the portal aspect in a
+variety of community-standard formats.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t849]
+                {LVV-T849} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Navigate to the portal endpoint. ~The stable version should be used for
+this test and is currently located at:
+https://lsst-lsp-stable.ncsa.illinois.edu/portal/suit/.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Currently this drops the user into an active portal environment.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
+                {\scriptsize from \hyperref[lvv-t849]
+                {LVV-T849} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Though the current stable system does not authenticate currently, this
+step and the previous one should be updated as the system evolves.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    No-op.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Select query type "ADQL".
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the example query given in the example code below by entering
+the text in the ADQL Query box, then clicking "Search" at the lower left
+corner of the page.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ SELECT cntr, ra, decl, w1mpro\_ep, w2mpro\_ep, w3mpro\_ep FROM
+wise\_00.allwise\_p3as\_mep WHERE CONTAINS(POINT('ICRS', ra, decl),
+CIRCLE('ICRS', 192.85, 27.13, .2)) = 1
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A new page will load with the search results as a table, with some plots
+as well.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Click the icon that looks like a floppy disk (it says "Save the content
+as an IPAC, CSV, or TSV table" when you mouse over it).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            \begin{itemize}
+\tightlist
+\item
+  Select "CSV", then specify a destination to save the file on your
+  local computer.
+\item
+  Select "VOTable", then specify a destination to save the file on your
+  local computer.
+\item
+  Select "FITS", then specify a destination to save the file on your
+  local computer.
+\end{itemize}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Open each of the files (either in TOPCAT, or using Astropy io tools).
+Confirm that the data tables are well-formed, and that each table
+contains the same columns and the same number of rows.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 7 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 8-1
+                {\scriptsize from \hyperref[lvv-t850]
+                {LVV-T850} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Currently, there is no logout mechanism on the portal.\\
+This should be updated as the system matures.\\
+~\\
+Simply close the browser window.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Closed browser window. ~When navigating to the portal endpoint, expect
+to execute the steps in LVV-T849.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1240}{LVV-T1240}
+    - Verify implementation of minimum astrometric standards per CCD
+}\label{lvv-t1240}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9741}{LVV-9741} - DMS-REQ-0030-V-02: Minimum astrometric standards per CCD
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that each CCD in a processed dataset had its astrometric solution
+determined by at least~\textbf{astrometricMinStandards = 5~}astrometric
+standards.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Ingest the data from the most recent reprocessing of HSC RC2 data
+(identify the path to these data on the LSST Development Cluster at
+\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
+Confluence page}.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Select a single visit from the dataset, and extract its calibration
+data. For a subset of CCDs, check how many astrometric standards
+contributed to the solution. Confirm that this number is at
+least~\textbf{astrometricMinStandards = 5.}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
 \newpage
 \section{Reusable Test Cases}
 
@@ -19159,6 +19569,25 @@ Specifically, this will demonstrate that:
   Alert packets can be retrieved from the queue system at LSST-relevant
   scales.
 \end{itemize}
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T987}{LVV-T987}
+    - Instantiate the Butler for reading data
+}\label{lvv-t987}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Create a Butler client to read data from an input repository.
 
 
 
@@ -19490,45 +19919,6 @@ updated calculations completion on the following night.
 
 
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T849}{LVV-T849}
-    - Authenticate to the portal aspect of the LSP
-}\label{lvv-t849}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Simon Krughoff
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-Obtain an authenticated session in the portal aspect of the LSST Science
-Platform
-
-
-
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T850}{LVV-T850}
-    - Log out of the portal aspect of the LSP
-}\label{lvv-t850}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Simon Krughoff
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-Leave the portal aspect of the LSST Science Platform in a clean state
-
-
-
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T837}{LVV-T837}
     - Authenticate to Notebook Aspect
 }\label{lvv-t837}
@@ -19570,7 +19960,7 @@ notebook after authentication is complete.
 
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1207}{LVV-T1207}
-    - Execute a simple ADQL query via the TAP service
+    - Execute a simple ADQL query using the TAP service in the notebook aspect
 }\label{lvv-t1207}
 
 \begin{longtable}[]{llllll}
@@ -19603,6 +19993,45 @@ Test & Simon Krughoff
 
 \subsubsection{Test Items}
 Leave the notebook aspect of the LSST Science Platform in a clean state
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T849}{LVV-T849}
+    - Authenticate to the portal aspect of the LSP
+}\label{lvv-t849}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Simon Krughoff
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Obtain an authenticated session in the portal aspect of the LSST Science
+Platform
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T850}{LVV-T850}
+    - Log out of the portal aspect of the LSP
+}\label{lvv-t850}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Simon Krughoff
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Leave the portal aspect of the LSST Science Platform in a clean state
 
 
 
@@ -20349,6 +20778,7 @@ Software
 }
 & {
 \hyperref[lvv-t151]{LVV-T151}
+\hyperref[lvv-t1232]{LVV-T1232}
 } \\
 \href{https://jira.lsstcorp.org/browse/LVV-37}{LVV-37 - DMS-REQ-0094-V-01: Keep Historical Alert Archive
 }
@@ -20687,6 +21117,11 @@ image users
 & {
 \hyperref[lvv-t1097]{LVV-T1097}
 \hyperref[lvv-t1168]{LVV-T1168}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9741}{LVV-9741 - DMS-REQ-0030-V-02: Minimum astrometric standards per CCD
+}
+& {
+\hyperref[lvv-t1240]{LVV-T1240}
 } \\
 \tabularnewline
 \bottomrule
