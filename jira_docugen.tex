@@ -630,6 +630,16 @@ processing
     \hyperref[lvv-t1240]{LVV-T1240} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1240}{Verify implementation of minimum astrometric standards per CCD
 } \tabularnewline
+    \hyperref[lvv-t1250]{LVV-T1250} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1250}{Verify implementation of minimum number of simultaneous DM EFD query
+users
+} \tabularnewline
+    \hyperref[lvv-t1251]{LVV-T1251} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1251}{Verify implementation of maximum time to retrieve DM EFD query results
+} \tabularnewline
+    \hyperref[lvv-t1252]{LVV-T1252} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1252}{Verify number of simultaneous alert filter users
+} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -3277,9 +3287,143 @@ and a WCS model.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Alert Production
+            Ingest the data from the most recent reprocessing of HSC RC2 data
+(identify the path to these data on the LSST Development Cluster at
+\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
+Confluence page}.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Select a single visit from the dataset, and extract its WCS object,
+calexp image, psf model, and source list.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Inspect the calexp image to ensure that
+
+\begin{enumerate}
+\tightlist
+\item
+  A well-formed image is present,
+\item
+  The variance plane is present and well-behaved,
+\item
+  Mask planes are present and contain information about defects.
+\end{enumerate}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                An astronomical image with mask and variance planes. This can be readily
+visualized using Firefly, which displays mask planes by default.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Plot images of the PSF model at various points, and verify that the PSF
+differs with position.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A "star-like" image of the PSF evaluated at various positions. The PSF
+should vary slightly with position (this could be readily visualized by
+taking a difference of PSFs at two positions).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Starting from the XY pixel coordinates of the sources, apply the WCS to
+obtain RA, Dec coordinates. Plot these positions and confirm that they
+match the expected values from the WCS object.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                RA, Dec coordinates that are returned should be near the central
+position of the visit coordinate as given in either the calexp metadata
+or the WCS.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 7 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Repeat steps 2-6, but now with difference images created by the Alert
+Production pipeline (for example, in the `ap\_verify` test data
+processing).
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9268,6 +9412,21 @@ from pathologies.
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
         \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Interrogate the calibRegistry for the metadata associated with a bad
+pixel map where the validity range contains the date of interest.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
     \end{longtable}
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T84}{LVV-T84}
@@ -9316,7 +9475,11 @@ Verify that DMS can do this on demand.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to CPP
+            Identify the location of a test dataset (for example, the HSC RC2 data
+that are regularly reprocessed; identify the path to these data on the
+LSST Development Cluster at
+\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
+Confluence page}).
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9326,6 +9489,156 @@ Verify that DMS can do this on demand.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Import the standard libraries required for the rest of this test:
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ import osimport lsst.afw.display as afwDisplay\\
+from lsst.daf.persistence import Butler\\
+from lsst.ip.isr import IsrTask\\
+from firefly\_client import FireflyClient\\
+from IPython.display import IFrame
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Ingest the dataset from step 1 using the Butler (e.g., following example
+code below).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ butler = Butler(\$REPOSITORY\_PATH)\\
+raw = butler.get(``raw'', visit=\$VISIT\_ID, detector=2)\\
+bias = butler.get(``bias'', visit=\$VISIT\_ID, detector=2)
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Display the bias image and inspect that its pixels contain unique
+values.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A relatively flat image showing the bias level with roughly Poisson
+noise.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Configure and run an Instrument Signature Removal (ISR) task on the raw
+data. Most corrections are disabled for simplicity, but the bias frame
+is applied.\\
+~\\
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ isr\_config = IsrTask.ConfigClass()\\
+isr\_config.doDark=False\\
+isr\_config.doFlat=False\\
+isr\_config.doFringe=False\\
+isr\_config.doDefect=False\\
+isr\_config.doAddDistortionModel=False\\
+isr\_config.doLinearize=False\\
+isr = IsrTask(config=isr\_config)\\
+result = isr.run(raw, bias=bias)
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A trimmed, bias-corrected image in `result`.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 7 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Display the `result` image and confirm that the bias correction has been
+performed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A displayed image with bias removed (i.e., typical background counts
+reduced relative to the raw frame).
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -11411,8 +11724,40 @@ filtering service.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Simulated alert stream, observe ability to define filters and proper
-filter results
+            Run the Alert Production pipeline on a data set such as the HiTS 2015
+data used in `ap\_verify`.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that alerts are generated, and that an Alert Distribution
+service is making them available via a stream.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that a UI (or API) exists that allows users to define simple
+filters. Define a filter, and observe both the full and the filtered
+alert streams to confirm that the filter has reduced the volume of
+alerts.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11446,8 +11791,9 @@ Test & Eric Bellm
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the DMS alert filter service supports specified number of
-brokers.
+Verify that the DMS alert filter service provides sufficient bandwidth
+for 100 simultaneously-operating brokers to receive up to 20 alerts per
+visit.
 
 
 
@@ -11471,7 +11817,23 @@ brokers.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Simulated alert stream, observe ability to support specified load
+            Create a simulated alert stream.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simultaneously execute user-defined alert filters for at least 100
+users, and confirm that the system successfully filters the stream as
+requested. Confirm that the bandwidth requirement was met.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13411,7 +13773,37 @@ Science Primitives~
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to CPP
+            On the LSST development cluster or notebook aspect, git clone the repo
+containing the CBP package: \url{https://github.com/lsst/cbp}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Follow the steps in the package README to install the package.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the package can be loaded in python, and that some of the
+tests in the `tests/` folder will execute.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13856,7 +14248,11 @@ production on LSST compute platform(s).
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Batch Production
+            Identify a test dataset (for example, the HSC RC2 data that are
+regularly reprocessed; identify the path to these data on the LSST
+Development Cluster at
+\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
+Confluence page}).
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13866,6 +14262,30 @@ production on LSST compute platform(s).
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute a batch processing job using the orchestration system, and
+confirm (manually and/or via QA tools typically used for HSC
+reprocessing) that the pipeline executed and produced all expected
+products (or error logs in cases of failure).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Calexp single-visit and coadd images, and associated catalogs, are
+present in a Butler repository. Logs of the processing are available to
+be inspected for identification of problems in the processing.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -13903,6 +14323,9 @@ execution and production systems usage/load.
 \paragraph{Hardware}
 
 \subsubsection{Input Specification}
+Data set and mechanism for Production Orchestration as outlined in
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{LVV-T140}.
+
 
 \subsubsection{Output Specification}
 
@@ -13912,9 +14335,60 @@ execution and production systems usage/load.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t140]
+                {LVV-T140} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify a test dataset (for example, the HSC RC2 data that are
+regularly reprocessed; identify the path to these data on the LSST
+Development Cluster at
+\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
+Confluence page}).
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
+                {\scriptsize from \hyperref[lvv-t140]
+                {LVV-T140} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute a batch processing job using the orchestration system, and
+confirm (manually and/or via QA tools typically used for HSC
+reprocessing) that the pipeline executed and produced all expected
+products (or error logs in cases of failure).
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Calexp single-visit and coadd images, and associated catalogs, are
+present in a Butler repository. Logs of the processing are available to
+be inspected for identification of problems in the processing.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe monitoring during DRP execution
+            While DRP processing in step 1 is executing, monitor the progress and
+resource usage of processing.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -16832,7 +17306,37 @@ Early Integration activities and during AuxTel commissioning.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to IIP
+            From the Base Site, connect to the (simulated) OCS telemetry stream.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Send a command to the OCS, and observe that the command has been
+executed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Extract information from the telemetry being broadcast by the OCS, and
+ensure that these data are readable.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -19388,6 +19892,268 @@ least~\textbf{astrometricMinStandards = 5.}
         \\ \midrule
     \end{longtable}
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1250}{LVV-T1250}
+    - Verify implementation of minimum number of simultaneous DM EFD query
+users
+}\label{lvv-t1250}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-3400}{LVV-3400} - DMS-REQ-0358-V-01: Min number of simultaneous DM EFD query users
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM EFD can support \textbf{dmEfdQueryUsers~= 5}
+simultaneous queries. The additional requirement that each query must
+last no more than \textbf{dmEfdQueryTime = 10 seconds~}will be verified
+separately in
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1251}{LVV-T1251},
+but these must be satisfied together.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Send multiple (at least 5) simultaneous queries to the DM EFD.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that (a) the queries executed successfully, and that (b) they
+return reasonable results.~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Repeat the above steps for different queries, and different numbers of
+simultaneous queries, to confirm that the expected performance is met
+regardless of the query being executed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1251}{LVV-T1251}
+    - Verify implementation of maximum time to retrieve DM EFD query results
+}\label{lvv-t1251}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9788}{LVV-9788} - DMS-REQ-0358-V-02: Max time to retrieve DM EFD query results
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM EFD can support \textbf{dmEfdQueryUsers~= 5}
+simultaneous queries, with each query must executing in no more than
+\textbf{dmEfdQueryTime = 10 seconds.~}The requirement on at least 5
+simultaneous queries will be verified separately in
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1250}{LVV-T1250},\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1251}{}
+but these must be satisfied together.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Send multiple (at least 5) simultaneous queries to the DM EFD.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that (a) the queries executed successfully, and that (b) they
+return reasonable results. Check that the time of execution for all
+queries was less than 10 seconds.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Repeat the above steps for different queries, and different numbers of
+simultaneous queries, to confirm that the expected performance is met
+regardless of the query being executed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1252}{LVV-T1252}
+    - Verify number of simultaneous alert filter users
+}\label{lvv-t1252}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9748}{LVV-9748} - DMS-REQ-0343-V-02: Number of simultaneous users
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DMS alert filter service supports specified number of
+brokers.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Create a simulated alert stream.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simultaneously execute user-defined alert filters for at least 100
+users, and confirm that the system successfully filters the stream as
+requested.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
 \newpage
 \section{Reusable Test Cases}
 
@@ -19915,6 +20681,26 @@ Verify that\\
 2. Level 1 Data Products are available within L1PublicT\\
 3. Solar System Object orbits are available within L1PublicT of the
 updated calculations completion on the following night.
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{LVV-T140}
+    - Verify implementation of Production Orchestration
+}\label{lvv-t140}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Robert Gruendl
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Demonstrate use to orchestration software to perform real-time and batch
+production on LSST compute platform(s).
 
 
 
@@ -20723,6 +21509,7 @@ Software
 }
 & {
 \hyperref[lvv-t140]{LVV-T140}
+\hyperref[lvv-t140]{LVV-T140}
 } \\
 \href{https://jira.lsstcorp.org/browse/LVV-134}{LVV-134 - DMS-REQ-0303-V-01: Production Monitoring
 }
@@ -21122,6 +21909,21 @@ image users
 }
 & {
 \hyperref[lvv-t1240]{LVV-T1240}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-3400}{LVV-3400 - DMS-REQ-0358-V-01: Min number of simultaneous DM EFD query users
+}
+& {
+\hyperref[lvv-t1250]{LVV-T1250}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9788}{LVV-9788 - DMS-REQ-0358-V-02: Max time to retrieve DM EFD query results
+}
+& {
+\hyperref[lvv-t1251]{LVV-T1251}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9748}{LVV-9748 - DMS-REQ-0343-V-02: Number of simultaneous users
+}
+& {
+\hyperref[lvv-t1252]{LVV-T1252}
 } \\
 \tabularnewline
 \bottomrule
