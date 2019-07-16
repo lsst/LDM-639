@@ -155,9 +155,6 @@ Release Processing
     \hyperref[lvv-t69]{LVV-T69} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T69}{Verify implementation of Object Characterization
 } \tabularnewline
-    \hyperref[lvv-t70]{LVV-T70} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T70}{Verify implementation of Coadd Source Catalog
-} \tabularnewline
     \hyperref[lvv-t71]{LVV-T71} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T71}{Verify implementation of Detecting extended low surface brightness
 objects
@@ -362,9 +359,6 @@ Software
     \hyperref[lvv-t134]{LVV-T134} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T134}{Verify implementation of Provide Image Access Services
 } \tabularnewline
-    \hyperref[lvv-t135]{LVV-T135} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T135}{Verify implementation of Provide Data Access Services
-} \tabularnewline
     \hyperref[lvv-t136]{LVV-T136} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T136}{Verify implementation of Data Product and Raw Data Access
 } \tabularnewline
@@ -374,9 +368,6 @@ Software
     \hyperref[lvv-t138]{LVV-T138} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T138}{Verify implementation of Bulk Download Service
 } \tabularnewline
-    \hyperref[lvv-t139]{LVV-T139} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T139}{Verify implementation of Provide Pipeline Execution Services
-} \tabularnewline
     \hyperref[lvv-t140]{LVV-T140} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{Verify implementation of Production Orchestration
 } \tabularnewline
@@ -385,9 +376,6 @@ Software
 } \tabularnewline
     \hyperref[lvv-t142]{LVV-T142} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T142}{Verify implementation of Production Fault Tolerance
-} \tabularnewline
-    \hyperref[lvv-t143]{LVV-T143} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T143}{Verify implementation of Provide Pipeline Construction Services
 } \tabularnewline
     \hyperref[lvv-t144]{LVV-T144} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T144}{Verify implementation of Task Specification
@@ -7247,120 +7235,6 @@ proper motion and parallax, and a variability characterization.
         \\ \midrule
     \end{longtable}
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T70}{LVV-T70}
-    - Verify implementation of Coadd Source Catalog
-}\label{lvv-t70}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-108}{LVV-108} - DMS-REQ-0277-V-01: Coadd Source Catalog
-
-\end{itemize}
-
-\subsubsection{Test Items}
-Verify that the DRP pipelines produce a CoaddSource catalog.
-
-
-
-\subsubsection{Predecessors}
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in DRP-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-3
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
-data product will be retrieved from the Butler and verified to be
-non-empty.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that there exists a catalog of merged sources.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T71}{LVV-T71}
     - Verify implementation of Detecting extended low surface brightness
 objects
@@ -13895,63 +13769,6 @@ passed without blocking issues.
         \\ \midrule
     \end{longtable}
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T135}{LVV-T135}
-    - Verify implementation of Provide Data Access Services
-}\label{lvv-t135}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Robert Gruendl
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-60}{LVV-60} - DMS-REQ-0155-V-01: Provide Data Access Services
-
-\end{itemize}
-
-\subsubsection{Test Items}
-This is a composite requirement in the SysML model.
-
-
-
-\subsubsection{Predecessors}
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to LSP
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T136}{LVV-T136}
     - Verify implementation of Data Product and Raw Data Access
 }\label{lvv-t136}
@@ -13972,7 +13789,8 @@ Test & Colin Slater
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that available data products can be listed and retrieved.
+Verify that available image, file, and catalog data products, and their
+metadata and provenance information, can be listed and retrieved.
 
 
 
@@ -13996,7 +13814,10 @@ Verify that available data products can be listed and retrieved.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to LSP
+            Details of the Gen3 Butler and ObsTAP tables are still being worked out.
+The general overview of this test will be to use some combination of the
+Gen3 Butler and TAP access to the ObsTAP tables to test that the
+required access is provided.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14134,63 +13955,6 @@ achieved.
             Test should be repeated while observing in firehose mode (with LSSTCam)
 during science verification to ensure that bulk transfer does not
 compromise normal nightly operations.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T139}{LVV-T139}
-    - Verify implementation of Provide Pipeline Execution Services
-}\label{lvv-t139}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Inspection & Robert Lupton
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-61}{LVV-61} - DMS-REQ-0156-V-01: Provide Pipeline Execution Services
-
-\end{itemize}
-
-\subsubsection{Test Items}
-Batch Production, Workload and Orchestration~
-
-
-
-\subsubsection{Predecessors}
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify subsidiary requirements
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14449,68 +14213,6 @@ ready for subsequent use, and/or reset and repeat production attempts.
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Execute AP and DRP, simulate failures, observe correct processing
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T143}{LVV-T143}
-    - Verify implementation of Provide Pipeline Construction Services
-}\label{lvv-t143}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Inspection & Robert Lupton
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-62}{LVV-62} - DMS-REQ-0158-V-01: Provide Pipeline Construction Services
-
-\end{itemize}
-
-\subsubsection{Test Items}
-This is a composite requirement in the SysML model.
-
-
-
-\subsubsection{Predecessors}
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T144}{LVV-T144},
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T148}{LVV-T148},
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T145}{LVV-T145}
-
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that all predecessor Test Cases making up this composite
-requirement have successfully passed testing.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -19154,9 +18856,47 @@ Test & Leanne Guy
 \begin{itemize}
 \item \href{https://jira.lsstcorp.org/browse/LVV-3401}{LVV-3401} - DMS-REQ-0359-V-01: RMS photometric repeatability in uzy
 
+\item \href{https://jira.lsstcorp.org/browse/LVV-9751}{LVV-9751} - DMS-REQ-0359-V-02: Max fraction of sensors with excess unusable pixels
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9757}{LVV-9757} - DMS-REQ-0359-V-08: Max cross-talk imperfections
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9755}{LVV-9755} - DMS-REQ-0359-V-06: Accuracy of photometric transformation
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9754}{LVV-9754} - DMS-REQ-0359-V-05: Repeatability outlier limit in gri
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9752}{LVV-9752} - DMS-REQ-0359-V-03: Max fraction of outliers among non-saturated sources
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9756}{LVV-9756} - DMS-REQ-0359-V-07: RMS width of zero point in u-band
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9753}{LVV-9753} - DMS-REQ-0359-V-04: Accuracy of zero point for colors with u-band
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9762}{LVV-9762} - DMS-REQ-0359-V-13: Max sky brightness error
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9760}{LVV-9760} - DMS-REQ-0359-V-11: Fraction of zero point outliers
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9759}{LVV-9759} - DMS-REQ-0359-V-10: RMS photometric repeatability in gri
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9758}{LVV-9758} - DMS-REQ-0359-V-09: Repeatability outlier limit in uzy
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9761}{LVV-9761} - DMS-REQ-0359-V-12: Max fraction of unusable pixels per sensor
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9764}{LVV-9764} - DMS-REQ-0359-V-15: Percentage of image area with ghosts
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9766}{LVV-9766} - DMS-REQ-0359-V-17: Max RMS of resolved/unresolved flux ratio
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9763}{LVV-9763} - DMS-REQ-0359-V-14: RMS width of zero point in all bands except u
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9765}{LVV-9765} - DMS-REQ-0359-V-16: Accuracy of zero point for colors without u-band
+
 \end{itemize}
 
 \subsubsection{Test Items}
+Verify that the DMS system provides software to calculate photometric
+performance metrics, and that the algorithms are properly calculating
+the desired quantities. Note that because the DMS requirement is that
+the software shall be provided (and not on the actual measured values of
+the metrics), we verify all of the requirements via a single test case.
+
 
 
 \subsubsection{Predecessors}
@@ -19177,9 +18917,69 @@ Test & Leanne Guy
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            
+            Point the butler to a simulated dataset containing data in all filters,
+that is sufficient for the purposes of measuring photometric performance
+metrics.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the LSST Stack package `validate\_drp` (or an alternate package
+that is relevant) on this dataset to perform the measurements of the
+metrics.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Compare measured photometry to known values from input simulated data,
+and confirm that the output values for all of the photometric
+performance metrics are as expected.
+
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
@@ -19208,9 +19008,40 @@ Test & Leanne Guy
 \begin{itemize}
 \item \href{https://jira.lsstcorp.org/browse/LVV-3402}{LVV-3402} - DMS-REQ-0360-V-01: Median astrometric error on 20 arcmin scales
 
+\item \href{https://jira.lsstcorp.org/browse/LVV-9778}{LVV-9778} - DMS-REQ-0360-V-12: RMS difference between r-band and other filter
+separation
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9777}{LVV-9777} - DMS-REQ-0360-V-11: Max fraction of r-band color difference outliers
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9779}{LVV-9779} - DMS-REQ-0360-V-13: Max fraction exceeding limit on 200 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9773}{LVV-9773} - DMS-REQ-0360-V-07: Outlier limit on 5 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9770}{LVV-9770} - DMS-REQ-0360-V-05: Outlier limit on 20 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9775}{LVV-9775} - DMS-REQ-0360-V-09: Outlier limit on 200 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9769}{LVV-9769} - DMS-REQ-0360-V-04: Median absolute error in RA, Dec
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9774}{LVV-9774} - DMS-REQ-0360-V-08: Median astrometric error on 200 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9768}{LVV-9768} - DMS-REQ-0360-V-03: Median astrometric error on 5 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9771}{LVV-9771} - DMS-REQ-0360-V-06: Color difference outlier limit relative to r-band
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9776}{LVV-9776} - DMS-REQ-0360-V-10: Max fraction exceeding limit on 20 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9767}{LVV-9767} - DMS-REQ-0360-V-02: Max fraction exceeding limit on 5 arcmin scales
+
 \end{itemize}
 
 \subsubsection{Test Items}
+Verify that the DMS system provides software to calculate astrometric
+performance metrics, and that the algorithms are properly calculating
+the desired quantities. Note that because the DMS requirement is that
+the software shall be provided (and not on the actual measured values of
+the metrics), we verify all of the requirements via a single test case.
+
 
 
 \subsubsection{Predecessors}
@@ -19231,9 +19062,69 @@ Test & Leanne Guy
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+'DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            
+            Point the butler to a simulated dataset containing data in all filters,
+that is sufficient for the purposes of measuring astrometric performance
+metrics.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the LSST Stack package `validate\_drp` (or an alternate package
+that is relevant) on this dataset to perform the measurements of the
+metrics.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Compare measured astrometry to known values from input simulated data,
+and confirm that the output values for all of the astrometric
+performance metrics are as expected.
+
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
@@ -21128,11 +21019,6 @@ Processing
 & {
 \hyperref[lvv-t69]{LVV-T69}
 } \\
-\href{https://jira.lsstcorp.org/browse/LVV-108}{LVV-108 - DMS-REQ-0277-V-01: Coadd Source Catalog
-}
-& {
-\hyperref[lvv-t70]{LVV-T70}
-} \\
 \href{https://jira.lsstcorp.org/browse/LVV-180}{LVV-180 - DMS-REQ-0349-V-01: Detecting extended low surface brightness objects
 }
 & {
@@ -21480,11 +21366,6 @@ Software
 & {
 \hyperref[lvv-t134]{LVV-T134}
 } \\
-\href{https://jira.lsstcorp.org/browse/LVV-60}{LVV-60 - DMS-REQ-0155-V-01: Provide Data Access Services
-}
-& {
-\hyperref[lvv-t135]{LVV-T135}
-} \\
 \href{https://jira.lsstcorp.org/browse/LVV-129}{LVV-129 - DMS-REQ-0298-V-01: Data Product and Raw Data Access
 }
 & {
@@ -21499,11 +21380,6 @@ Software
 }
 & {
 \hyperref[lvv-t138]{LVV-T138}
-} \\
-\href{https://jira.lsstcorp.org/browse/LVV-61}{LVV-61 - DMS-REQ-0156-V-01: Provide Pipeline Execution Services
-}
-& {
-\hyperref[lvv-t139]{LVV-T139}
 } \\
 \href{https://jira.lsstcorp.org/browse/LVV-133}{LVV-133 - DMS-REQ-0302-V-01: Production Orchestration
 }
@@ -21520,11 +21396,6 @@ Software
 }
 & {
 \hyperref[lvv-t142]{LVV-T142}
-} \\
-\href{https://jira.lsstcorp.org/browse/LVV-62}{LVV-62 - DMS-REQ-0158-V-01: Provide Pipeline Construction Services
-}
-& {
-\hyperref[lvv-t143]{LVV-T143}
 } \\
 \href{https://jira.lsstcorp.org/browse/LVV-136}{LVV-136 - DMS-REQ-0305-V-01: Task Specification
 }
@@ -21888,7 +21759,148 @@ arcmin scales
 & {
 \hyperref[lvv-t377]{LVV-T377}
 } \\
+\href{https://jira.lsstcorp.org/browse/LVV-9751}{LVV-9751 - DMS-REQ-0359-V-02: Max fraction of sensors with excess unusable pixels
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9757}{LVV-9757 - DMS-REQ-0359-V-08: Max cross-talk imperfections
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9755}{LVV-9755 - DMS-REQ-0359-V-06: Accuracy of photometric transformation
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9754}{LVV-9754 - DMS-REQ-0359-V-05: Repeatability outlier limit in gri
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9752}{LVV-9752 - DMS-REQ-0359-V-03: Max fraction of outliers among non-saturated sources
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9756}{LVV-9756 - DMS-REQ-0359-V-07: RMS width of zero point in u-band
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9753}{LVV-9753 - DMS-REQ-0359-V-04: Accuracy of zero point for colors with u-band
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9762}{LVV-9762 - DMS-REQ-0359-V-13: Max sky brightness error
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9760}{LVV-9760 - DMS-REQ-0359-V-11: Fraction of zero point outliers
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9759}{LVV-9759 - DMS-REQ-0359-V-10: RMS photometric repeatability in gri
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9758}{LVV-9758 - DMS-REQ-0359-V-09: Repeatability outlier limit in uzy
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9761}{LVV-9761 - DMS-REQ-0359-V-12: Max fraction of unusable pixels per sensor
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9764}{LVV-9764 - DMS-REQ-0359-V-15: Percentage of image area with ghosts
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9766}{LVV-9766 - DMS-REQ-0359-V-17: Max RMS of resolved/unresolved flux ratio
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9763}{LVV-9763 - DMS-REQ-0359-V-14: RMS width of zero point in all bands except u
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9765}{LVV-9765 - DMS-REQ-0359-V-16: Accuracy of zero point for colors without u-band
+}
+& {
+\hyperref[lvv-t377]{LVV-T377}
+} \\
 \href{https://jira.lsstcorp.org/browse/LVV-3402}{LVV-3402 - DMS-REQ-0360-V-01: Median astrometric error on 20 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9778}{LVV-9778 - DMS-REQ-0360-V-12: RMS difference between r-band and other filter
+separation
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9777}{LVV-9777 - DMS-REQ-0360-V-11: Max fraction of r-band color difference outliers
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9779}{LVV-9779 - DMS-REQ-0360-V-13: Max fraction exceeding limit on 200 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9773}{LVV-9773 - DMS-REQ-0360-V-07: Outlier limit on 5 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9770}{LVV-9770 - DMS-REQ-0360-V-05: Outlier limit on 20 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9775}{LVV-9775 - DMS-REQ-0360-V-09: Outlier limit on 200 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9769}{LVV-9769 - DMS-REQ-0360-V-04: Median absolute error in RA, Dec
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9774}{LVV-9774 - DMS-REQ-0360-V-08: Median astrometric error on 200 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9768}{LVV-9768 - DMS-REQ-0360-V-03: Median astrometric error on 5 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9771}{LVV-9771 - DMS-REQ-0360-V-06: Color difference outlier limit relative to r-band
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9776}{LVV-9776 - DMS-REQ-0360-V-10: Max fraction exceeding limit on 20 arcmin scales
+}
+& {
+\hyperref[lvv-t378]{LVV-T378}
+} \\
+\href{https://jira.lsstcorp.org/browse/LVV-9767}{LVV-9767 - DMS-REQ-0360-V-02: Max fraction exceeding limit on 5 arcmin scales
 }
 & {
 \hyperref[lvv-t378]{LVV-T378}
