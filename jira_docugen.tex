@@ -9251,7 +9251,8 @@ Test & Robert Lupton
 
 \subsubsection{Test Items}
 Verify that the DMS can produce a map of detector pixels that suffer
-from pathologies.
+from pathologies, and that these pathologies are encoded in at least
+32-bit values.
 
 
 
@@ -9275,7 +9276,8 @@ from pathologies.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to CPP
+            Interrogate the calibRegistry for the metadata associated with a bad
+pixel map where the validity range contains the date of interest.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9289,8 +9291,9 @@ from pathologies.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Interrogate the calibRegistry for the metadata associated with a bad
-pixel map where the validity range contains the date of interest.
+            Check that the bad pixel pathologies are encoded as at least 32-bit
+values, and that the various pathologies are represented by different
+encoding.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
