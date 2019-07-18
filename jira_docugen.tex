@@ -3785,7 +3785,10 @@ Verify that the DMS creates an Exposure Catalog that includes\\
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that Exposure Catalogs contained required elements
+            Verify that Exposure Catalogs contain the required elements. At present,
+the form of the exposure catalog is not defined. This information can be
+found for a given Butler repo from the metadata, but will ultimately be
+aggregated into a database/table summarizing available exposures.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9566,7 +9569,38 @@ correction matrix.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to CPP
+            Identify an appropriate calibration dataset that can be used to derive
+the crosstalk correction matrix.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the relevant portion of the CPP (aka `cp\_pipe`), and confirm
+that the crosstalk correction matrix is produced and persisted.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Apply the crosstalk correction to simulated images, and confirm that the
+correction is performing as expected.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9736,6 +9770,8 @@ corrections.
 
 \subsubsection{Input Specification}
 
+
+
 \subsubsection{Output Specification}
 
 \subsubsection{Test Procedure}
@@ -9746,7 +9782,52 @@ corrections.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to CPP
+            Identify a suitable set of calibration frames, including biases, dark
+frames, and flat-field frames.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the CPP (aka `cp\_pipe`) on the data set.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the expected data products are created, and that they have
+the expected properties.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Test that the calibration products are archived, and can readily be
+applied to science data to produce the desired corrections.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9839,7 +9920,7 @@ Test & Robert Lupton
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the DMS can produce an dark correction frame calibration
+Verify that the DMS can produce a dark correction frame calibration
 product.\\
 Verify that the DMS can determine the effectiveness of a dark correction
 and determine how often it should be updated.
@@ -9866,7 +9947,55 @@ and determine how often it should be updated.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to CPP
+            Identify the path to a dataset containing dark frames (i.e., exposures
+taken with the shutter closed).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the relevant steps from `cp\_pipe` (the calibration pipeline) to
+produce dark correction frames.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Inspect the resulting dark correction frame to confirm that it appears
+as expected.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Determining whether the dark correction is being done properly will
+require on-sky science data. The dark correction can be applied to these
+frames and the results inspected to ensure that the correction was
+correctly measured and applied.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11802,7 +11931,8 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-Execute CPP on a variety of representative cadences
+Execute CPP on a variety of representative cadences, and verify that the
+calibration pipeline correctly produces necessary calibration products.
 
 
 
@@ -11826,7 +11956,8 @@ Execute CPP on a variety of representative cadences
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Execute CPP on a variety of representative cadences
+            Identify a suitable set of calibration frames, including biases, dark
+frames, and flat-field frames.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11840,7 +11971,22 @@ Execute CPP on a variety of representative cadences
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe lack of failures and expected data products
+            Execute the CPP (aka `cp\_pipe`) on the data set.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the expected data products are created, and that they have
+the expected properties.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14439,7 +14585,22 @@ not allow data corruption/loss.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Power-cycle all DM systems at each Facility, observe recovery
+            Power-cycle all of the DM systems at each Facility.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Observe each system and ensure that it has recovered in a properly
+initialized state.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
