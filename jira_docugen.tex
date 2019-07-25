@@ -350,7 +350,7 @@ Re-Use
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T131}{Verify implementation of Provide User Interface Services
 } \tabularnewline
     \hyperref[lvv-t132]{LVV-T132} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T132}{Verify implementation of Pre-cursor, and Real Data
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T132}{Verify implementation of Pre-cursor and Real Data
 } \tabularnewline
     \hyperref[lvv-t133]{LVV-T133} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T133}{Verify implementation of Provide Beam Projector Coordinate Calculation
@@ -1531,7 +1531,7 @@ units.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -1584,7 +1584,8 @@ mode\\
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            O{bserve image metadata is present and queryable}
+            O{bserve image and its metadata is present and queryable in the Data
+Backbone.}
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1594,6 +1595,11 @@ mode\\
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Well-formed image data with appropriate associated metadata.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -1605,7 +1611,7 @@ mode\\
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -1657,7 +1663,8 @@ all modes}
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe wavefront sensor data and metadata archived
+            Observe wavefront sensor data and metadata archived in the Data
+Backbone.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1667,6 +1674,12 @@ all modes}
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Well-formed wavefront sensor image data with appropriate associated
+metadata.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -1779,7 +1792,7 @@ Stand DAQ while simulating all modes.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -1791,8 +1804,9 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-Delegate to Prompt Services (Ingest raw data from L1 Test Stand DAQ,
-observe image and metadata output)
+Verify that the raw exposure data from all readout channels in a sensor
+can be assembled into a single image, and that all required/relevant
+metadata are associated with the image data.~
 
 
 
@@ -1816,7 +1830,7 @@ observe image and metadata output)
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest data from L1 Camera Test Stand DAQ
+            Ingest data from the L1 Camera Test Stand DAQ.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1830,7 +1844,7 @@ observe image and metadata output)
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Simulate all different modes
+            Simulate all different modes of data gathering.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1844,7 +1858,7 @@ observe image and metadata output)
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that a raw image is constructed in correct format
+            Verify that a raw image is constructed in correct format.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1854,11 +1868,17 @@ observe image and metadata output)
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A single raw image combining data from all readout channels for a given
+sensor.~
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that a raw image is constructed with correct metadata
+            Verify that a raw image is constructed with correct metadata.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1868,6 +1888,12 @@ observe image and metadata output)
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Image header or ancillary table contains the required metadata about the
+observing context in which data were gathered.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -1941,7 +1967,8 @@ mode\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                O{bserve image metadata is present and queryable}
+                O{bserve image and its metadata is present and queryable in the Data
+Backbone.}
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -1949,6 +1976,11 @@ mode\\
                 \begin{minipage}[t]{13cm}{\scriptsize
                 } \end{minipage} \\ \cdashline{2-3}
                 & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Well-formed image data with appropriate associated metadata.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
                 \\ \hdashline
 
 
@@ -1960,7 +1992,7 @@ mode\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Ingest data from L1 Camera Test Stand DAQ
+                Ingest data from the L1 Camera Test Stand DAQ.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -1977,7 +2009,7 @@ mode\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Simulate all different modes
+                Simulate all different modes of data gathering.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -1994,7 +2026,7 @@ mode\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Verify that a raw image is constructed in correct format
+                Verify that a raw image is constructed in correct format.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -2002,6 +2034,12 @@ mode\\
                 \begin{minipage}[t]{13cm}{\scriptsize
                 } \end{minipage} \\ \cdashline{2-3}
                 & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    A single raw image combining data from all readout channels for a given
+sensor.~
+
+                    \vspace{\dp0}
+                    } \end{minipage}
                 \\ \hdashline
 
 
@@ -2011,7 +2049,7 @@ mode\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Verify that a raw image is constructed with correct metadata
+                Verify that a raw image is constructed with correct metadata.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -2019,6 +2057,12 @@ mode\\
                 \begin{minipage}[t]{13cm}{\scriptsize
                 } \end{minipage} \\ \cdashline{2-3}
                 & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Image header or ancillary table contains the required metadata about the
+observing context in which data were gathered.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
                 \\ \hdashline
 
 
@@ -2993,7 +3037,7 @@ flux on the image to physical flux units.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3006,8 +3050,8 @@ Test & Jim Bosch
 
 \subsubsection{Test Items}
 Verify that Processed Visit Images produced by the AP and DRP pipelines
-include FITS WCS accurate to specified ``astrometricAccuracy'' over the
-bounds of the image.
+include FITS WCS accurate to specified \textbf{astrometricAccuracy} over
+the bounds of the image.
 
 
 
@@ -3081,15 +3125,19 @@ the source list.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A table containing detected sources, and a WCS object associated with
+that catalog.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Starting from the XY pixel coordinates of the sources, apply the WCS to
-obtain RA, Dec coordinates.\\[2\baselineskip]We will assume that Gaia
-provides a source of ``truth.'' Match the source list to Gaia DR2, and
-calculate the positional offset between the test data and the Gaia
-catalog.~
+            Confirm that each CCD within the visit image contains at
+least~\textbf{astrometricMinStandards~}astrometric standards that were
+used in deriving the astrometric solution.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3099,14 +3147,18 @@ catalog.~
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 5 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Apply appropriate cuts to extract the optimal dataset for comparison,
-then calculate statistics (median, 1-sigma range, etc.; also plot a
-histogram) of the offsets in milliarcseconds. Confirm that the offset is
-less than astrometricAccuracy.
+            Starting from the XY pixel coordinates of the sources, apply the WCS to
+obtain RA, Dec coordinates.\\[2\baselineskip]
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3116,9 +3168,59 @@ less than astrometricAccuracy.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A list of RA, Dec coordinates for all sources in the catalog.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            We will assume that Gaia provides a source of ``truth.'' Match the
+source list to Gaia DR2, and calculate the positional offset between the
+test data and the Gaia catalog.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A matched catalog of sources in common between the test source list and
+Gaia DR2.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 7 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Apply appropriate cuts to extract the optimal dataset for comparison,
+then calculate statistics (median, 1-sigma range, etc.; also plot a
+histogram) of the offsets in milliarcseconds. Confirm that the offset is
+less than \textbf{astrometricAccuracy}.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Histogram and relevant statistics needed to confirm that the WCS
+transformation is~
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 8 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Repeat Step 5, but for subregions of the image, to confirm that the
 accuracy criterion is met at all positions.
@@ -3131,6 +3233,11 @@ accuracy criterion is met at all positions.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \textbf{astrometricAccuracy~}requirement is met over the entire image.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -3201,7 +3308,7 @@ PSF given a point on the image.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3264,10 +3371,7 @@ and a WCS model.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest the data from the most recent reprocessing of HSC RC2 data
-(identify the path to these data on the LSST Development Cluster at
-\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
-Confluence page}.
+            Ingest the data from an appropriate processed dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3516,7 +3620,7 @@ Definition
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
@@ -3570,18 +3674,52 @@ Verify that the DMS produces a Prompt Processing Data Quality Report.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the AP pipeline (`ap\_pipe`).
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t866]
+                {LVV-T866} } } }
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Perform the steps of Alert Production (including, but not necessarily
+limited to, single frame processing, ISR, source detection/measurement,
+PSF estimation, photometric and astrometric calibration, difference
+imaging, DIASource detection/measurement, source association). During
+Operations, it is presumed that these are automated for a given
+dataset.~
+
                 \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    An output dataset including difference images and DIASource and
+DIAObject measurements.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t866]
+                {LVV-T866} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Verify that the expected data products have been produced, and that
+catalogs contain reasonable values for measured quantities of interest.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -3597,6 +3735,13 @@ updated Data Quality Report has become available at the relevant UI.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A Prompt Processing QC report is available via a UI, and contains
+information about the photometric zeropoint, sky brightness, seeing,
+PSF, and detection efficiency, and possibly other relevant quantities.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
@@ -3612,6 +3757,12 @@ readily-accessible location.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Persistence of a static QC report in an accessible location, containing
+the same information as in the report from Step 3.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -9815,7 +9966,7 @@ applied to science data to produce the desired corrections.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -9866,18 +10017,44 @@ Calibration Data Products.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the CPP (`cp\_pipe`).
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
                 \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -9893,6 +10070,12 @@ provenance information has been retained.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset consisting of calibration images, with provenance information
+recorded and properly associated with the calibration images.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -10691,7 +10874,7 @@ Load multiple DRs and PPDB, observe uniqueness of IDs
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -10703,7 +10886,9 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-Load DR, observe retrieval of representative datasets
+Verify that the DMS can identify and retrieve datasets consisting of
+logical groupings of Exposures, metadata, provenance, etc., or other
+groupings that are processed or produced as a logical unit.
 
 
 
@@ -10725,23 +10910,34 @@ Load DR, observe retrieval of representative datasets
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Load DR
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
                 \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe retrieval of single PVI with metadata
+            Ingest data from an appropriate processed dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -10755,7 +10951,7 @@ Load DR, observe retrieval of representative datasets
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe retrieval of multiple PVIs with metadata
+            Observe retrieval of single Processed Visit Image (PVI) with metadata.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -10765,11 +10961,16 @@ Load DR, observe retrieval of representative datasets
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A PVI and its associated metadata.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe retrieval of coadd patch with metadata
+            Observe retrieval of multiple PVIs with metadata.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -10779,11 +10980,37 @@ Load DR, observe retrieval of representative datasets
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A set of PVIs and their associated metadata.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 5 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe retrieval of subset of rows in each catalog
+            Observe retrieval of coadd patch with metadata and provenance
+information.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                An image of coadded data in a patch, along with its metadata and
+information describing the provenance of the patch constituents.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Observe retrieval of subset of rows in each of the above catalogs.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13124,7 +13351,7 @@ DIAObjects.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -13187,8 +13414,7 @@ DRP and AP products.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest the data products resulting from the ``ci\_hsc'' daily DRP
-processing.
+            Ingest the data products from an appropriate DRP-processed dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13215,12 +13441,17 @@ magnitudes to show that they are well-calibrated.{]}
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Calibrated fluxes and magnitudes are available for all sources, as well
+as tools to convert measured fluxes to magnitudes (and vice-versa).
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest the data products resulting from the ``ap\_verify'' daily AP
-processing.
+            Ingest the data products from an appropriate AP processing dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13247,6 +13478,13 @@ comparing the magnitudes to show that they are well-calibrated.{]}
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Calibrated fluxes and magnitudes are available for all Sources,
+DIASources, and Objects, as well as tools to convert measured fluxes to
+magnitudes (and vice-versa).
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -13701,14 +13939,14 @@ Portal is displayed, as well as to the User Workspace.
     \end{longtable}
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T132}{LVV-T132}
-    - Verify implementation of Pre-cursor, and Real Data
+    - Verify implementation of Pre-cursor and Real Data
 }\label{lvv-t132}
 
 \begin{longtable}[]{llllll}
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
@@ -13746,9 +13984,8 @@ and organized for access through the Data Butler Access Client. ~
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Confirm that the CI jobs known as ``ci\_hsc'' (DRP processing on HSC
-data) and ``ap\_verify'' (Alert Production processing on a small amount
-of HiTS 2015 DECam data) successfully run.~
+            Confirm that the CI jobs used to test DRP and AP processing successfully
+run. These jobs use precursor datasets from cameras other than LSST.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13773,6 +14010,12 @@ products, and confirm that they exist as expected.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Processed images, catalogs, calibration information, and other related
+data products are present and accessible via the Butler.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -13951,7 +14194,7 @@ passed without blocking issues.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -14001,6 +14244,13 @@ required access is provided.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Verification that the relevant data products and their related tables,
+metadata, and provenance information are available and readily
+accessible.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14012,7 +14262,7 @@ required access is provided.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -14048,7 +14298,8 @@ Verify that data products can be ingested.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to DBB
+            Identify a suitable set of raw data to be run through ``mini-DRP''
+processing.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14058,6 +14309,73 @@ Verify that data products can be ingested.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1064]
+                {LVV-T1064} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Process data with the Data Release Production payload, starting from raw
+science images and generating science data products, placing them in the
+Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 3-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the data products from the DRP processing have been
+ingested into the Data Backbone.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Processed images, catalogs, calibration information, and other related
+data products are present and accessible via the Butler.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -17186,7 +17504,7 @@ networking downtimes.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Gregory Dubois-Felsmann
 \\\bottomrule
 \end{longtable}
@@ -17249,6 +17567,11 @@ executed.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation that the OCS command successfully executed.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -17264,6 +17587,11 @@ ensure that these data are readable.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A readable extract from the OCS telemetry stream.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -19063,7 +19391,7 @@ arcmin scales
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -19188,6 +19516,12 @@ metrics.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Measurements of validation metrics and the presence of QA plots
+resulting from the validation pipeline.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
@@ -19204,6 +19538,12 @@ performance metrics are as expected.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Measured astrometry metrics that are within reasonable values given the
+(known) input dataset.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -19215,7 +19555,7 @@ performance metrics are as expected.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -19333,6 +19673,12 @@ metrics.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Measurements of validation metrics and the presence of QA plots
+resulting from the validation pipeline.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
@@ -19349,6 +19695,12 @@ performance metrics are as expected.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Measured astrometry metrics that are within reasonable values given the
+(known) input dataset.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -19902,8 +20254,8 @@ to execute the steps in LVV-T849.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
+1 & Defined & Normal &
+Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
 
@@ -19965,10 +20317,7 @@ standards.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest the data from the most recent reprocessing of HSC RC2 data
-(identify the path to these data on the LSST Development Cluster at
-\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
-Confluence page}.
+            Ingest data from an appropriate processed dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -19995,6 +20344,12 @@ least~\textbf{astrometricMinStandards = 5.}
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                At least \textbf{astrometricMinStandards} from each CCD\textbf{~}were
+used in determining the WCS solution.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -20477,7 +20832,7 @@ These products will include:
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -20497,14 +20852,15 @@ all modes
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
 
 \subsubsection{Test Items}
-Delegate to Prompt Services (Ingest raw data from L1 Test Stand DAQ,
-observe image and metadata output)
+Verify that the raw exposure data from all readout channels in a sensor
+can be assembled into a single image, and that all required/relevant
+metadata are associated with the image data.~
 
 
 
@@ -20587,6 +20943,28 @@ Test & Jeffrey Carlin
 
 \subsubsection{Test Items}
 Create a Butler client to read data from an input repository.
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T866}{LVV-T866}
+    - Run Alert Production Payload
+}\label{lvv-t866}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute Alert Production payload on a dataset. Generate all (or a subset
+of) Prompt science data products including Alerts (with the exception of
+Solar System object orbits) and load them into the Data Backbone and
+Prompt Products Database. ~~
 
 
 
@@ -20891,6 +21269,26 @@ be visualized.
 
 
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1060}{LVV-T1060}
+    - Run Periodic Calibration Products Production Payload
+}\label{lvv-t1060}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Calibration Products Production payload to create a subset
+of Master Calibration images and Calibration Database entries.
+
+
+
+
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T35}{LVV-T35}
     - Verify implementation of Nightly Data Accessible Within 24 hrs
 }\label{lvv-t35}
@@ -20910,6 +21308,26 @@ Test & Eric Bellm
 2. Level 1 Data Products are available within L1PublicT\\
 3. Solar System Object orbits are available within L1PublicT of the
 updated calculations completion on the following night.
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064}
+    - Run Data Release Production Payload
+}\label{lvv-t1064}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Data Release Production payload, starting from raw images
+and producing science data products.
 
 
 
