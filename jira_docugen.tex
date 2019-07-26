@@ -2885,7 +2885,7 @@ extract the PSF matching kernel.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
@@ -2924,9 +2924,7 @@ signature has been removed.\\
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Process HSC data, DECAM data. ~Verify that Processed Visit Images are
-generated at correct size and with significant instrumental artifacts
-removed.
+            Identify suitable precursor datasets containing unprocessed raw images.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -2940,6 +2938,28 @@ removed.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
+            Run the Prompt Processing payload on these data. ~Verify that Processed
+Visit Images are generated at correct size and with significant
+instrumental artifacts removed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Raw precursor dataset images have been processed into Processed Visit
+Images, with instrumental artifacts corrected.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
             Run camera test stand data through full acquisition+backbone+ISR.
 
             \vspace{\dp0}
@@ -2952,7 +2972,7 @@ removed.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 3 } & Description &
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Run simulated LSST data with calibrations through prompt processing
 system and inspect Processed Visit images to verify that they have been
@@ -2967,6 +2987,12 @@ described orientation.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Raw images have been processed into Processed Visit Images, with
+instrumental artifacts corrected.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -3838,7 +3864,7 @@ processing rather than the observatory system.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
@@ -3876,8 +3902,8 @@ aspects of the telescope or camera are changing with time.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Using precursor and simulated calibration data, run the L1 calibration
-pipeline.
+            Identify precursor and simulated calibration datasets on which to run
+the L1 calibration pipeline.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3889,7 +3915,47 @@ pipeline.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1059]
+                {LVV-T1059} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Daily Calibration Products Update payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1059]
+                {LVV-T1059} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Check that a dynamic report is created that triggers alerts if
 calibrations go out of range.~
@@ -3902,9 +3968,15 @@ calibrations go out of range.~
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dynamic report is available via UI to users, and if any out-of-spec
+changes have occurred, alerts have been issued.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
-            \multirow{3}{*}{ 3 } & Description &
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Check that a static report is created and archived in a
 readily-accessible location.
@@ -3917,6 +3989,12 @@ readily-accessible location.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                An archived version of the calibration report is available and will be
+retained in a static file format.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -3928,7 +4006,7 @@ readily-accessible location.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3984,63 +4062,12 @@ aggregated into a database/table summarizing available exposures.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in DRP-00-00).
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A list of the required metadata for a set of exposures is returned and
+both human- and machine-readable.
 
                 \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-3
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
-data product will be retrieved from the Butler and verified to be
-non-empty.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -8918,7 +8945,7 @@ Releases
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -8954,358 +8981,7 @@ DR is retired, for comparison with future DRs.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in DRP-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-3
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
-data product will be retrieved from the Butler and verified to be
-non-empty.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
-                {\scriptsize from \hyperref[lvv-t13]
-                {LVV-T13} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
-                {\scriptsize from \hyperref[lvv-t13]
-                {LVV-T13} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-3
-                {\scriptsize from \hyperref[lvv-t13]
-                {LVV-T13} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 3-1
-                {\scriptsize from \hyperref[lvv-t14]
-                {LVV-T14} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 3-2
-                {\scriptsize from \hyperref[lvv-t14]
-                {LVV-T14} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 3-3
-                {\scriptsize from \hyperref[lvv-t14]
-                {LVV-T14} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Scripts from the pipe\_analysis package will be run on every tract to
-check for the presence of data products and make plots
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 4-1
-                {\scriptsize from \hyperref[lvv-t15]
-                {LVV-T15} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 4-2
-                {\scriptsize from \hyperref[lvv-t15]
-                {LVV-T15} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 4-3
-                {\scriptsize from \hyperref[lvv-t15]
-                {LVV-T15} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each processed CCD, the PVI will be retrieved from the Butler, and
-the existence of all components described in section Test Items (§4.6.2)
-will be verified.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 4-4
-                {\scriptsize from \hyperref[lvv-t15]
-                {LVV-T15} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 4-5
-                {\scriptsize from \hyperref[lvv-t15]
-                {LVV-T15} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Five sensors will be chosen at random from each of two visits and
-inspected by eye for unmasked artifacts.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 5-1
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00)
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 5-2
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 5-3
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each combination of tract/patch/filter, the PVI will be retrieved
-from the Butler, and the existence of all components described in Test
-items section §4.6.2 will be verified.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 5-4
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 5-5
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Ten patches will be chosen at random and inspected by eye for unmasked
-artifacts.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-            \multirow{3}{*}{ 6 } & Description &
+            \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Prepare a second DRP run -\textgreater{} DPDD with different
 configuration parameters for this second test Data Release.
@@ -9320,7 +8996,28 @@ configuration parameters for this second test Data Release.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 7 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1064]
+                {LVV-T1064} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Process data with the Data Release Production payload, starting from raw
+science images and generating science data products, placing them in the
+Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Stage subset of products from first test Data Release to separate
 storage.
@@ -9335,7 +9032,7 @@ storage.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 8 } & Description &
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Scientifically compare the results of the subset of that region of sky
 to those in the second test Data Release comparing the results of the
@@ -9349,6 +9046,12 @@ DRP Scientific Verification tests.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Diagnostic plots quantifying the differences between scientific outputs
+between the first and second test datasets.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -9360,7 +9063,7 @@ DRP Scientific Verification tests.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -9399,7 +9102,7 @@ from pathologies, and that these pathologies are encoded in at least
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Interrogate the calibRegistry for the metadata associated with a bad
-pixel map where the validity range contains the date of interest.
+pixel map, where the validity range contains the date of interest.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9409,6 +9112,11 @@ pixel map where the validity range contains the date of interest.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A bad pixel map for the requested date has been returned.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
@@ -9425,6 +9133,12 @@ encoding.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Bad pixel values can be decoded to determine their pathologies using
+their 32-bit values.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -9436,7 +9150,7 @@ encoding.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -9474,11 +9188,7 @@ Verify that DMS can do this on demand.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Identify the location of a test dataset (for example, the HSC RC2 data
-that are regularly reprocessed; identify the path to these data on the
-LSST Development Cluster at
-\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
-Confluence page}).
+            Identify the location of an appropriate precursor dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9648,7 +9358,7 @@ reduced relative to the raw frame).
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -9700,10 +9410,49 @@ the crosstalk correction matrix.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the relevant portion of the CPP (aka `cp\_pipe`), and confirm
-that the crosstalk correction matrix is produced and persisted.
+            Confirm that the crosstalk correction matrix is produced and persisted.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -9713,9 +9462,16 @@ that the crosstalk correction matrix is produced and persisted.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A correction matrix quantifying what fraction of the signal detected in
+any given amplifier on each sensor in the focal plane appears in any
+other amplifier.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
-            \multirow{3}{*}{ 3 } & Description &
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Apply the crosstalk correction to simulated images, and confirm that the
 correction is performing as expected.
@@ -9728,6 +9484,12 @@ correction is performing as expected.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A noticeable difference between images before and after applying the
+correction.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -9859,7 +9621,7 @@ flatfield data cube.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -9913,18 +9675,44 @@ frames, and flat-field frames.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the CPP (aka `cp\_pipe`) on the data set.
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
                 \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -9940,6 +9728,12 @@ the expected properties.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A full set of calibration data products has been created, and they are
+well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
@@ -9955,6 +9749,12 @@ applied to science data to produce the desired corrections.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation that application of the calibration products to processed
+data has the desired effects.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -10087,7 +9887,7 @@ recorded and properly associated with the calibration images.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -10167,6 +9967,12 @@ as expected.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A well-formed dark correction frame is present and accessible via the
+Data Butler.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
@@ -10184,6 +9990,12 @@ correctly measured and applied.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Applying the dark correction to a dataset produces noticeable
+differences between the original frame(s) and the corrected outputs.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -10803,7 +10615,7 @@ are identical.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -10815,7 +10627,8 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-Load multiple DRs and PPDB, observe uniqueness of IDs
+Verify that the IDs of Objects, Sources, DIAObjects, and DIASources from
+different Data Releases are unique.
 
 
 
@@ -10839,7 +10652,8 @@ Load multiple DRs and PPDB, observe uniqueness of IDs
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Load multiple DRs and PPDB
+            Identify an appropriate precursor dataset to be processed through Data
+Release Production.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -10851,9 +10665,56 @@ Load multiple DRs and PPDB, observe uniqueness of IDs
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1064]
+                {LVV-T1064} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Process data with the Data Release Production payload, starting from raw
+science images and generating science data products, placing them in the
+Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 3-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe uniqueness of IDs
+            After running the DRP payload multiple times, load the resulting data
+products (both data release and prompt products) using the Butler.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -10863,6 +10724,32 @@ Load multiple DRs and PPDB, observe uniqueness of IDs
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Multiple datasets resulting from processing of the same input data.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Inspect the IDs in the multiple data products and confirm that all IDs
+are unique.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                No IDs are repeated between multiple processings of the identical input
+dataset.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -11329,7 +11216,7 @@ Time
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -11341,8 +11228,9 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the DMS can generate a nightly Data Quality Report within
-dqReportComplTime
+Verify that the DMS can generate a nightly L1 Data Quality Report within
+\textbf{dqReportComplTime = 4{[}hour{]}}, in both human- and
+machine-readable formats.
 
 
 
@@ -11380,8 +11268,10 @@ dqReportComplTime
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe data quality report is generated on time and with correct
-contents
+            After \textbf{dqReportComplTime = 4{[}hour{]}~}has passed, confirm (via
+timestamps) that the data quality report has been generated within
+\textbf{dqReportComplTime = 4{[}hour{]},} and that it contains the
+correct contents.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11391,6 +11281,12 @@ contents
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Both human- and machine-readable versions of the L1 Data Quality Report
+are available with dqReportComplTime.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -11916,7 +11812,7 @@ identification of SSObjects.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
@@ -11953,8 +11849,8 @@ filtering service.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Run the Alert Production pipeline on a data set such as the HiTS 2015
-data used in `ap\_verify`.
+            Identify a suitable precursor dataset for processing through the Alert
+Production pipeline.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11966,7 +11862,55 @@ data used in `ap\_verify`.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t866]
+                {LVV-T866} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Perform the steps of Alert Production (including, but not necessarily
+limited to, single frame processing, ISR, source detection/measurement,
+PSF estimation, photometric and astrometric calibration, difference
+imaging, DIASource detection/measurement, source association). During
+Operations, it is presumed that these are automated for a given
+dataset.~
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    An output dataset including difference images and DIASource and
+DIAObject measurements.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t866]
+                {LVV-T866} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Verify that the expected data products have been produced, and that
+catalogs contain reasonable values for measured quantities of interest.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Confirm that alerts are generated, and that an Alert Distribution
 service is making them available via a stream.
@@ -11979,9 +11923,15 @@ service is making them available via a stream.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Via either a UI or API, confirmation that a stream of alerts are
+available.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
-            \multirow{3}{*}{ 3 } & Description &
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Confirm that a UI (or API) exists that allows users to define simple
 filters. Define a filter, and observe both the full and the filtered
@@ -11996,6 +11946,12 @@ alerts.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The user-defined filter has reduced the number of alerts being received
+relative to the full stream.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -12008,7 +11964,7 @@ Filtering Service
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
@@ -12021,8 +11977,8 @@ Test & Eric Bellm
 
 \subsubsection{Test Items}
 Verify that the DMS alert filter service provides sufficient bandwidth
-for 100 simultaneously-operating brokers to receive up to 20 alerts per
-visit.
+for \textbf{numBrokerUsers = 100} simultaneously-operating brokers to
+receive up to \textbf{numBrokerAlerts = 20} alerts per visit.
 
 
 
@@ -12060,9 +12016,10 @@ visit.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Simultaneously execute user-defined alert filters for at least 100
-users, and confirm that the system successfully filters the stream as
-requested. Confirm that the bandwidth requirement was met.
+            Simultaneously execute user-defined alert filters for at least
+\textbf{numBrokerUsers = 100} users, and confirm that the system
+successfully filters the stream as requested. Confirm that the bandwidth
+requirement of \textbf{numBrokerAlerts = 20} per user was met.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -12072,6 +12029,12 @@ requested. Confirm that the bandwidth requirement was met.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                All of the (simulated) users successfully receive their requested
+filtered alerts, with \textbf{numBrokerAlerts = 20~}per user.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -12083,7 +12046,7 @@ requested. Confirm that the bandwidth requirement was met.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
@@ -12131,6 +12094,11 @@ that an Alert Distribution service is making them available.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A stream of alerts that is confirmed to be generated and distributed.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
@@ -12146,6 +12114,12 @@ filters.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The UI (or API) for accessing alert streams has some pre-defined filters
+available for users.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -12161,6 +12135,12 @@ been properly filtered.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                After applying the pre-defined filter, the number of alerts has
+decreased relative to the raw stream.~
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -12172,7 +12152,7 @@ been properly filtered.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -12222,18 +12202,44 @@ frames, and flat-field frames.
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the CPP (aka `cp\_pipe`) on the data set.
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
                 \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -12249,6 +12255,12 @@ the expected properties.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Repos containing valid calibration products that are well-formed and
+ready to be applied to processed datasets.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -13214,7 +13226,7 @@ exposures and coadds.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -13254,8 +13266,7 @@ done by inserting artificial sources into existing datasets.
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Run DRP and AP processing, including source detection and measurement
-algorithms, on a small portion of the data from the simulated Twinkles
-dataset.
+algorithms, on a small portion of the data from a simulated dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13265,6 +13276,12 @@ dataset.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Source catalogs containing measurements of all sources detected in the
+input images.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
@@ -13282,6 +13299,12 @@ signal-to-noise range were recovered.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Most sources above a reasonable S/N threshold were detected, and their
+measured fluxes are reasonably close to the simulated inputs.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14028,7 +14051,7 @@ Software
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Lupton
 \\\bottomrule
 \end{longtable}
@@ -14041,7 +14064,10 @@ Software
 \end{itemize}
 
 \subsubsection{Test Items}
-Science Primitives~
+Verify that the DMS provides software to calculate coordinates relating
+the collimated beam projector position and telescope pupil position to
+the illumination position on the telescope optical elements and focal
+plane.
 
 
 
@@ -14105,6 +14131,12 @@ tests in the `tests/` folder will execute.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Successful execution of test scripts, which demonstrate the calculation
+of beam projector coordinates.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14467,7 +14499,7 @@ compromise normal nightly operations.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
@@ -14504,11 +14536,7 @@ production on LSST compute platform(s).
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Identify a test dataset (for example, the HSC RC2 data that are
-regularly reprocessed; identify the path to these data on the LSST
-Development Cluster at
-\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
-Confluence page}).
+            Identify an appropriate precursor dataset.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14553,7 +14581,7 @@ be inspected for identification of problems in the processing.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
@@ -14597,11 +14625,7 @@ Data set and mechanism for Production Orchestration as outlined in
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Identify a test dataset (for example, the HSC RC2 data that are
-regularly reprocessed; identify the path to these data on the LSST
-Development Cluster at
-\href{https://confluence.lsstcorp.org/display/DM/Reprocessing+of+the+HSC+RC2+dataset}{this
-Confluence page}).
+                Identify an appropriate precursor dataset.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -14654,6 +14678,12 @@ resource usage of processing.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Ability to monitor in real-time the orchestrated production processing,
+including resource usage.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14725,7 +14755,7 @@ ready for subsequent use, and/or reset and repeat production attempts.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Kian-Tat Lim
 \\\bottomrule
 \end{longtable}
@@ -14773,6 +14803,12 @@ be run and configured without re-compilation.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation that the software architecture has allowed for
+reconfiguring and running Tasks without recompilation.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
@@ -14789,6 +14825,13 @@ subtraction, and photometric-redshift estimation.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Successful Task execution with different configurations, including
+confirmation that the outputs are different from tasks with altered
+configurations.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14891,7 +14934,7 @@ runs through difference in recorded provenance and in results.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
@@ -14938,6 +14981,11 @@ not allow data corruption/loss.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Restart of all DM systems.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
@@ -14953,6 +15001,11 @@ initialized state.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Systems are all active and initialized for their designated purpose.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -15195,7 +15248,7 @@ Verify that prior data releases remain accessible.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -15527,7 +15580,7 @@ Archive
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
@@ -15541,7 +15594,7 @@ Test & Robert Gruendl
 \subsubsection{Test Items}
 Demonstrate Engineering and Facilities Data (images, associated
 metadata, and observatory environment and control data) are archived and
-available for public access within L1PublicT (24 hours).~
+available for public access within \textbf{L1PublicT (24 hours)}.~
 
 
 
@@ -15580,8 +15633,9 @@ commands into the EFD.~
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Show that the data products are present in the archived EFD within
-L1PublicT hours.
+            Wait at least \textbf{L1PublicT=24} hours, then access the archived EFD.
+Confirm that the data products are present in the archived EFD
+after~\textbf{L1PublicT=24} hours have elapsed.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -15591,6 +15645,12 @@ L1PublicT hours.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The EFD contains the simulated OCS commands, and they were ingested
+within~\textbf{L1PublicT=24} hours of the operations rehearsal.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -15606,6 +15666,12 @@ demonstrate that the data are publicly available.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A query at the public interface to the EFD successfully executes and
+returns EFD data.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -20549,8 +20615,8 @@ regardless of the query being executed.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
+1 & Defined & Normal &
+Test & Eric Bellm
 \\\bottomrule
 \end{longtable}
 
@@ -20561,8 +20627,8 @@ Test & Jeffrey Carlin
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the DMS alert filter service supports specified number of
-brokers.
+Verify that the DMS alert filter service supports \textbf{numBrokerUsers
+= 100~}simultaneous brokers.
 
 
 
@@ -20600,7 +20666,11 @@ brokers.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Simultaneously execute user-defined alert filters for at least 100
+            Simultaneously execute user-defined alert filters for at least
+\textbf{numBrokerUsers = 100} users, and confirm that the system
+successfully filters the stream as requested. Confirm that the bandwidth
+requirement of \textbf{numBrokerAlerts = 20~}per user was
+met.Simultaneously execute user-defined alert filters for at least 100
 users, and confirm that the system successfully filters the stream as
 requested.
 
@@ -20612,6 +20682,12 @@ requested.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                All of the (simulated) \textbf{numBrokerUsers = 100~}users successfully
+receive their requested filtered alerts.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -20623,8 +20699,8 @@ requested.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
+1 & Defined & Normal &
+Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
 
@@ -20686,6 +20762,11 @@ NCSA.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The data is present at NCSA in non-empty repos.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -20740,6 +20821,11 @@ contain the expected data.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Camera test stand data that is well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -20969,6 +21055,26 @@ Prompt Products Database. ~~
 
 
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1059}{LVV-T1059}
+    - Run Daily Calibration Products Update Payload
+}\label{lvv-t1059}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Daily Calibration Products Update payload to create a subset
+of Master Calibration images and Calibration Database entries.
+
+
+
+
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T21}{LVV-T21}
     - AG-00-20: Scientific Verification of DIASource Catalog
 }\label{lvv-t21}
@@ -21128,143 +21234,22 @@ be visualized.\\[2\baselineskip]
 
 
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T13}{LVV-T13}
-    - DRP-00-15: Scientific Verification of Source Catalog
-}\label{lvv-t13}
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064}
+    - Run Data Release Production Payload
+}\label{lvv-t1064}
 
 \begin{longtable}[]{llllll}
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
+1 & Draft & Normal &
+Test & Jeffrey Carlin
 \\\bottomrule
 \end{longtable}
 
 \subsubsection{Test Items}
-This test will check that the source catalogs delivered by the DRP
-science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Measurements in the catalog are presented in flux units
-  (DMS-REQ-0347);
-\item
-  Derived quantities are provided in pre-computed columns
-  (DMS-REQ-0331);
-\item
-  Aperture corrections for different photometry algorithms are
-  consistent.
-\item
-  Photometry measurements are consistent with reference catalog
-  photometry (including sources not used in photometric calibration).
-\item
-  Astrometry measurements are consistent with reference catalog
-  positions (including sources not used in astrometric calibration).
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead require for each test that we be able to quickly
-construct a plot in which such a target can be visualized.
-
-
-
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T14}{LVV-T14}
-    - DRP-00-25: Scientific Verification of Object Catalog
-}\label{lvv-t14}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-This test will check that the object catalogs delivered by the DRP
-science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Measurements in the catalog are presented in flux units
-  (DMS-REQ-0347);
-\item
-  Derived quantities are provided in pre-computed columns
-  (DMS-REQ-0331);
-\item
-  Aperture corrections for different photometry algorithms are
-  consistent.
-\item
-  PSF models correctly predict the ellipticities of stars over each
-  tract.
-\item
-  Photometry measurements are consistent with reference catalog
-  photometry (including sources not used in photometric calibration).
-\item
-  Astrometry measurements are consistent with reference catalog
-  positions (including sources not used in astrometric calibration).
-\item
-  Forced and unforced photometry measurements are consistent.
-\item
-  The slope of the stellar locus in color-color space is not a function
-  of position on the sky.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead re- quire for each test that we be able to quickly
-construct a plot in which such a target can be visualized.\\
-All science quality tests in this section shall distinguish between
-blended and isolated objects.
-
-
-
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T15}{LVV-T15}
-    - DRP-00-30: Scientific Verification of Processed Visit Images
-}\label{lvv-t15}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-This test will check that the Processed Visit Images (PVIs) delivered by
-the DRP science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Processed visit images have been generated and persisted during
-  payload execution;
-\item
-  Each PVI includes a background model (DMS-REQ-0327), photometric
-  zero-point (DMS- REQ-0029), spatially-varying PSF (DMS-REQ-0070) and
-  WCS (DMS-REQ-0030).
-\item
-  Saturated pixels are correctly masked.
-\item
-  Pixels affected by cosmic rays are correctly masked.
-\item
-  The background is not oversubtracted around bright objects.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead re- quire for each test that we be able to quickly
-construct a plot or display summary images that allow such a target can
-be visualized.
+Execute the Data Release Production payload, starting from raw images
+and producing science data products.
 
 
 
@@ -21312,26 +21297,6 @@ updated calculations completion on the following night.
 
 
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064}
-    - Run Data Release Production Payload
-}\label{lvv-t1064}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-Execute the Data Release Production payload, starting from raw images
-and producing science data products.
-
-
-
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{LVV-T140}
     - Verify implementation of Production Orchestration
 }\label{lvv-t140}
@@ -21340,7 +21305,7 @@ and producing science data products.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
