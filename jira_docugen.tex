@@ -631,6 +631,12 @@ users
     \hyperref[lvv-t1264]{LVV-T1264} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1264}{Verify implementation of archiving camera test data
 } \tabularnewline
+    \hyperref[lvv-t1276]{LVV-T1276} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1276}{Verify implementation of latency of reporting optical transients
+} \tabularnewline
+    \hyperref[lvv-t1277]{LVV-T1277} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1277}{Verify processing of maximum number of calibration exposures
+} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -2188,7 +2194,7 @@ Test & Eric Bellm
 
 \subsubsection{Verification Elements}
 \begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-4}{LVV-4} - DMS-REQ-0004-V-01: Time to L1 public release\_1
+\item \href{https://jira.lsstcorp.org/browse/LVV-175}{LVV-175} - DMS-REQ-0004-V-01: Time to L1 public release
 
 \end{itemize}
 
@@ -11483,7 +11489,9 @@ Execute single-day operations rehearsal, observe data products generated
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Execute single-day operations rehearsal
+            Identify a dataset of raw calibration exposures containing at least
+\textbf{nCalExpProc = 25~}exposures. (If it contains more than 25
+exposures, use only 25 for the test.)
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11495,9 +11503,50 @@ Execute single-day operations rehearsal, observe data products generated
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1059]
+                {LVV-T1059} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Daily Calibration Products Update payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1059]
+                {LVV-T1059} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            ~Observe data products generated
+            Confirm that the processing completed successfully within
+\textbf{calProcTime = 1200 seconds.}
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -11507,6 +11556,12 @@ Execute single-day operations rehearsal, observe data products generated
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Calibration products resulting from processed raw calibration exposures
+are present within calProcTime, and are well-formed images.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -20823,6 +20878,281 @@ contain the expected data.
             & Expected Result &
                 \begin{minipage}[t]{13cm}{\footnotesize
                 Camera test stand data that is well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1276}{LVV-T1276}
+    - Verify implementation of latency of reporting optical transients
+}\label{lvv-t1276}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9740}{LVV-9740} - DMS-REQ-0004-V-02: Latency of reporting optical transients
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that alerts are generated for optical transients
+within~\textbf{OTT1 = 1 minute~}of the completion of the readout of the
+last image.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a precursor dataset containing raw images (and templates), that
+is suitable for testing the Alert Production.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t866]
+                {LVV-T866} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Perform the steps of Alert Production (including, but not necessarily
+limited to, single frame processing, ISR, source detection/measurement,
+PSF estimation, photometric and astrometric calibration, difference
+imaging, DIASource detection/measurement, source association). During
+Operations, it is presumed that these are automated for a given
+dataset.~
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    An output dataset including difference images and DIASource and
+DIAObject measurements.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t866]
+                {LVV-T866} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Verify that the expected data products have been produced, and that
+catalogs contain reasonable values for measured quantities of interest.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Time processing of data starting from (pre-ingested) raw files until an
+alert is available for distribution; verify that this time is less than
+OTT1.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Alerts are received via the alert stream within OTT1=1 minute from the
+time the Alert Production payload was executed.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1277}{LVV-T1277}
+    - Verify processing of maximum number of calibration exposures
+}\label{lvv-t1277}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Kian-Tat Lim
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9745}{LVV-9745} - DMS-REQ-0131-V-02: Max number of calibs to be processed
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that as many as \textbf{nCalExpProc = 25} calibration exposures
+can be processed together within time calProcTime.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset of raw calibration exposures containing at least
+\textbf{nCalExpProc = 25~}exposures. (If it contains more than 25
+exposures, use only 25 for the test.)
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1059]
+                {LVV-T1059} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Daily Calibration Products Update payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1059]
+                {LVV-T1059} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the processing completed successfully within
+\textbf{calProcTime = 1200 seconds.}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Calibration products resulting from processed raw calibration exposures
+are present within calProcTime, and are well-formed images.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Perform the test again with \emph{more than} nCalExpProc = 25 images,
+and confirm that the processing completes within~\textbf{calProcTime =
+1200 seconds.}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Calibration products resulting from processed raw calibration exposures
+are present within calProcTime, and are well-formed images. (To verify
+that the test with 25 images was not at the limits of what the software
+can handle -- should be able to exceed that bare minimum.)
 
                 \vspace{\dp0}
                 } \end{minipage}
