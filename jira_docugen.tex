@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
 % using template at <template>.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 1.2rc2.post34+g8122980
+% using docsteady version 1.2rc2.post55+g044fd29
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -604,7 +604,8 @@ processing
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T378}{Verify Calculation of Astrometric Performance Metrics
 } \tabularnewline
     \hyperref[lvv-t385]{LVV-T385} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T385}{Verify Retrieval of a CCD-sized image from a coadd
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T385}{Verify implementation of minimum number of simultaneous retrievals of
+CCD-sized coadd cutouts
 } \tabularnewline
     \hyperref[lvv-t1097]{LVV-T1097} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{Verify Summit to Base Network Implementation
@@ -636,6 +637,10 @@ users
 } \tabularnewline
     \hyperref[lvv-t1277]{LVV-T1277} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1277}{Verify processing of maximum number of calibration exposures
+} \tabularnewline
+    \hyperref[lvv-t1332]{LVV-T1332} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1332}{Verify implementation of maximum time for retrieval of CCD-sized coadd
+cutouts
 } \tabularnewline
 \bottomrule
 \end{longtable}
@@ -15229,7 +15234,7 @@ rows even in the presence of failures
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -15241,7 +15246,8 @@ Test & Colin Slater
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that SQL can be used to query catalogs.
+Verify that SQL, or a similar structured language, can be used to query
+catalogs.
 
 
 
@@ -15254,6 +15260,11 @@ Verify that SQL can be used to query catalogs.
 \paragraph{Hardware}
 
 \subsubsection{Input Specification}
+An operational QSERV database that has been verified via
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1085}{LVV-T1085}
+and
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1086}{LVV-T1086}.
+
 
 \subsubsection{Output Specification}
 
@@ -15265,7 +15276,38 @@ Verify that SQL can be used to query catalogs.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to LSP
+            Execute a simple query (for example, the one below) and confirm that it
+returns the expected result.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \texttt{ \textbf{SELECT *} \textbf{FROM} Object \textbf{WHERE}~\\
+
+~qserv\_areaspec\_box(316.582327, −6.839078, 316.653938, −6.781822)
+ }
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A catalog of objects satisfying the specified constraints.~
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Repeat the query from all available access routes (e.g., an external VO
+client, internal DM tools on the development cluster, the Science
+Platform query tool, and from within the Notebook Aspect), confirming in
+each case that the results are as expected.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -15286,7 +15328,7 @@ Verify that SQL can be used to query catalogs.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -15311,6 +15353,10 @@ Verify that prior data releases remain accessible.
 \paragraph{Hardware}
 
 \subsubsection{Input Specification}
+Availability of at least three (3) data releases, of which at least one
+of them must be archived outside the QSERV database. These can be
+precursor datasets, if needed.
+
 
 \subsubsection{Output Specification}
 
@@ -15322,7 +15368,9 @@ Verify that prior data releases remain accessible.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe access to prior DR on tape
+            Confirm that at least two data releases (the most recent, and one
+previous) are accessible to users (and can be queried) from the standard
+channels.~~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -15332,6 +15380,33 @@ Verify that prior data releases remain accessible.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Simple queries return catalog data from the data releases that are
+available in QSERV.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that previous data releases are accessible for bulk download
+(perhaps with significant latency) from tape or other bulk store, and
+that the downloaded tables contain the expected data products.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A download of an entire previous data release from its bulk store.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -19866,14 +19941,15 @@ performance metrics are as expected.
     \end{longtable}
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T385}{LVV-T385}
-    - Verify Retrieval of a CCD-sized image from a coadd
+    - Verify implementation of minimum number of simultaneous retrievals of
+CCD-sized coadd cutouts
 }\label{lvv-t385}
 
 \begin{longtable}[]{llllll}
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -19886,6 +19962,10 @@ image users
 \end{itemize}
 
 \subsubsection{Test Items}
+Verify that at least \textbf{ccdRetrievalUsers = 20~}users can
+simultaneously retrieve a single CCD-sized coadd cutout using the IVOA
+SODA protocol.~
+
 
 
 \subsubsection{Predecessors}
@@ -19908,7 +19988,10 @@ image users
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            
+            Confirm that CCD-sized cutouts from coadds, also containing mask and
+variance planes, are available on the SODA server. If none are
+available, copy an image (or some images) to the server.
+
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
@@ -19917,6 +20000,50 @@ image users
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                At least one CCD-sized coadd cutout is available, and is a well-formed
+image.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate SODA queries by at least \textbf{ccdRetrievalUsers = 20~}users
+at the same time.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that all simulated users retrieved the desired image(s), and
+that the returned images are well-formed, with (at least) image, mask,
+and variance planes.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                All of the simulated~\textbf{ccdRetrievalUsers = 20~}users retrieved
+images within the specified time (see related Verification Element and
+Test Case).
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -21193,6 +21320,111 @@ and confirm that the processing completes within~\textbf{calProcTime =
 are present within calProcTime, and are well-formed images. (To verify
 that the test with 25 images was not at the limits of what the software
 can handle -- should be able to exceed that bare minimum.)
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1332}{LVV-T1332}
+    - Verify implementation of maximum time for retrieval of CCD-sized coadd
+cutouts
+}\label{lvv-t1332}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Defined & Normal &
+Test & Leanne Guy
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9797}{LVV-9797} - DMS-REQ-0377-V-02: Max time to retrieve single-CCD coadd cutout image
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that at least \textbf{ccdRetrievalUsers = 20~}users can retrieve
+CCD-sized coadd cutouts using the IVOA SODA protocol within a maximum
+retrieval time of~\textbf{ccdRetrievalTime = 15 seconds}.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that CCD-sized cutouts from coadds, also containing mask and
+variance planes, are available on the SODA server. If none are
+available, copy an image (or some images) to the server.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                At least one CCD-sized coadd cutout is available, and is a well-formed
+image.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate SODA queries by at least \textbf{ccdRetrievalUsers = 20~}users
+at the same time.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Monitor the time that each query takes to complete, and confirm that all
+simulated users retrieved the desired image(s)
+within~\textbf{ccdRetrievalTime = 15 seconds.}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                All of the simulated \textbf{ccdRetrievalUsers = 20~}users retrieved
+images within~\textbf{ccdRetrievalTime = 15 seconds.}
 
                 \vspace{\dp0}
                 } \end{minipage}
