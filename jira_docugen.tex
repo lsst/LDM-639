@@ -642,6 +642,27 @@ users
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1332}{Verify implementation of maximum time for retrieval of CCD-sized coadd
 cutouts
 } \tabularnewline
+    \hyperref[lvv-t1524]{LVV-T1524} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1524}{Verify Implementation of Exporting MOCs as FITS
+} \tabularnewline
+    \hyperref[lvv-t1525]{LVV-T1525} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1525}{Verify Implementation of Linkage Between HiPS Maps and Coadded Images
+} \tabularnewline
+    \hyperref[lvv-t1526]{LVV-T1526} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1526}{Verify Availability of Secure and Authenticated HiPS Service
+} \tabularnewline
+    \hyperref[lvv-t1527]{LVV-T1527} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1527}{Verify Support for HiPS Visualization
+} \tabularnewline
+    \hyperref[lvv-t1528]{LVV-T1528} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1528}{Verify Visualization of MOCs via Science Platform
+} \tabularnewline
+    \hyperref[lvv-t1529]{LVV-T1529} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1529}{Verify Production of All-Sky HiPS Map
+} \tabularnewline
+    \hyperref[lvv-t1530]{LVV-T1530} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1530}{Verify Production of Multi-Order Coverage Maps for Survey Data
+} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -21414,6 +21435,421 @@ images within~\textbf{ccdRetrievalTime = 15 seconds.}
 
                 \vspace{\dp0}
                 } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1524}{LVV-T1524}
+    - Verify Implementation of Exporting MOCs as FITS
+}\label{lvv-t1524}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18222}{LVV-18222} - DMS-REQ-0384-V-01: Export MOCs As FITS\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the Data Management system provides a means for exporting
+the LSST-generated MOCs in the FITS serialization form defined in the
+IVOA MOC Recommendation.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1525}{LVV-T1525}
+    - Verify Implementation of Linkage Between HiPS Maps and Coadded Images
+}\label{lvv-t1525}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18223}{LVV-18223} - DMS-REQ-0381-V-01: HiPS Linkage to Coadds\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the HiPS maps produced by the Data Management system provide
+for straightforward linkage from the HiPS data to the underlying LSST
+coadded images, and that this has been implemented using a mechanism
+supported by both the LSST Science Platform and by community tools.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1526}{LVV-T1526}
+    - Verify Availability of Secure and Authenticated HiPS Service
+}\label{lvv-t1526}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18224}{LVV-18224} - DMS-REQ-0380-V-01: HiPS Service\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the Data Management system includes a secure and
+authenticated Internet endpoint for an IVOA-compliant HiPS service.
+~Confirm that this service is advertised via Registry as well as in the
+HiPS community mechanism operated by CDS, or whatever equivalent
+mechanism may exist in the LSST operations era.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1527}{LVV-T1527}
+    - Verify Support for HiPS Visualization
+}\label{lvv-t1527}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18225}{LVV-18225} - DMS-REQ-0382-V-01: HiPS Visualization\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the LSST Science Platform supports the visualization of
+LSST-generated HiPS image maps as well as other HiPS maps which satisfy
+the IVOA HiPS Recommendation. Also verify that integrated behavior is
+available, such as the overplotting of catalog entries, comparable to
+that provided for individual source images (e.g., PVIs and coadd tiles).
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1528}{LVV-T1528}
+    - Verify Visualization of MOCs via Science Platform
+}\label{lvv-t1528}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18226}{LVV-18226} - DMS-REQ-0385-V-01: MOC Visualization\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the LSST Science Platform supports the visualization of the
+LSST-generated MOCs as well as other MOCs which satisfy the IVOA MOC
+Recommendation.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1529}{LVV-T1529}
+    - Verify Production of All-Sky HiPS Map
+}\label{lvv-t1529}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18227}{LVV-18227} - DMS-REQ-0379-V-01: Produce All-Sky HiPS Map\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that Data Release Production includes the production of an
+all-sky image map for the existing coadded image area in each filter
+band, and at least one pre-defined all-sky color image map, following
+the IVOA HiPS Recommendation.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1530}{LVV-T1530}
+    - Verify Production of Multi-Order Coverage Maps for Survey Data
+}\label{lvv-t1530}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18228}{LVV-18228} - DMS-REQ-0383-V-01: Produce MOC Maps\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that Data Release Production includes the production of
+Multi-Order Coverage maps for the survey data, conformant with the IVOA
+MOC recommendation. ~Confirm that separate MOC are produced for each
+filter band for the main survey, and additional MOCs are produced to
+represent special-programs datasets and other collections of on-sky
+data.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
         \\ \midrule
     \end{longtable}
 
