@@ -20385,9 +20385,9 @@ variety of community-standard formats.
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Navigate to the portal endpoint. ~The stable version should be used for
-this test and is currently located at:
-https://lsst-lsp-stable.ncsa.illinois.edu/portal/suit/.
+                Navigate to the Portal Aspect endpoint. ~The stable version should be
+used for this test and is currently located at:
+https://lsst-lsp-stable.ncsa.illinois.edu/portal/app/ .
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -20396,7 +20396,7 @@ https://lsst-lsp-stable.ncsa.illinois.edu/portal/suit/.
                 } \end{minipage} \\ \cdashline{2-3}
                 & {\small Expected Result} &
                     \begin{minipage}[t]{13cm}{\scriptsize
-                    Currently this drops the user into an active portal environment.
+                    A credential-entry screen should be displayed.
 
                     \vspace{\dp0}
                     } \end{minipage}
@@ -20409,8 +20409,8 @@ https://lsst-lsp-stable.ncsa.illinois.edu/portal/suit/.
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                Though the current stable system does not authenticate currently, this
-step and the previous one should be updated as the system evolves.
+                Enter a valid set of credentials for an LSST user with LSP access on the
+instance under test.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -20419,7 +20419,7 @@ step and the previous one should be updated as the system evolves.
                 } \end{minipage} \\ \cdashline{2-3}
                 & {\small Expected Result} &
                     \begin{minipage}[t]{13cm}{\scriptsize
-                    No-op.
+                    The Portal Aspect UI should be displayed following authentication.
 
                     \vspace{\dp0}
                     } \end{minipage}
@@ -22731,7 +22731,7 @@ Leave the notebook aspect of the LSST Science Platform in a clean state
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+2 & Draft & Normal &
 Test & Simon Krughoff
 \\\bottomrule
 \end{longtable}
