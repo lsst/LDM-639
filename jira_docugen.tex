@@ -595,7 +595,7 @@ processing
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T212}{Verify implementation of No Limit on Data Access Centers
 } \tabularnewline
     \hyperref[lvv-t376]{LVV-T376} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T376}{Verify the Calculation of Ellipticity Correlations
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T376}{Verify the Calculation of Ellipticity Residuals and Correlations
 } \tabularnewline
     \hyperref[lvv-t377]{LVV-T377} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T377}{Verify Calculation of Photometric Performance Metrics
@@ -1358,7 +1358,7 @@ verify delivery and test download.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -1552,12 +1552,36 @@ non-empty.
 
         \\ \midrule
 
-            \multirow{3}{*}{ 3 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 3-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that each of the single-visit, coadd, and difference image
-catalogs from HSC reprocessing and HiTS reprocessing (which may be the
-first source of regular difference images) provide measurements in flux
-units.
+            Identify and read appropriate processed precursor datasets with the
+Butler, including one containing single-visit images, one with coadds,
+and one with difference imaging.~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -1567,6 +1591,26 @@ units.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that each of the single-visit, coadd, and difference image
+catalogs provide measurements in flux units.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation of measurements in catalogs encoded in flux units.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -3359,7 +3403,7 @@ accuracy criterion is met at all positions.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3397,7 +3441,7 @@ PSF given a point on the image.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Alert Production
+            Identify a dataset with processed visit images in multiple filters.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3407,6 +3451,55 @@ PSF given a point on the image.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Select Objects classified as point sources on at least 10 different
+processed visit images (including all bands). ~Evaluate the PSF model at
+the positions of these Objects, and verify that subtracting a scaled
+version of the PSF model from the processed visit image yields residuals
+consistent with pure noise.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Images with the PSF model subtracted, leaving only residuals that are
+consistent with being noise.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -3608,7 +3701,7 @@ processing).
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3650,7 +3743,7 @@ to be retrieved along with the image for that CCD.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Alert Production
+            Identify a dataset with processed visit images in multiple filters.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3660,6 +3753,53 @@ to be retrieved along with the image for that CCD.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Display an image of the background model for a full CCD. Repeat this for
+all available filters, and confirm that the background is smoothly
+varying and defined over the full CCD.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Well-formed background covering the entire CCD for all CCDs in all
+filters.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -6436,6 +6576,12 @@ from the coadd image yields residuals consistent with pure noise.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Images with the PSF model subtracted, leaving only residuals that are
+consistent with being noise.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -19600,14 +19746,14 @@ functioning
     \end{longtable}
 
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T376}{LVV-T376}
-    - Verify the Calculation of Ellipticity Correlations
+    - Verify the Calculation of Ellipticity Residuals and Correlations
 }\label{lvv-t376}
 
 \begin{longtable}[]{llllll}
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Defined & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -19617,9 +19763,15 @@ Test & Leanne Guy
 \item \href{https://jira.lsstcorp.org/browse/LVV-3404}{LVV-3404} - DMS-REQ-0362-V-01: Median residual PSF ellipticity correlations on 5
 arcmin scales
 
+\item \href{https://jira.lsstcorp.org/browse/LVV-9780}{LVV-9780} - DMS-REQ-0362-V-02: Max fraction of excess ellipticity residuals on 1 and
+5 arcmin scales
+
 \end{itemize}
 
 \subsubsection{Test Items}
+Verify that the DMS includes software to enable the calculation of the
+ellipticity residuals and correlation metrics defined in the OSS.~
+
 
 
 \subsubsection{Predecessors}
@@ -19640,9 +19792,37 @@ arcmin scales
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-            \multirow{3}{*}{ 1 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            
+            Point the butler to an appropriate (precursor or simulated) dataset
+containing data in all filters, that is sufficient for the purposes of
+measuring astrometric performance metrics.
+
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
@@ -19651,6 +19831,51 @@ arcmin scales
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the LSST Stack package `validate\_drp` (or an alternate package
+that is relevant) on this dataset to perform the measurements of the
+metrics.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Measurements of validation metrics and the presence of QA plots
+resulting from the validation pipeline.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Compare measured ellipticity correlations to known (for simulated data)
+or measured (if using precursor data) values from input (precursor or
+simulated) data, and confirm that the output values for all of the
+ellipticity performance metrics are as expected.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Measured ellipticity metrics that are within reasonable values given the
+(known) input dataset.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -19916,9 +20141,9 @@ the metrics), we verify all of the requirements via a single test case.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Point the butler to a simulated dataset containing data in all filters,
-that is sufficient for the purposes of measuring astrometric performance
-metrics.
+            Point the butler to an appropriate (precursor or simulated) dataset
+containing data in all filters, that is sufficient for the purposes of
+measuring astrometric performance metrics.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -19954,8 +20179,9 @@ resulting from the validation pipeline.
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Compare measured astrometry to known values from input simulated data,
-and confirm that the output values for all of the astrometric
+            Compare measured astrometry to known (for simulated data) or measured
+(if using precursor data) values from input (precursor or simulated)
+data, and confirm that the output values for all of the astrometric
 performance metrics are as expected.
 
             \vspace{\dp0}
@@ -22238,6 +22464,25 @@ These products will include:
 
 
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T987}{LVV-T987}
+    - Instantiate the Butler for reading data
+}\label{lvv-t987}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Create a Butler client to read data from an input repository.
+
+
+
+
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T29}{LVV-T29}
     - Verify implementation of Raw Science Image Data Acquisition
 }\label{lvv-t29}
@@ -22358,25 +22603,6 @@ demonstrate that:
   Alert packets can be retrieved from the queue system at LSST-relevant
   scales.
 \end{itemize}
-
-
-
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T987}{LVV-T987}
-    - Instantiate the Butler for reading data
-}\label{lvv-t987}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-Create a Butler client to read data from an input repository.
 
 
 
