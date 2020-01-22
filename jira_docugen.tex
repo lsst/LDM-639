@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
 % using template at <template>.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 1.2rc8.post1+g126395f
+% using docsteady version 1.2rc8.post10+g9af92fd
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -492,9 +492,6 @@ Availability
     \hyperref[lvv-t180]{LVV-T180} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T180}{Verify implementation of Data Management Unscheduled Downtime
 } \tabularnewline
-    \hyperref[lvv-t181]{LVV-T181} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{Verify integration of Summit Facility Data Communications
-} \tabularnewline
     \hyperref[lvv-t182]{LVV-T182} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T182}{Verify implementation of Prefer Computing and Storage Down
 } \tabularnewline
@@ -778,7 +775,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -978,7 +975,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -1225,7 +1222,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -1358,7 +1355,7 @@ verify delivery and test download.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Colin Slater
 \\\bottomrule
 \end{longtable}
@@ -1393,166 +1390,6 @@ Verify that source measurements in catalogs are in flux units.
     \endhead
 
                 \multirow{3}{*}{\parbox{1.3cm}{ 1-1
-                {\scriptsize from \hyperref[lvv-t18]
-                {LVV-T18} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack and Alert Processing packaged shall be initialized as
-described in LVT-T17 (AG-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
-                {\scriptsize from \hyperref[lvv-t18]
-                {LVV-T18} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The alert generation processing will be executed using the verification
-cluster:\\[2\baselineskip]```bash\\
-python ap\_verify/bin/prepare\_demo\_slurm\_files.py\\
-\# At present we must run a single ccd+visit to handle ingestion
-before\\
-\# parallel processing can begin\\
-./ap\_verify/bin/exec\_demo\_run\_1ccd.sh 410915 25\\
-ln -s ap\_verify/bin/demo\_run.sl\\
-ln -s ap\_verify/bin/demo\_cmds.conf\\
-sbatch demo\_run.sl\\
-```\\[2\baselineskip]and any errors or failures reported.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-3
-                {\scriptsize from \hyperref[lvv-t18]
-                {LVV-T18} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-4
-                {\scriptsize from \hyperref[lvv-t18]
-                {LVV-T18} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-5
-                {\scriptsize from \hyperref[lvv-t18]
-                {LVV-T18} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                DIAObjects are currently only stored in a database, without shims to the
-Butler, so the existence of the database table and its non-empty
-contents will be verified by directly accessing it using sqlite3 and
-executing appropriate SQL queries.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in DRP-00-00).
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 2-3
-                {\scriptsize from \hyperref[lvv-t12]
-                {LVV-T12} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
-data product will be retrieved from the Butler and verified to be
-non-empty.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-        \\ \midrule
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 3-1
                 {\scriptsize from \hyperref[lvv-t987]
                 {LVV-T987} } } }
 
@@ -1577,7 +1414,7 @@ non-empty.
 
         \\ \midrule
 
-            \multirow{3}{*}{ 4 } & Description &
+            \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Identify and read appropriate processed precursor datasets with the
 Butler, including one containing single-visit images, one with coadds,
@@ -1593,7 +1430,7 @@ and one with difference imaging.~
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 5 } & Description &
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Verify that each of the single-visit, coadd, and difference image
 catalogs provide measurements in flux units.
@@ -2415,9 +2252,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -2778,9 +2615,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -2950,9 +2787,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -3191,7 +3028,7 @@ flux on the image to physical flux units.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3227,7 +3064,26 @@ the bounds of the image.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify an appropriate processed dataset for this test.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset with Processed Visit Images available.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
                 {\scriptsize from \hyperref[lvv-t987]
                 {LVV-T987} } } }
 
@@ -3250,20 +3106,6 @@ the bounds of the image.
                 \\ \hdashline
 
 
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest data from an appropriate processed dataset.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -3368,7 +3210,7 @@ less than \textbf{astrometricAccuracy}.
             & Expected Result &
                 \begin{minipage}[t]{13cm}{\footnotesize
                 Histogram and relevant statistics needed to confirm that the WCS
-transformation is~
+transformation is accurate.
 
                 \vspace{\dp0}
                 } \end{minipage}
@@ -3403,7 +3245,7 @@ accuracy criterion is met at all positions.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -3701,7 +3543,7 @@ processing).
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -4420,9 +4262,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -4570,9 +4412,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -4790,9 +4632,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -4849,8 +4691,8 @@ described in LVV-T17 - AG-00-00).
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                sqlite3 or Python's sqlalchemy module will be used to access the Level 1
-database.
+                sqlite3 or Pythonâ\euro{}™s sqlalchemy module will be used to access the
+Level 1 database.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -4992,9 +4834,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -5141,9 +4983,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -5318,9 +5160,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -5633,9 +5475,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -5781,9 +5623,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -6029,7 +5871,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -6112,9 +5954,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -6378,7 +6220,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -6430,7 +6272,7 @@ non-empty.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+2 & Approved & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -6469,14 +6311,33 @@ Fully covered by preconditions for
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset with coadded images in multiple filters.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Multi-band data that has been processed through the coaddition stage.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00)
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -6484,89 +6345,23 @@ described in LVV-T10 - DRP-00-00)
                 \begin{minipage}[t]{13cm}{\scriptsize
                 } \end{minipage} \\ \cdashline{2-3}
                 & {\small Expected Result} &
-                \\ \hdashline
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
 
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-2
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                A ``Data Butler'' will be initialized to access the repository.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-3
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                For each combination of tract/patch/filter, the PVI will be retrieved
-from the Butler, and the existence of all components described in Test
-items section §4.6.2 will be verified.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-4
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
-                \\ \hdashline
-
-
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-5
-                {\scriptsize from \hyperref[lvv-t16]
-                {LVV-T16} } } }
-
-                & {\small Description} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                Ten patches will be chosen at random and inspected by eye for unmasked
-artifacts.
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Test Data} &
-                \begin{minipage}[t]{13cm}{\scriptsize
-                } \end{minipage} \\ \cdashline{2-3}
-                & {\small Expected Result} &
+                    \vspace{\dp0}
+                    } \end{minipage}
                 \\ \hdashline
 
 
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Select Objects classified as point sources on 10 different coadd images
-(including all bands). ~Evaluate the PSF model at the positions of these
-Objects, and verify that subtracting a scaled version of the PSF model
-from the coadd image yields residuals consistent with pure noise.
+            Load the exposures, then select Objects classified as point sources on
+at least 10 different coadd images (including all bands). Evaluate the
+PSF model at the positions of these Objects, and verify that subtracting
+a scaled version of the PSF model from the processed visit image yields
+residuals consistent with pure noise.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -6681,7 +6476,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -6884,7 +6679,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -7146,9 +6941,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -7223,7 +7018,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -7847,7 +7642,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -7962,7 +7757,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -8133,9 +7928,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -8256,7 +8051,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -8314,7 +8109,7 @@ described in LVV-T10 - DRP-00-00)
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each combination of tract/patch/filter, the PVI will be retrieved
 from the Butler, and the existence of all components described in Test
-items section §4.6.2 will be verified.
+items section ยง4.6.2 will be verified.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -8469,7 +8264,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -8611,7 +8406,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -8814,7 +8609,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -8963,9 +8758,9 @@ sbatch demo\_run.sl\\
 
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
-                For each of the expected data products types (listed in §4.2.2) and each
-of the expected units (PVIs, catalogs, etc.), the data product will be
-retrieved from the Butler and verified to be non-empty.
+                For each of the expected data products types (listed in ยง4.2.2) and
+each of the expected units (PVIs, catalogs, etc.), the data product will
+be retrieved from the Butler and verified to be non-empty.
 
                 \vspace{\dp0}
                 } \end{minipage} \\ \cdashline{2-3}
@@ -13323,7 +13118,7 @@ described in DRP-00-00).
                 & {\small Description} &
                 \begin{minipage}[t]{13cm}{\scriptsize
                 For each of the expected data products types (listed in Test Items
-section §4.3.2) and each of the expected units (PVIs, coadds, etc), the
+section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
 data product will be retrieved from the Butler and verified to be
 non-empty.
 
@@ -14251,7 +14046,7 @@ Portal is displayed, as well as to the User Workspace.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Robert Gruendl
 \\\bottomrule
 \end{longtable}
@@ -14304,7 +14099,7 @@ run. These jobs use precursor datasets from cameras other than LSST.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            For each of these two datasets, instantiate the Butler, ingest the data
+            For each of these two datasets, instantiate the Butler, load the data
 products, and confirm that they exist as expected.
 
             \vspace{\dp0}
@@ -17791,69 +17586,6 @@ unplanned downtime
         \\ \midrule
     \end{longtable}
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{LVV-T181}
-    - Verify integration of Summit Facility Data Communications
-}\label{lvv-t181}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Robert Gruendl
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-71}{LVV-71} - DMS-REQ-0168-V-01: Summit Facility Data Communications
-
-\end{itemize}
-
-\subsubsection{Test Items}
-This verifies that the Summit Network is integrated properly with the
-Summit - Base Network. ~(The former is a TS deliverable, the latter a DM
-deliverable). ~Demonstrate data is transferred over the summit
-instrument data fibers, from the DAQ to the Summit - Base DWDM, along
-with monitoring network performance. ~This requirement does not include
-testing the DAQ buffering of the data, nor the transfer from summit to
-base which are covered elsewhere.
-
-
-
-\subsubsection{Predecessors}
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T182}{LVV-T182}
     - Verify implementation of Prefer Computing and Storage Down
 }\label{lvv-t182}
@@ -18021,7 +17753,7 @@ ensure that these data are readable.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Inspection & Robert Gruendl
 \\\bottomrule
 \end{longtable}
 
@@ -18032,20 +17764,30 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Monitor summit to base networking and verify that the mean time between
-failures is less than summToBaseNetMTBF (90 days) over 1 year.
+Monitor summit to base networking ~for at least 1 week, model annual
+availability, and verify that the mean time between failures is less
+than summToBaseNetMTBF (90 days) over 1 year.
 
 
 
 \subsubsection{Predecessors}
+See pre-conditions.
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+PMCS DMTC-7400-2400 Complete.\\
+perSonar installed in Summit and publishing statistics to MadDash.
+
 
 \subsubsection{Output Specification}
 
@@ -18079,7 +17821,7 @@ failures is less than summToBaseNetMTBF (90 days) over 1 year.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Demonstration & Robert Gruendl
 \\\bottomrule
 \end{longtable}
 
@@ -18090,20 +17832,68 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Monitor Summit to Base networking and verify that the mean time to
-repair is less than summToBaseNetMTTR (24 hours) over a 1-year period.
+This approach is necessitated by not wanting to actually cut the fiber
+just for test purposes:
+
+\begin{itemize}
+\tightlist
+\item
+  Pick a point on the network (Time Domain graph) and simulate a fault
+  (e.g. disconnect a cable).
+\item
+  Detect there a fault.
+\item
+  Diagnose that it is a break.
+\item
+  Measure the cable with the OTDR to locate the distance from the end
+  point.
+\item
+  Elapse time to simulate the following:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Go to the most inaccessible place which would mean carrying all the
+    tools/splicer/generator/tent equipment some ~metres.
+  \item
+    Erect a tent to make the splice
+  \item
+    Start the generator
+  \item
+    Do a splice on some random piece of cable
+  \item
+    At an end point measure the cable again to ensure it is break free.
+  \item
+    Take down and reinstall an isolate pole (not in the actual fiber
+    path)
+  \item
+    Put the cable on the pole.
+  \end{itemize}
+\item
+  Restore connection (e.g. reconnect cable)
+\item
+  Measure with OTDR to ensure back to normal state.\\[2\baselineskip]
+\end{itemize}
 
 
 
 \subsubsection{Predecessors}
+See pre-conditions.
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+PMCS DMTC-7400-2400 Complete
+
 
 \subsubsection{Output Specification}
 
@@ -18148,22 +17938,38 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-A secondary transfer method (redundant fiber network, microwave link, or
-transportable medium) between Summit and Base capable of transferring 1
+Transfer data between summit and base on primary equipment (LSST Summit
+- Base) over uninterrupted 1 day period. ~Simulate outage by
+disconnecting fiber from equipment on primary and verify that network
+fails over to secondary equipment. ~Demonstrate transfer of data at or
+exceeding rates specified in \citeds{LDM-142} between summit and base over
+secondary equipment uninterrupted 1 day period (except for
+\textless{}=60s to fail-over to secondary and recover to primary
+connection execution). Verify that ~link is capable of transferring 1
 night of raw data (nCalibExpDay + nRawExpNightMax = 450 + 2800 = ~3250
-exposures) within summToBaseNet2TransMax (72 hours). ~
+exposures) within summToBaseNet2TransMax (72 hours). Restore connection
+between fiber and primary equipment (i.e. reconnect primary), verify
+that network recovers to primary.
 
 
 
 \subsubsection{Predecessors}
+See pre-conditions.
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+PMCS DMTC-7400-2400 complete.
+
 
 \subsubsection{Output Specification}
 
@@ -18197,7 +18003,7 @@ exposures) within summToBaseNet2TransMax (72 hours). ~
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Inspection & Robert Gruendl
 \\\bottomrule
 \end{longtable}
 
@@ -18208,18 +18014,24 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the Summit to Base communications link is owned and operated
-by LSST and/or the operations entity.
+Inspect construction and operations contracts and Indefeasible Rights to
+Use (IRUs).
 
 
 
 \subsubsection{Predecessors}
+PMCS DMTC-7400-2140, -2240, -2330 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+None
+
 
 \paragraph{Hardware}
+None
+
 
 \subsubsection{Input Specification}
 
@@ -18444,19 +18256,31 @@ Test & Robert Gruendl
 
 \subsubsection{Test Items}
 Verify (a) plannned and (b) as-built wireless network at the Base
-Facility supports minBaseWiFi bandwidth.
+Facility supports minBaseWiFi bandwidth (1000 Mbs). Test internet web
+browsing and file download, email at summit and base over wireless.
+Verify wireless signal strength meets or exceeds typical, and average
+and peak bandwidths meet or exceed minBaseWiFI bandwidth.
 
 
 
 \subsubsection{Predecessors}
+PMCS DLP-465 Complete.
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+Desktop with WiFi NIC, email reader, internet browser.
+
 
 \subsubsection{Input Specification}
+Base Wireless LAN is installed/configured and Test Personnel have
+accounts for email, internet access.
+
 
 \subsubsection{Output Specification}
 
@@ -18501,20 +18325,35 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that the Base Facility can transfer a full image+metadata to the
-Archive Center in baseToArchiveMaxTransferTime.
+Transfer data between base and archive over uninterrupted 1 day period
+(with repeated transfers on normal observing cadence). Analyze the
+network and show that data acquired by a DAQ can be transferred within
+the required time, i.e. verify that link is capable of transferring
+image for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}.
+Verify transfer of data at or exceeding rates specified in \citeds{LDM-142}.
 
 
 
 \subsubsection{Predecessors}
+PMCS DM-Net-5 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+loaded with simulated or pre-cursor data.\\
+Archiver/Forwarder receivers or other capability is on configured at
+LDF, connected to Base - Archive Network.
+
 
 \subsubsection{Output Specification}
 
@@ -18559,11 +18398,19 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify Network uptime between Base Facility and Archive Facility.
+Transfer data between base and archive over uninterrupted 1 week period.
+~Extrapolate to a full year to estimate if expect to meet
+baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for complete loss
+of transfer service (all paths), not a single path failure with
+successful fail-over. Demonstrate transfer of data at or exceeding rates
+specified in \citeds{LDM-142}, verify achieved average and peak throughput and
+latency.
 
 
 
 \subsubsection{Predecessors}
+~PMCS DMTC-7400-2130 Complete
+
 
 \subsubsection{Environment Needs}
 
@@ -18572,6 +18419,11 @@ Verify Network uptime between Base Facility and Archive Facility.
 \paragraph{Hardware}
 
 \subsubsection{Input Specification}
+Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+loaded with simulated or pre-cursor data.\\
+Archiver/Forwarder receivers or other capability is on configured at
+LDF, connected to Base - Archive Network.
+
 
 \subsubsection{Output Specification}
 
@@ -18616,19 +18468,34 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify uptime of the Base Facility to Archive Facility network.
+Disconnect, reconnect and recover transfer of data between base and
+archive, after disconnecting fiber at an intermediate location between
+base and archive. Verify recovery can occur within baseToArchNetMTTR =
+48{[}hour{]}. Demonstrate reconnection and recovery to transfer of data
+at or exceeding rates specified in \citeds{LDM-142}.
 
 
 
 \subsubsection{Predecessors}
+PMCS DM-NET-5 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+loaded with simulated or pre-cursor data.\\
+Archiver/Forwarder receivers or other capability is on configured at
+LDF, connected to Base - Archive Network.
+
 
 \subsubsection{Output Specification}
 
@@ -18673,20 +18540,44 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify the performance of a secondary network link meets needs for
-operations support and catching up after outages.
+FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
+Transfer data between base and archive on primary links over
+uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
+primary and verify that network fails over to secondary links. ~Transfer
+data between base and archive over secondary equipment uninterrupted 1
+day period. ~Restore connection on primary link verify that network
+recovers to primary. Transfer data between base and archive on primary
+links over uninterrupted 1 day period. Demonstrate transfer of data at
+or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
+except for \textless{}=60s fail-over fail-over to secondary and recover
+to primary connection execution.
 
 
 
 \subsubsection{Predecessors}
+PMCS DM-NET-5 Complete\\
+PMCS DMTC-8000-0990 Complete\\
+PMCS DMTC-8100-2130 Complete\\
+PMCS DMTC-8100-2530 Complete\\
+PMCS DMTC-8200-0600 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
+loaded with simulated or pre-cursor data.\\
+Archiver/Forwarder receivers or other capability is on configured at
+LDF, connected to Base - Archive Network.
+
 
 \subsubsection{Output Specification}
 
@@ -18905,20 +18796,33 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify sufficient bandwidth between Archive Center and Data Access
-Centers of at least archToDacBandwidth.
+Transfer data between archive and both DACs over uninterrupted 1 day
+period ~(data can be simulated, i.e. files of similar size and quantity
+to real data). ~Verify can meet archToDacBandwidth = 10000{[}megabit per
+second{]}. Analyze the network and show that data can be transferred
+within the required time. Demonstrate transfer of data at or exceeding
+rates specified in \citeds{LDM-142}.
 
 
 
 \subsubsection{Predecessors}
+PMCS DMTC-8100-2550 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Data is staged in LDF and data transfer capabilities to US DAC and
+Chilean DAC are in place.
+
 
 \subsubsection{Output Specification}
 
@@ -18964,19 +18868,32 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-
+Transfer data between archive and DACs over uninterrupted 1 week period.
+~Extrapolate to 1 year to estimate can meet archToDacNetMTBF =
+180{[}day{]}. Demonstrate transfer of data at or exceeding rates
+specified in \citeds{LDM-142}, verify achieved average and peak throughput and
+latency.
 
 
 
 \subsubsection{Predecessors}
+PMCS DMTC-8100-2550 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Data is staged in LDF and data transfer capabilities to US DAC and
+Chilean DAC are in place.
+
 
 \subsubsection{Output Specification}
 
@@ -19022,20 +18939,32 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify the reliability of the Archive to Data Access Center
-communications.
+Reconnect and recover transfer of data between archive and DACs, after
+disconnecting fiber at an intermediate location between archive and
+DACs. Verify can meet chToDacNetMTTR = 48{[}hour{]}. Demonstrate
+reconnection and recovery to transfer of data at or exceeding rates
+specified in \citeds{LDM-142}.
 
 
 
 \subsubsection{Predecessors}
+PMCS DMTC-8100-2550 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Data is staged in LDF and data transfer capabilities to US DAC and
+Chilean DAC are in place.
+
 
 \subsubsection{Output Specification}
 
@@ -19081,19 +19010,38 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-Inter-Site Networks~
+FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
+Transfer data between base and archive on primary links over
+uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
+primary and verify that network fails over to secondary links. ~Transfer
+data between base and archive over secondary equipment uninterrupted 1
+day period. ~Restore connection on primary link verify that network
+recovers to primary. Transfer data between base and archive on primary
+links over uninterrupted 1 day period. Demonstrate transfer of data at
+or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
+except for \textless{}=60s fail-over fail-over to secondary and recover
+to primary connection execution.
 
 
 
 \subsubsection{Predecessors}
+PMCS DMTC-8100-2550 Complete
+
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
+See pre-conditions.
+
 
 \paragraph{Hardware}
+See pre-conditions.
+
 
 \subsubsection{Input Specification}
+Data is staged in LDF and data transfer capabilities to US DAC and
+Chilean DAC are in place.
+
 
 \subsubsection{Output Specification}
 
@@ -19753,7 +19701,7 @@ functioning
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -19887,7 +19835,7 @@ ellipticity performance metrics are as expected.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -20051,7 +19999,7 @@ performance metrics are as expected.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Leanne Guy
 \\\bottomrule
 \end{longtable}
@@ -20323,44 +20271,31 @@ Test & Jeff Kantor
 
 \subsubsection{Verification Elements}
 \begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} - DMS-REQ-0171-V-01: Summit to Base Network
-
 \item \href{https://jira.lsstcorp.org/browse/LVV-71}{LVV-71} - DMS-REQ-0168-V-01: Summit Facility Data Communications
 
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that:
-
-\begin{itemize}
-\tightlist
-\item
-  Summit - Base Network has been properly implemented in Summit and Base
-  facilities
-\item
-  Summit - Base Network is properly integrated with Summit Control
-  Network and DAQ/Camera Data Backbone
-\end{itemize}
+Control the AuxTel through a night of Observing, read out data and
+transfer data to LSST Summit DWDM. Verify that data acquired by a AuxTel
+DAQ can be transferred to LSST Summit DWDM and loaded in EFD without
+problems.
 
 
 
 \subsubsection{Predecessors}
-None.
+PMCS DMTC-7400-2400 Complete\\
+PMCS T\&SC-2600-1545 Complete
 
 
 \subsubsection{Environment Needs}
 
 \paragraph{Software}
-OCS/DMCS test harness\\
-Simulated images and meta-data\\
-EFD\\
-DAQ client\\
-Archiver/forwarder (Data Backbone)
+See pre-conditions
 
 
 \paragraph{Hardware}
-DAQ\\
-Base servers with archiver
+See pre-conditions.\\[2\baselineskip]
 
 
 \subsubsection{Input Specification}
@@ -20372,21 +20307,16 @@ Base servers with archiver
 \item
   Summit - Base Network installed and operating properly.
 \item
-  Simulated or real DAQ installed on summit and pre-loaded with image
-  data.
+  AuxTel hardware and control systems are functional with LATIS. AuxTel
+  TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected via LSST Control
+  Network on Summit to LSST DWDM (with at least 2 x 10 Gbps ethernet
+  port client cards).
 \item
-  EFD installed on summit and pre-loaded with image meta-data.
-\item
-  Archiver/forwarders installed in Base and operating properly.
-\item
-  OCS/DMCS test harness installed and pre-configured to trigger read-out
-  and transfer.
+  AuxTel Archiver/forwarders installed in Summit and operating properly.
 \end{enumerate}
 
 
 \subsubsection{Output Specification}
-Image and meta-data transferred to Base Archiver/Forwarders.
-
 
 \subsubsection{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
@@ -20423,7 +20353,7 @@ Base Network has been set-up and is working.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Draft & Normal &
+1 & Approved & Normal &
 Inspection & Jeff Kantor
 \\\bottomrule
 \end{longtable}
@@ -20446,11 +20376,15 @@ Inspection & Jeff Kantor
   deliverable RD10})
 \item
   Installation of AURA DWDM and Data Transfer Node (DTN) (completed
-  20171218 \citeds{DMTR-82})
+  20171218
+  \href{https://docushare.lsst.org/docushare/dsweb/Get/\citeds{DMTR-82}/\citeds{DMTR-82}.pdf}{\citeds{DMTR-82}})
 \item
   Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
   (completed 20190505
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743})
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743},
+  20191108
+  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-35302/DAQ\%20DWDM\%20connection\%20tests\%2020191109.pptx}{DAQ
+  DWDM Connection Tests})
 \end{enumerate}
 
 
@@ -20470,6 +20404,7 @@ OTDR, DTN.
 
 
 \subsubsection{Input Specification}
+PMCS DMTC-7400-2330 COMPLETE\\
 By phase:
 
 \begin{enumerate}
@@ -20790,7 +20725,7 @@ to execute the steps in LVV-T849.
 \toprule
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
-1 & Defined & Normal &
+1 & Approved & Normal &
 Test & Jim Bosch
 \\\bottomrule
 \end{longtable}
@@ -20826,7 +20761,26 @@ standards.
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
 
-                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify an appropriate processed dataset for this test.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset with Processed Visit Images.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
                 {\scriptsize from \hyperref[lvv-t987]
                 {LVV-T987} } } }
 
@@ -20849,20 +20803,6 @@ standards.
                 \\ \hdashline
 
 
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Ingest data from an appropriate processed dataset.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
@@ -22431,39 +22371,6 @@ These products will include:
 
 
 
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T18}{LVV-T18}
-    - AG-00-05: Alert Generation Produces Required Data Products
-}\label{lvv-t18}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-This test will check that the basic data products produced by Alert
-Generation are generated by execution of the science payload.\\
-These products will include:
-
-\begin{itemize}
-\tightlist
-\item
-  Processed visit images (PVIs; DMS-REQ-0069);
-\item
-  Difference Exposures (DMS-REQ-0010);
-\item
-  DIASource catalogs (DMS-REQ-0269);
-\item
-  DIAObject catalogs (DMS-REQ-0271);
-\end{itemize}
-
-
-
-
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T987}{LVV-T987}
     - Instantiate the Butler for reading data
 }\label{lvv-t987}
@@ -22540,6 +22447,39 @@ Test & Jeffrey Carlin
 \subsubsection{Test Items}
 Execute the Calibration Products Production payload to create a subset
 of Master Calibration images and Calibration Database entries.
+
+
+
+
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T18}{LVV-T18}
+    - AG-00-05: Alert Generation Produces Required Data Products
+}\label{lvv-t18}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+This test will check that the basic data products produced by Alert
+Generation are generated by execution of the science payload.\\
+These products will include:
+
+\begin{itemize}
+\tightlist
+\item
+  Processed visit images (PVIs; DMS-REQ-0069);
+\item
+  Difference Exposures (DMS-REQ-0010);
+\item
+  DIASource catalogs (DMS-REQ-0269);
+\item
+  DIAObject catalogs (DMS-REQ-0271);
+\end{itemize}
 
 
 
@@ -22767,6 +22707,26 @@ additional related quanitites.
 
 
 
+\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064}
+    - Run Data Release Production Payload
+}\label{lvv-t1064}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Data Release Production payload, starting from raw images
+and producing science data products.
+
+
+
+
 \subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{LVV-T16}
     - DRP-00-35: Scientific Verification of Coadd Images
 }\label{lvv-t16}
@@ -22804,26 +22764,6 @@ This test does not include quantitative targets for the science quality
 criteria; we instead require for each test that we be able to quickly
 construct a plot or display summary images that allow such a target can
 be visualized.\\[2\baselineskip]
-
-
-
-
-\subsection{\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064}
-    - Run Data Release Production Payload
-}\label{lvv-t1064}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\end{longtable}
-
-\subsubsection{Test Items}
-Execute the Data Release Production payload, starting from raw images
-and producing science data products.
 
 
 
