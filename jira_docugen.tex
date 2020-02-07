@@ -464,6 +464,45 @@ cutouts} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1563}{ Verify re-run on different system produces the same results} \tabularnewline
     \hyperref[lvv-t1564]{LVV-T1564} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1564}{ Verify re-run on similar system produces the same results} \tabularnewline
+    \hyperref[lvv-t1745]{LVV-T1745} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1745}{ Verify calculation of median relative astrometric measurement error on
+20 arcminute scales} \tabularnewline
+    \hyperref[lvv-t1746]{LVV-T1746} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1746}{ Verify calculation of fraction of relative astrometric measurement error
+on 5 arcminute scales exceeding outlier limit} \tabularnewline
+    \hyperref[lvv-t1747]{LVV-T1747} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1747}{ Verify calculation of relative astrometric measurement error on 5
+arcminute scales} \tabularnewline
+    \hyperref[lvv-t1748]{LVV-T1748} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1748}{ Verify calculation of median error in absolute position for RA, Dec axes} \tabularnewline
+    \hyperref[lvv-t1749]{LVV-T1749} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1749}{ Verify calculation of fraction of relative astrometric measurement error
+on 20 arcminute scales exceeding outlier limit} \tabularnewline
+    \hyperref[lvv-t1750]{LVV-T1750} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1750}{ Verify calculation of separations relative to r-band exceeding color
+difference outlier limit} \tabularnewline
+    \hyperref[lvv-t1751]{LVV-T1751} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1751}{ Verify calculation of median relative astrometric measurement error on
+200 arcminute scales} \tabularnewline
+    \hyperref[lvv-t1752]{LVV-T1752} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1752}{ Verify calculation of fraction of relative astrometric measurement error
+on 200 arcminute scales exceeding outlier limit} \tabularnewline
+    \hyperref[lvv-t1753]{LVV-T1753} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1753}{ Verify calculation of RMS difference of separations relative to r-band} \tabularnewline
+    \hyperref[lvv-t1754]{LVV-T1754} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1754}{ Verify calculation of residual PSF ellipticity correlations for
+separations less than 5 arcmin} \tabularnewline
+    \hyperref[lvv-t1755]{LVV-T1755} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1755}{ Verify calculation of residual PSF ellipticity correlations for
+separations less than 1 arcmin} \tabularnewline
+    \hyperref[lvv-t1756]{LVV-T1756} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1756}{ Verify calculation of photometric repeatability in uzy filters} \tabularnewline
+    \hyperref[lvv-t1757]{LVV-T1757} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1757}{ Verify calculation of photometric repeatability in gri filters} \tabularnewline
+    \hyperref[lvv-t1758]{LVV-T1758} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1758}{ Verify calculation of photometric outliers in uzy bands} \tabularnewline
+    \hyperref[lvv-t1759]{LVV-T1759} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1759}{ Verify calculation of photometric outliers in gri bands} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -13764,8 +13803,8 @@ and organized for access through the Data Butler Access Client. ~
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Confirm that the CI jobs used to test DRP and AP processing successfully
-run. These jobs use precursor datasets from cameras other than LSST.
+            Confirm that the CI jobs used to test DRP processing successfully run.
+These jobs use precursor datasets from cameras other than LSST.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -13779,7 +13818,7 @@ run. These jobs use precursor datasets from cameras other than LSST.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            For each of these two datasets, instantiate the Butler, load the data
+            For the precursor dataset, instantiate the Butler, load the data
 products, and confirm that they exist as expected.
 
             \vspace{\dp0}
@@ -19608,8 +19647,6 @@ Test & Leanne Guy
 
 \subsubsection{Verification Elements}
 \begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-3402}{LVV-3402} - DMS-REQ-0360-V-01: Median astrometric error on 20 arcmin scales
-
 \item \href{https://jira.lsstcorp.org/browse/LVV-9778}{LVV-9778} - DMS-REQ-0360-V-12: RMS difference between r-band and other filter
 separation
 
@@ -21901,6 +21938,1973 @@ produces the same results.~
         \\ \midrule
     \end{longtable}
 
+\subsection{LVV-T1745 -  Verify calculation of median relative astrometric measurement error on
+20 arcminute scales}\label{lvv-t1745}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1745}{LVV-T1745} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-3402}{LVV-3402} - DMS-REQ-0360-V-01: Median astrometric error on 20 arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the median
+relative astrometric measurement error on 20 arcminute scales and assess
+whether it meets the requirement that it shall be no more than AM2 = 10
+milliarcseconds.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AM2 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AM2 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1746 -  Verify calculation of fraction of relative astrometric measurement error
+on 5 arcminute scales exceeding outlier limit}\label{lvv-t1746}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1746}{LVV-T1746} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9767}{LVV-9767} - DMS-REQ-0360-V-02: Max fraction exceeding limit on 5 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9773}{LVV-9773} - DMS-REQ-0360-V-07: Outlier limit on 5 arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the maximum
+fraction of relative astrometric measurements on 5 arcminute scales that
+exceed the 5 arcminute outlier limit \textbf{AD1 = 20 milliarcseconds},
+and assess whether it meets the requirement that it shall be less than
+\textbf{AF1 = 10 percent.}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AF1 has been calculated using the outlier limit
+AD1, and that its values are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AF1 has been calculated (and used the limit AD1).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1747 -  Verify calculation of relative astrometric measurement error on 5
+arcminute scales}\label{lvv-t1747}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1747}{LVV-T1747} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9768}{LVV-9768} - DMS-REQ-0360-V-03: Median astrometric error on 5 arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the
+relative astrometric measurement error on 5 arcminute scales, and assess
+whether it meets the requirement that it shall be less
+than\textbf{~\textbf{AM1 = 10 milliarcseconds.}}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AM1 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AM1 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1748 -  Verify calculation of median error in absolute position for RA, Dec axes}\label{lvv-t1748}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1748}{LVV-T1748} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9769}{LVV-9769} - DMS-REQ-0360-V-04: Median absolute error in RA, Dec
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the median
+error in absolute position for each axis, RA and DEC, and assess whether
+it meets the requirement that it shall be less than \textbf{AA1 = 50
+milliarcseconds}.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AA1 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AA1 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1749 -  Verify calculation of fraction of relative astrometric measurement error
+on 20 arcminute scales exceeding outlier limit}\label{lvv-t1749}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1749}{LVV-T1749} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9776}{LVV-9776} - DMS-REQ-0360-V-10: Max fraction exceeding limit on 20 arcmin scales
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9770}{LVV-9770} - DMS-REQ-0360-V-05: Outlier limit on 20 arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the maximum
+fraction of relative astrometric measurements on 20 arcminute scales
+that exceed the 20 arcminute outlier limit \textbf{AD2 = 20
+milliarcseconds}, and assess whether it meets the requirement that it
+shall be less than \textbf{AF2 = 10 percent.}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AF2 has been calculated using the outlier limit
+AD2, and that its values are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AF2 has been calculated (and used the limit AD2).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1750 -  Verify calculation of separations relative to r-band exceeding color
+difference outlier limit}\label{lvv-t1750}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1750}{LVV-T1750} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9771}{LVV-9771} - DMS-REQ-0360-V-06: Color difference outlier limit relative to r-band
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9777}{LVV-9777} - DMS-REQ-0360-V-11: Max fraction of r-band color difference outliers
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the
+separations measured relative to the r-band that exceed the color
+difference outlier limit \textbf{AB2 = 20 milliarcseconds}, and assess
+whether it meets the requirement that it shall be less than \textbf{ABF1
+= 10 percent.~}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits, and including at least one visit in r-band.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric ABF1 has been calculated using the outlier limit
+AB2, and that its values are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that ABF1 has been calculated (and used the limit AB2).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1751 -  Verify calculation of median relative astrometric measurement error on
+200 arcminute scales}\label{lvv-t1751}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1751}{LVV-T1751} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9774}{LVV-9774} - DMS-REQ-0360-V-08: Median astrometric error on 200 arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the median
+relative astrometric measurement error on 200 arcminute scales and
+assess whether it meets the requirement that it shall be no more than
+AM3 = 15 milliarcseconds.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits, and that covers an area larger than 200 arcminutes.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AM3 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AM3 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1752 -  Verify calculation of fraction of relative astrometric measurement error
+on 200 arcminute scales exceeding outlier limit}\label{lvv-t1752}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1752}{LVV-T1752} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9779}{LVV-9779} - DMS-REQ-0360-V-13: Max fraction exceeding limit on 200 arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the maximum
+fraction of relative astrometric measurements on 200 arcminute scales
+that exceed the 200 arcminute outlier limit \textbf{AD3 = 30
+milliarcseconds}, and assess whether it meets the requirement that it
+shall be less than \textbf{AF3 = 10 percent.}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits, and that covers an area larger than 200 arcminutes.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AF3 has been calculated using the outlier limit
+AD3, and that its values are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AF3 has been calculated (and used the limit AD3).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1753 -  Verify calculation of RMS difference of separations relative to r-band}\label{lvv-t1753}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1753}{LVV-T1753} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9778}{LVV-9778} - DMS-REQ-0360-V-12: RMS difference between r-band and other filter
+separation
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the
+separations measured relative to the r-band, and assess whether it meets
+the requirement that it shall be less than \textbf{AB1 =
+10~milliarcseconds.}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits, and including at least one visit in r-band.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric AB1 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that AB1 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1754 -  Verify calculation of residual PSF ellipticity correlations for
+separations less than 5 arcmin}\label{lvv-t1754}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1754}{LVV-T1754} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-3404}{LVV-3404} - DMS-REQ-0362-V-01: Median residual PSF ellipticity correlations on 5
+arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the median
+residual PSF ellipticity correlations averaged over an arbitrary field
+of view for separations less than 5 arcmin, and assess whether it meets
+the requirement that it shall be no greater than \textbf{TE2 =
+1.0e-7{[}arcminuteSeparationCorrelation{]}.}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric TE2 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that TE2 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1755 -  Verify calculation of residual PSF ellipticity correlations for
+separations less than 1 arcmin}\label{lvv-t1755}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1755}{LVV-T1755} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9782}{LVV-9782} - DMS-REQ-0362-V-04: Median residual PSF ellipticity correlations on 1
+arcmin scales
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the median
+residual PSF ellipticity correlations averaged over an arbitrary field
+of view for separations less than 1 arcmin, and assess whether it meets
+the requirement that it shall be no greater than \textbf{TE1 =
+2.0e-5{[}arcminuteSeparationCorrelation{]}.}
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field with multiple
+overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric TE1 has been calculated, and that its values are
+reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that TE1 has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1756 -  Verify calculation of photometric repeatability in uzy filters}\label{lvv-t1756}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1756}{LVV-T1756} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-3401}{LVV-3401} - DMS-REQ-0359-V-01: RMS photometric repeatability in uzy
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the RMS
+photometric repeatability of bright non-saturated unresolved point
+sources in the u, z, and y filters, and assess whether it meets the
+requirement that it shall be less than \textbf{PA1uzy = 7.5
+millimagnitudes}.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field in each of the u, z,
+and y filters with multiple overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric PA1uzy has been calculated, and that its values
+are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that PA1uzy has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1757 -  Verify calculation of photometric repeatability in gri filters}\label{lvv-t1757}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1757}{LVV-T1757} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9759}{LVV-9759} - DMS-REQ-0359-V-10: RMS photometric repeatability in gri
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the RMS
+photometric repeatability of bright non-saturated unresolved point
+sources in the g, r, and i filters, and assess whether it meets the
+requirement that it shall be less than \textbf{PA1gri = 5.0
+millimagnitudes}.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field in each of the g, r,
+and i filters with multiple overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric PA1gri has been calculated, and that its values
+are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that PA1gri has been calculated.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1758 -  Verify calculation of photometric outliers in uzy bands}\label{lvv-t1758}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1758}{LVV-T1758} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9758}{LVV-9758} - DMS-REQ-0359-V-09: Repeatability outlier limit in uzy
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9752}{LVV-9752} - DMS-REQ-0359-V-03: Max fraction of outliers among non-saturated sources
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the
+photometric repeatability in the u, z, and y filters, and assess whether
+it meets the requirement that no more than \textbf{PF1 =
+10{[}percent{]}} of the repeatability outliers exceed the outlier limit
+of \textbf{PA2uzy = 22.5 millimagnitudes}.~
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field in each of the u, z,
+and y filters with multiple overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric PA2uzy has been calculated using the threshold
+PF1, and that its values are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that PA2uzy has been calculated (and that it used PF1).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1759 -  Verify calculation of photometric outliers in gri bands}\label{lvv-t1759}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1759}{LVV-T1759} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9752}{LVV-9752} - DMS-REQ-0359-V-03: Max fraction of outliers among non-saturated sources
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-9754}{LVV-9754} - DMS-REQ-0359-V-05: Repeatability outlier limit in gri
+
+\end{itemize}
+
+\subsubsection{Test Items}
+ Verify that the DM system has provided the code to calculate the
+photometric repeatability in the g, r, and i filters, and assess whether
+it meets the requirement that no more than \textbf{PF1 =
+10{[}percent{]}} of the repeatability outliers exceed the outlier limit
+of \textbf{PA2gri = 15 millimagnitudes}.
+
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify a dataset containing at least one field in each of the g, r,
+and i filters with multiple overlapping visits.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset that has been ingested into a Butler repository.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1744]
+                {LVV-T1744} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute `validate\_drp` on a repository containing precursor data.
+Identify the path to the data, which we will call `DATA/path', then
+execute the following (with additional flags specified as needed):
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    JSON files (and associated figures) containing the Measurements and any
+associated ``extras.''
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the metric PA2gri has been calculated using the threshold
+PF1, and that its values are reasonable.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A JSON file (and/or a report generated from that JSON file)
+demonstrating that PA2gri has been calculated (and that it used PF1).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
 \newpage
 \section{Reusable Test Cases}
 
@@ -22502,6 +24506,45 @@ Test & Simon Krughoff
 
 \subsubsection{Test Items}
  Leave the portal aspect of the LSST Science Platform in a clean state
+
+
+
+
+\subsection{LVV-T860 -  Initialize science pipelines
+}\label{lvv-t860}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T860}{LVV-T860} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+ Initialize the science pipelines software for use.~
+
+
+
+
+\subsection{LVV-T1744 -  Run validate\_drp on precursor data
+}\label{lvv-t1744}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Defined & Normal &
+Analysis & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1744}{LVV-T1744} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+ Run the validate\_drp code on a precursor dataset to evaluate the
+metrics that have been implemented in validate\_drp.
 
 
 
