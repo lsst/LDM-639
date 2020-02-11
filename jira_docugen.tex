@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
 % using template at <template>.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 1.2rc9.post5+gf52a2c4.d20200210
+% using docsteady version 1.2rc9.post6+g0b89cbb.d20200211
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -5769,9 +5769,9 @@ eups list -s
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            For each of the expected data product types (listed in Test Items
-section ยง4.3.2) and each of the expected units (PVIs, coadds, etc),
-retrieve the data product from the Butler and verify it to be non-empty.
+            For each of the expected data product types and each of the expected
+units (PVIs, coadds, etc), retrieve the data product from the Butler and
+verify it to be non-empty.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -22851,424 +22851,6 @@ Also, these test cases shall not call other reusable test cases in their script.
 
 
 
-\subsection{LVV-T860 - Initialize science pipelines}\label{lvv-t860}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T860}{LVV-T860} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Initialize the science pipelines software for use.~
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            The `path` that you will use depends on where you are running the
-science pipelines. Options:\\[2\baselineskip]
-
-\begin{itemize}
-\tightlist
-\item
-  local (newinstall.sh - based
-  install):{[}path\_to\_installation{]}/loadLSST.bash
-\item
-  development cluster (``lsst-dev''):
-  /software/lsstsw/stack/loadLSST.bash
-\item
-  LSP Notebook aspect (from a terminal):
-  /opt/lsst/software/stack/loadLSST.bash
-\end{itemize}
-
-From the command line, execute the commands below in the example
-code:\\[2\baselineskip]
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                source `path`\\
-setup lsst\_distrib
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Science pipeline software is available for use. If additional packages
-are needed (for example, `obs' packages such as `obs\_subaru`), then
-additional `setup` commands will be necessary.\\[2\baselineskip]To check
-versions in use, type:\\
-eups list -s
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T987 - Instantiate the Butler for reading data}\label{lvv-t987}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T987}{LVV-T987} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Create a Butler client to read data from an input repository.
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Identify the path to the data repository, which we will refer to as
-`DATA/path', then execute the following:
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                \begin{verbatim}
-import lsst.daf.persistence as dafPersist
-butler = dafPersist.Butler(inputs='DATA/path')
-\end{verbatim}
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Butler repo available for reading.
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T1060 - Run Periodic Calibration Products Production Payload}\label{lvv-t1060}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1060}{LVV-T1060} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Execute the Calibration Products Production payload to create a subset
-of Master Calibration images and Calibration Database entries.
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the Calibration Products Production payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T866 - Run Alert Production Payload}\label{lvv-t866}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T866}{LVV-T866} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Execute Alert Production payload on a dataset. Generate all (or a subset
-of) Prompt science data products including Alerts (with the exception of
-Solar System object orbits) and load them into the Data Backbone and
-Prompt Products Database. ~~
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Perform the steps of Alert Production (including, but not necessarily
-limited to, single frame processing, ISR, source detection/measurement,
-PSF estimation, photometric and astrometric calibration, difference
-imaging, DIASource detection/measurement, source association). During
-Operations, it is presumed that these are automated for a given
-dataset.~
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                An output dataset including difference images and DIASource and
-DIAObject measurements.
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that the expected data products have been produced, and that
-catalogs contain reasonable values for measured quantities of interest.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T1059 - Run Daily Calibration Products Update Payload}\label{lvv-t1059}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1059}{LVV-T1059} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Execute the Daily Calibration Products Update payload to create a subset
-of Master Calibration images and Calibration Database entries.
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the Daily Calibration Products Update payload. The payload uses
-raw calibration images and information from the Transformed EFD to
-generate a subset of Master Calibration Images and Calibration Database
-entries in the Data Backbone.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Confirm that the expected Master Calibration images and Calibration
-Database entries are present and well-formed.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T901 - Run MOPS payload}\label{lvv-t901}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T901}{LVV-T901} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Run MOPS payload on a dataset (for example, one night's data). Generate
-entries in the MOPS Database and the Prompt Products Database, including
-Solar System Object records, measurements, and orbits. Perform precovery
-forced photometry of transients.
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Perform the steps of Moving Object Pipeline (MOPS) processing on newly
-detected DIASources, and generate Solar System data products including
-Solar System objects with associated Keplerian orbits, errors, and
-detected DIASources. This includes running processes to link DIASource
-detections within a night (called tracklets), to link these tracklets
-across multiple nights (into tracks), to fit the tracks with an orbital
-model to identify those tracks that are consistent with an asteroid
-orbit, to match these new orbits with existing SSObjects, and to update
-the SSObject table. ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~~
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                An output dataset consisting of an updated SSObject database with
-SSObjects both added and pruned as the orbital fits have been refined,
-and an updated DIASource database with DIASources assigned and
-unassigned to SSObjects.
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that the expected data products have been produced, and that
-catalogs contain reasonable values for measured quantities of interest.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T1064 - Run Data Release Production Payload}\label{lvv-t1064}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Execute the Data Release Production payload, starting from raw images
-and producing science data products.
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Process data with the Data Release Production payload, starting from raw
-science images and generating science data products, placing them in the
-Data Backbone.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-
 \subsection{LVV-T837 - Authenticate to Notebook Aspect}\label{lvv-t837}
 
 \begin{longtable}[]{llllll}
@@ -23284,6 +22866,14 @@ Test & Jeffrey Carlin
 \subsubsection{Test Items}
 Not specifically a test -- modular script to be used in multiple other
 Test Scripts.
+
+
+
+
+
+
+\subsubsection{Input Specification}
+Must have a user account on the LSP.
 
 
 \subsubsection{Test Procedure}
@@ -23356,6 +22946,14 @@ The steps here cover just those necessary to gain access to an empty
 notebook after authentication is complete.
 
 
+
+
+
+
+\subsubsection{Input Specification}
+Authentication to the Notebook aspect.
+
+
 \subsubsection{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
     %\toprule
@@ -23406,115 +23004,6 @@ icon.
     \end{longtable}
 
 
-\subsection{LVV-T1207 - Execute a simple ADQL query using the TAP service in the notebook aspect}\label{lvv-t1207}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Jeffrey Carlin
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1207}{LVV-T1207} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Extract a small amount of data from a catalog via the LSST TAP service.
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute a query in a notebook to select a small number of stars. In the
-example code below, we query the WISE catalog, then extract the results
-to an Astropy table.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                \begin{verbatim}
-import pandas
-import pyvo
-service = pyvo.dal.TAPService('http://lsst-lsp-stable.ncsa.illinois.edu/api/tap')
-\end{verbatim}
-
-results = service.search(``SELECT ra, decl, w1mpro\_ep, w2mpro\_ep,
-w3mpro\_ep FROM wise\_00.allwise\_p3as\_mep WHERE CONTAINS(POINT('ICRS',
-ra, decl), CIRCLE('ICRS', 192.85, 27.13, .2)) = 1'')\\
-tab = results.to\_table()
-
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
-
-\subsection{LVV-T1208 - Log out of the notebook aspect of the LSP}\label{lvv-t1208}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Simon Krughoff
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1208}{LVV-T1208} in Jira } \\
-\end{longtable}
-
-\subsubsection{Test Items}
-Leave the notebook aspect of the LSST Science Platform in a clean state
-
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Under the `File' menu at the top of your Jupyter notebook session,
-select one of the following:\\[2\baselineskip]
-
-\begin{itemize}
-\tightlist
-\item
-  Save All, Exit, and Log Out
-\item
-  Exit and Log Out Without Saving
-\end{itemize}
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                You will be returned to the LSP landing page:
-\url{https://lsst-lsp-stable.ncsa.illinois.edu/} It is now safe to close
-the browser window.~
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-    \end{longtable}
-
-
 \subsection{LVV-T849 - Authenticate to the portal aspect of the LSP}\label{lvv-t849}
 
 \begin{longtable}[]{llllll}
@@ -23530,6 +23019,12 @@ Test & Simon Krughoff
 \subsubsection{Test Items}
 Obtain an authenticated session in the portal aspect of the LSST Science
 Platform
+
+
+
+
+
+
 
 
 \subsubsection{Test Procedure}
@@ -23597,6 +23092,12 @@ Test & Simon Krughoff
 Leave the portal aspect of the LSST Science Platform in a clean state
 
 
+
+
+
+
+
+
 \subsubsection{Test Procedure}
     \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
     %\toprule
@@ -23627,6 +23128,600 @@ to execute the steps in LVV-T849.
     \end{longtable}
 
 
+\subsection{LVV-T860 - Initialize science pipelines}\label{lvv-t860}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T860}{LVV-T860} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Initialize the science pipelines software for use.~
+
+
+
+
+
+
+\subsubsection{Input Specification}
+An installed software stack, either locally, on `lsst-dev`, or through
+the Notebook aspect.
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            The `path` that you will use depends on where you are running the
+science pipelines. Options:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  local (newinstall.sh - based
+  install):{[}path\_to\_installation{]}/loadLSST.bash
+\item
+  development cluster (``lsst-dev''):
+  /software/lsstsw/stack/loadLSST.bash
+\item
+  LSP Notebook aspect (from a terminal):
+  /opt/lsst/software/stack/loadLSST.bash
+\end{itemize}
+
+From the command line, execute the commands below in the example
+code:\\[2\baselineskip]
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                source `path`\\
+setup lsst\_distrib
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Science pipeline software is available for use. If additional packages
+are needed (for example, `obs' packages such as `obs\_subaru`), then
+additional `setup` commands will be necessary.\\[2\baselineskip]To check
+versions in use, type:\\
+eups list -s
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T866 - Run Alert Production Payload}\label{lvv-t866}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T866}{LVV-T866} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute Alert Production payload on a dataset. Generate all (or a subset
+of) Prompt science data products including Alerts (with the exception of
+Solar System object orbits) and load them into the Data Backbone and
+Prompt Products Database. ~~
+
+
+
+
+
+
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Perform the steps of Alert Production (including, but not necessarily
+limited to, single frame processing, ISR, source detection/measurement,
+PSF estimation, photometric and astrometric calibration, difference
+imaging, DIASource detection/measurement, source association). During
+Operations, it is presumed that these are automated for a given
+dataset.~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                An output dataset including difference images and DIASource and
+DIAObject measurements.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that the expected data products have been produced, and that
+catalogs contain reasonable values for measured quantities of interest.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T901 - Run MOPS payload}\label{lvv-t901}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T901}{LVV-T901} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Run MOPS payload on a dataset (for example, one night's data). Generate
+entries in the MOPS Database and the Prompt Products Database, including
+Solar System Object records, measurements, and orbits. Perform precovery
+forced photometry of transients.
+
+
+\subsubsection{Predecessors}
+Uses results loaded into Prompt Products database and Data Backbone
+services in
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T866}{LVV-T866}.
+
+
+
+
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Perform the steps of Moving Object Pipeline (MOPS) processing on newly
+detected DIASources, and generate Solar System data products including
+Solar System objects with associated Keplerian orbits, errors, and
+detected DIASources. This includes running processes to link DIASource
+detections within a night (called tracklets), to link these tracklets
+across multiple nights (into tracks), to fit the tracks with an orbital
+model to identify those tracks that are consistent with an asteroid
+orbit, to match these new orbits with existing SSObjects, and to update
+the SSObject table. ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                An output dataset consisting of an updated SSObject database with
+SSObjects both added and pruned as the orbital fits have been refined,
+and an updated DIASource database with DIASources assigned and
+unassigned to SSObjects.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that the expected data products have been produced, and that
+catalogs contain reasonable values for measured quantities of interest.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T987 - Instantiate the Butler for reading data}\label{lvv-t987}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T987}{LVV-T987} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Create a Butler client to read data from an input repository.
+
+
+
+
+
+
+\subsubsection{Input Specification}
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T860}{LVV-T860}
+must be executed to initialize the science pipelines.
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \begin{verbatim}
+import lsst.daf.persistence as dafPersist
+butler = dafPersist.Butler(inputs='DATA/path')
+\end{verbatim}
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Butler repo available for reading.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T1059 - Run Daily Calibration Products Update Payload}\label{lvv-t1059}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1059}{LVV-T1059} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Daily Calibration Products Update payload to create a subset
+of Master Calibration images and Calibration Database entries.
+
+
+
+
+
+
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the Daily Calibration Products Update payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T1060 - Run Periodic Calibration Products Production Payload}\label{lvv-t1060}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1060}{LVV-T1060} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Calibration Products Production payload to create a subset
+of Master Calibration images and Calibration Database entries.
+
+
+
+
+
+
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T1064 - Run Data Release Production Payload}\label{lvv-t1064}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1064}{LVV-T1064} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Execute the Data Release Production payload, starting from raw images
+and producing science data products.
+
+
+
+
+
+
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Process data with the Data Release Production payload, starting from raw
+science images and generating science data products, placing them in the
+Data Backbone.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T1207 - Execute a simple ADQL query using the TAP service in the notebook aspect}\label{lvv-t1207}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1207}{LVV-T1207} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Extract a small amount of data from a catalog via the LSST TAP service.
+
+
+
+
+
+
+\subsubsection{Input Specification}
+One must have access to the LSST Notebook Aspect, and have logged in and
+opened an empty notebook.
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute a query in a notebook to select a small number of stars. In the
+example code below, we query the WISE catalog, then extract the results
+to an Astropy table.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+                & Example Code &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                \begin{verbatim}
+import pandas
+import pyvo
+service = pyvo.dal.TAPService('http://lsst-lsp-stable.ncsa.illinois.edu/api/tap')
+\end{verbatim}
+
+results = service.search(``SELECT ra, decl, w1mpro\_ep, w2mpro\_ep,
+w3mpro\_ep FROM wise\_00.allwise\_p3as\_mep WHERE CONTAINS(POINT('ICRS',
+ra, decl), CIRCLE('ICRS', 192.85, 27.13, .2)) = 1'')\\
+tab = results.to\_table()
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+
+\subsection{LVV-T1208 - Log out of the notebook aspect of the LSP}\label{lvv-t1208}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Simon Krughoff
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1208}{LVV-T1208} in Jira } \\
+\end{longtable}
+
+\subsubsection{Test Items}
+Leave the notebook aspect of the LSST Science Platform in a clean state
+
+
+
+
+
+
+
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Under the `File' menu at the top of your Jupyter notebook session,
+select one of the following:\\[2\baselineskip]
+
+\begin{itemize}
+\tightlist
+\item
+  Save All, Exit, and Log Out
+\item
+  Exit and Log Out Without Saving
+\end{itemize}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                You will be returned to the LSP landing page:
+\url{https://lsst-lsp-stable.ncsa.illinois.edu/} It is now safe to close
+the browser window.~
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+
 \subsection{LVV-T1744 - Run validate\_drp on precursor data}\label{lvv-t1744}
 
 \begin{longtable}[]{llllll}
@@ -23642,6 +23737,12 @@ Analysis & Jeffrey Carlin
 \subsubsection{Test Items}
 Run the validate\_drp code on a precursor dataset to evaluate the
 metrics that have been implemented in validate\_drp.
+
+
+
+
+
+
 
 
 \subsubsection{Test Procedure}
