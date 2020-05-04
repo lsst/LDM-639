@@ -503,6 +503,10 @@ separations less than 1 arcmin} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1758}{Verify calculation of photometric outliers in uzy bands} \tabularnewline
     \hyperref[lvv-t1759]{LVV-T1759} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1759}{Verify calculation of photometric outliers in gri bands} \tabularnewline
+    \hyperref[lvv-t1830]{LVV-T1830} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1830}{Verify Implementation of Scientific Visualization of Camera Image Data} \tabularnewline
+    \hyperref[lvv-t1831]{LVV-T1831} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1831}{Verify Implementation of Data Management Nightly Reporting} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -23518,6 +23522,118 @@ demonstrating that PA2gri has been calculated (and that it used PF1).
 
                 \vspace{\dp0}
                 } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1830 - Verify Implementation of Scientific Visualization of Camera Image Data}\label{lvv-t1830}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Inspection & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1830}{LVV-T1830} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18465}{LVV-18465} - DMS-REQ-0395-V-01: Scientific Visualization of Camera Image Data\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that all scientific visualization of camera image data uses the
+coordinate systems defined in \href{https://lse-349.lsst.io/}{LSE-349}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1831 - Verify Implementation of Data Management Nightly Reporting}\label{lvv-t1831}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1831}{LVV-T1831} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18295}{LVV-18295} - DMS-REQ-0394-V-01: Data Management Nightly Reporting\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the LSST Data Management subsystem produces a searchable -
+interactive nightly report(s), from information published in the EFD by
+each subsystem, summarizing performance and behavior over a user defined
+period of time (e.g. the previous 24 hours).
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
         \\ \midrule
     \end{longtable}
 
