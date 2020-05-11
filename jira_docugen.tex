@@ -16156,9 +16156,9 @@ Inspection & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-Via monitoring and ~comparing with at least 6 months of historical data
-on the link, verify that the mean time between failures is less than
-summToBaseNetMTBF (90 days) over 1 year.
+Verify the availability of Summit to Base Network by demonstrating that
+the mean time between failures is less than summToBaseNetMTBF (90 days)
+over 1 year.
 
 
 \subsubsection{Predecessors}
@@ -16250,11 +16250,11 @@ Demonstration & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-After disconnecting fiber at an endpoint location on the base side of
-the ~summit - base fiber, demonstrate reconnection and recovery to
-transfer of data at or exceeding rates specified in \citeds{LDM-142} within MTTR
-specification. Network operator will provide MTTR data on links during
-commissioning and operations.\\[2\baselineskip]
+Verify the reliability of the summit to base network by demonstrating
+reconnection and recovery to transfer of data at or exceeding rates
+specified in \citeds{LDM-142} following a cut in network connection, within MTTR
+specification. The network operator will provide MTTR data on links
+during commissioning and operations.\\[2\baselineskip]
 
 
 \subsubsection{Predecessors}
@@ -16649,8 +16649,9 @@ Inspection & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-Inspect construction and operations contracts and Indefeasible Rights to
-Use (IRUs).
+Verify Summit to Base Network Ownership and Operation by LSST and/or the
+operations entity by inspection of construction and operations contracts
+and Indefeasible Rights.
 
 
 \subsubsection{Predecessors}
@@ -16963,10 +16964,10 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-Analyze the network and show that data acquired by a DAQ can be
-transferred within the required time, i.e. verify that link is capable
-of transferring image for prompt processing in oArchiveMaxTransferTime =
-5{[}second{]}, i.e. at or exceeding rates specified in \citeds{LDM-142}.
+Verify that the data acquired by a DAQ can be transferred within the
+required time, i.e. verify that link is capable of transferring image
+for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}, i.e.
+at or exceeding rates specified in \citeds{LDM-142}.
 
 
 \subsubsection{Predecessors}
@@ -17061,10 +17062,10 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-From test and historical data, extrapolate to a full year to estimate if
-expect to meet baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for
-complete loss of transfer service (simultaneous failure on all paths),
-not a single path failure with successful fail-over.
+Verify the availability of the Base to Archive Network communications by
+demonstrating that it meets or exceeds a mean time between failures,
+measured over a 1-yr period of MTBF \textgreater{} baseToArchNetMTBF
+(180{[}day{]})
 
 
 \subsubsection{Predecessors}
@@ -17156,8 +17157,9 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-After disconnecting fiber at a location in the Base - Archive, network,
-verify recovery can occur within baseToArchNetMTTR = 48{[}hour{]}.
+Verify Base to Archive Network Reliability by demonstrating that the
+network can recover from outages within baseToArchNetMTTR =
+48{[}hour{]}.
 
 
 \subsubsection{Predecessors}
@@ -17290,10 +17292,9 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-~Simulate outage on primary and verify fail over to secondary link and
-capacity on secondary link, restore primary link and verify that network
-recovers to primary. Demonstrate use of secondary path in ``catch-up''
-mode.
+Verify Base to Archive Network Secondary Link failover and capacity, and
+subsequent recovery primary. Demonstrate the use of the secondary path
+in ``catch-up'' mode.
 
 
 \subsubsection{Predecessors}
@@ -17622,9 +17623,9 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-Monitor and analyze data transfers to verify networks can transfer data
-at archToDacBandwidth = 10000{[}megabit per second{]}, i.e. at or
-exceeding rates specified in \citeds{LDM-142}.
+Verify archiving of data to Data Access Center Network at or exceeding
+rates specified in \citeds{LDM-142}, i.e at archToDacBandwidth = 10000{[}megabit
+per second{]}.
 
 
 \subsubsection{Predecessors}
@@ -17716,8 +17717,8 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-From test and historical data, extrapolate to 1 year to estimate
-networks meet archToDacNetMTBF = 180{[}day{]}.
+Verify availability of archiving to Data Access Center Network using
+test and historical data of or exceeding archToDacNetMTBF= 180{[}day{]}.
 
 
 \subsubsection{Predecessors}
@@ -17809,10 +17810,9 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-After disconnecting fiber locations on the Archive to DACs primary path,
-verify fail-over to secondary path and capacity on secondary path.
-~After reconnecting primary path, recovery of transfer of data on
-primary path, and verify recovery can meet chToDacNetMTTR =
+Verify the reliability of Archive to Data Access Center Network by
+demonstrating successful failover and capacity to the secondary part and
+subsequent recovery to primary within or exceeding chToDacNetMTTR =
 48{[}hour{]}.
 
 
@@ -17903,19 +17903,6 @@ entire process meets chToDacNetMTTR = 48{[}hour{]}.
                 \vspace{\dp0}
                 } \end{minipage}
         \\ \midrule
-
-            \multirow{3}{*}{ 4 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
     \end{longtable}
 
 \subsection{LVV-T203 - Verify implementation of Archive to Data Access Center Network Secondary
@@ -17938,8 +17925,9 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-After simulating failure on primary path, verify fail-over to and
-capacity on secondary path.
+Verify the Archive to Data Access Center Network via Secondary Link by
+simulating a failure on the primary path and capacity on the secondary
+path.
 
 
 \subsubsection{Predecessors}
@@ -19318,27 +19306,11 @@ Inspection & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-3 phases done (in collaboration with equipment/installation vendors):
-
-\begin{enumerate}
-\tightlist
-\item
-  Installation of fiber optic cables and Optical Time Domain Reflector
-  (OTDR) fiber testing (completed 20170602
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
-  deliverable RD10})
-\item
-  Installation of AURA DWDM and Data Transfer Node (DTN) (completed
-  20171218
-  \href{https://docushare.lsst.org/docushare/dsweb/Get/DMTR-82/DMTR-82.pdf}{DMTR-82})
-\item
-  Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
-  (completed 20190505
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743},
-  20191108
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-35302/DAQ\%20DWDM\%20connection\%20tests\%2020191109.pptx}{DAQ
-  DWDM Connection Tests})
-\end{enumerate}
+Verify the integration of the summit to base network by demonstrating a
+sustained and uninterrupted transfer of data between summit and base
+over 1 day period at or exceeding rates specified in \citeds{LDM-142}. Done in 3
+phases in collaboration with equipment/installation vendors (see test
+procedure).
 
 
 \subsubsection{Predecessors}
@@ -19385,7 +19357,11 @@ specifications.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Test optical fiber with OTDR
+            Test optical fiber with OTDR:\\
+Installation of fiber optic cables and Optical Time Domain Reflector
+(OTDR) fiber testing (completed 20170602
+\href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+deliverable RD10})
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -19405,7 +19381,10 @@ specifications.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Test AURA DWDM
+            Test AURA DWDM:\\
+Installation of AURA DWDM and Data Transfer Node (DTN) (completed
+20171218
+\href{https://docushare.lsst.org/docushare/dsweb/Get/DMTR-82/DMTR-82.pdf}{DMTR-82})
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -19425,7 +19404,13 @@ specifications.
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Test LSST DWDM
+            Test LSST DWDM:\\
+Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
+(completed 20190505
+\href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743},
+20191108
+\href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-35302/DAQ\%20DWDM\%20connection\%20tests\%2020191109.pptx}{DAQ
+DWDM Connection Tests})
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
