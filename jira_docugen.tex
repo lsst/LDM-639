@@ -533,6 +533,8 @@ limit} \tabularnewline
 u-band} \tabularnewline
     \hyperref[lvv-t1847]{LVV-T1847} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1847}{Verify calculation of sensor fraction with unusable pixels} \tabularnewline
+    \hyperref[lvv-t1862]{LVV-T1862} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1862}{Verify determining effectiveness of dark current frame} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -8580,15 +8582,13 @@ Test & Robert Lupton
 
 \subsubsection{Verification Elements}
 \begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-113}{LVV-113} - DMS-REQ-0282-V-01: Dark Current Correction Frame
+\item \href{https://jira.lsstcorp.org/browse/LVV-113}{LVV-113} - DMS-REQ-0282-V-01: Dark Current Correction Frame Creation
 
 \end{itemize}
 
 \subsubsection{Test Items}
 Verify that the DMS can produce a dark correction frame calibration
-product.\\
-Verify that the DMS can determine the effectiveness of a dark correction
-and determine how often it should be updated.
+product.
 
 
 \subsubsection{Predecessors}
@@ -8655,29 +8655,6 @@ as expected.
                 \begin{minipage}[t]{13cm}{\footnotesize
                 A well-formed dark correction frame is present and accessible via the
 Data Butler.
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-
-            \multirow{3}{*}{ 4 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Determining whether the dark correction is being done properly will
-require on-sky science data. The dark correction can be applied to these
-frames and the results inspected to ensure that the correction was
-correctly measured and applied.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Applying the dark correction to a dataset produces noticeable
-differences between the original frame(s) and the corrected outputs.
 
                 \vspace{\dp0}
                 } \end{minipage}
@@ -24319,6 +24296,128 @@ than~\textbf{SensorFraction = 15 percent.}
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1862 - Verify determining effectiveness of dark current frame}\label{lvv-t1862}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1862}{LVV-T1862} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18881}{LVV-18881} - DMS-REQ-0282-V-02: Dark Current Correction Frame Effectiveness
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DMS can determine the effectiveness of a dark correction
+and determine how often it should be updated.
+
+
+\subsubsection{Predecessors}
+Execution of
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T90}{LVV-T90}.
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify the path to a dataset containing dark frames (i.e., exposures
+taken with the shutter closed).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Determining whether the dark correction is being done properly will
+require on-sky science data. The dark correction can be applied to these
+frames and the results inspected to ensure that the correction was
+correctly measured and applied.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Applying the dark correction to a dataset produces noticeable
+differences between the original frame(s) and the corrected outputs.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
