@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
 % using template at <template>.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 1.2rc9.post6+g0b89cbb.d20200211
+% using docsteady version 1.2rc10.post1+g1a75e2a
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -230,7 +230,7 @@ Re-Use} \tabularnewline
     \hyperref[lvv-t125]{LVV-T125} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T125}{Verify implementation of Simulated Data} \tabularnewline
     \hyperref[lvv-t126]{LVV-T126} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T126}{Verify implementation Image Differencing} \tabularnewline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T126}{Verify implementation of Image Differencing} \tabularnewline
     \hyperref[lvv-t127]{LVV-T127} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T127}{Verify implementation of Provide Source Detection Software} \tabularnewline
     \hyperref[lvv-t128]{LVV-T128} &
@@ -417,7 +417,7 @@ processing} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T385}{Verify implementation of minimum number of simultaneous retrievals of
 CCD-sized coadd cutouts} \tabularnewline
     \hyperref[lvv-t1097]{LVV-T1097} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{Verify Summit to Base Network Implementation} \tabularnewline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1097}{Verify Summit Facility Network Implementation} \tabularnewline
     \hyperref[lvv-t1168]{LVV-T1168} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1168}{Verify Summit - Base Network Integration} \tabularnewline
     \hyperref[lvv-t1232]{LVV-T1232} &
@@ -503,6 +503,38 @@ separations less than 1 arcmin} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1758}{Verify calculation of photometric outliers in uzy bands} \tabularnewline
     \hyperref[lvv-t1759]{LVV-T1759} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1759}{Verify calculation of photometric outliers in gri bands} \tabularnewline
+    \hyperref[lvv-t1830]{LVV-T1830} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1830}{Verify Implementation of Scientific Visualization of Camera Image Data} \tabularnewline
+    \hyperref[lvv-t1831]{LVV-T1831} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1831}{Verify Implementation of Data Management Nightly Reporting} \tabularnewline
+    \hyperref[lvv-t1836]{LVV-T1836} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1836}{Verify calculation of resolved-to-unresolved flux ratio errors} \tabularnewline
+    \hyperref[lvv-t1837]{LVV-T1837} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1837}{Verify calculation of band-to-band color zero-point accuracy} \tabularnewline
+    \hyperref[lvv-t1838]{LVV-T1838} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1838}{Verify calculation of image fraction affected by ghosts} \tabularnewline
+    \hyperref[lvv-t1839]{LVV-T1839} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1839}{Verify calculation of RMS width of photometric zeropoint} \tabularnewline
+    \hyperref[lvv-t1840]{LVV-T1840} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1840}{Verify calculation of sky brightness precision} \tabularnewline
+    \hyperref[lvv-t1841]{LVV-T1841} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1841}{Verify calculation of scientifically unusable pixel fraction} \tabularnewline
+    \hyperref[lvv-t1842]{LVV-T1842} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1842}{Verify calculation of zeropoint error fraction exceeding the outlier
+limit} \tabularnewline
+    \hyperref[lvv-t1843]{LVV-T1843} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1843}{Verify calculation of significance of imperfect crosstalk corrections} \tabularnewline
+    \hyperref[lvv-t1844]{LVV-T1844} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1844}{Verify calculation of u-band photometric zero-point RMS} \tabularnewline
+    \hyperref[lvv-t1845]{LVV-T1845} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1845}{Verify accuracy of photometric transformation to physical scale} \tabularnewline
+    \hyperref[lvv-t1846]{LVV-T1846} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1846}{Verify calculation of band-to-band color zero-point accuracy including
+u-band} \tabularnewline
+    \hyperref[lvv-t1847]{LVV-T1847} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1847}{Verify calculation of sensor fraction with unusable pixels} \tabularnewline
+    \hyperref[lvv-t1862]{LVV-T1862} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1862}{Verify determining effectiveness of dark current frame} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -8550,15 +8582,13 @@ Test & Robert Lupton
 
 \subsubsection{Verification Elements}
 \begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-113}{LVV-113} - DMS-REQ-0282-V-01: Dark Current Correction Frame
+\item \href{https://jira.lsstcorp.org/browse/LVV-113}{LVV-113} - DMS-REQ-0282-V-01: Dark Current Correction Frame Creation
 
 \end{itemize}
 
 \subsubsection{Test Items}
 Verify that the DMS can produce a dark correction frame calibration
-product.\\
-Verify that the DMS can determine the effectiveness of a dark correction
-and determine how often it should be updated.
+product.
 
 
 \subsubsection{Predecessors}
@@ -8625,29 +8655,6 @@ as expected.
                 \begin{minipage}[t]{13cm}{\footnotesize
                 A well-formed dark correction frame is present and accessible via the
 Data Butler.
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-
-            \multirow{3}{*}{ 4 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Determining whether the dark correction is being done properly will
-require on-sky science data. The dark correction can be applied to these
-frames and the results inspected to ensure that the correction was
-correctly measured and applied.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Applying the dark correction to a dataset produces noticeable
-differences between the original frame(s) and the corrected outputs.
 
                 \vspace{\dp0}
                 } \end{minipage}
@@ -11767,7 +11774,7 @@ testing.
         \\ \midrule
     \end{longtable}
 
-\subsection{LVV-T126 - Verify implementation Image Differencing}\label{lvv-t126}
+\subsection{LVV-T126 - Verify implementation of Image Differencing}\label{lvv-t126}
 
 \begin{longtable}[]{llllll}
 \toprule
@@ -16140,7 +16147,7 @@ ensure that these data are readable.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Inspection & Robert Gruendl
+Inspection & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T185}{LVV-T185} in Jira } \\
 \end{longtable}
@@ -16152,9 +16159,9 @@ Inspection & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Monitor summit to base networking ~for at least 1 week, model annual
-availability, and verify that the mean time between failures is less
-than summToBaseNetMTBF (90 days) over 1 year.
+Verify the availability of Summit to Base Network by demonstrating that
+the mean time between failures is less than summToBaseNetMTBF (90 days)
+over 1 year.
 
 
 \subsubsection{Predecessors}
@@ -16170,7 +16177,10 @@ See pre-conditions.
 
 \subsubsection{Input Specification}
 PMCS DMTC-7400-2400 Complete.\\
-perSonar installed in Summit and publishing statistics to MadDash.
+6 months of historical availability data for this link is available.\\
+perSonar installed in Summit and publishing statistics to MadDash.\\
+As-built documentation for all of the above is
+available.\\[2\baselineskip]
 
 \subsubsection{Output Specification}
 
@@ -16182,16 +16192,45 @@ perSonar installed in Summit and publishing statistics to MadDash.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Monitor summit to base networking for at least 1 week
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                LATISS, ComCAM, and/or Full Camera data.
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Summit - base network is operational for 1 week and monitoring data is
+collected.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Extrapolate annual availability, compare with at least 6 months of
+historical data on the link.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                Historical and current logs
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The mean time between failures (MTBF) is projected to be less than
+summToBaseNetMTBF (90 days) over 1 year.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16202,7 +16241,7 @@ perSonar installed in Summit and publishing statistics to MadDash.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Demonstration & Robert Gruendl
+Demonstration & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T186}{LVV-T186} in Jira } \\
 \end{longtable}
@@ -16214,48 +16253,11 @@ Demonstration & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-This approach is necessitated by not wanting to actually cut the fiber
-just for test purposes:
-
-\begin{itemize}
-\tightlist
-\item
-  Pick a point on the network (Time Domain graph) and simulate a fault
-  (e.g. disconnect a cable).
-\item
-  Detect there a fault.
-\item
-  Diagnose that it is a break.
-\item
-  Measure the cable with the OTDR to locate the distance from the end
-  point.
-\item
-  Elapse time to simulate the following:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    Go to the most inaccessible place which would mean carrying all the
-    tools/splicer/generator/tent equipment some ~metres.
-  \item
-    Erect a tent to make the splice
-  \item
-    Start the generator
-  \item
-    Do a splice on some random piece of cable
-  \item
-    At an end point measure the cable again to ensure it is break free.
-  \item
-    Take down and reinstall an isolate pole (not in the actual fiber
-    path)
-  \item
-    Put the cable on the pole.
-  \end{itemize}
-\item
-  Restore connection (e.g. reconnect cable)
-\item
-  Measure with OTDR to ensure back to normal state.\\[2\baselineskip]
-\end{itemize}
+Verify the reliability of the summit to base network by demonstrating
+reconnection and recovery to transfer of data at or exceeding rates
+specified in \citeds{LDM-142} following a cut in network connection, within MTTR
+specification. The network operator will provide MTTR data on links
+during commissioning and operations.\\[2\baselineskip]
 
 
 \subsubsection{Predecessors}
@@ -16270,7 +16272,8 @@ See pre-conditions.
 See pre-conditions.
 
 \subsubsection{Input Specification}
-PMCS DMTC-7400-2400 Complete
+PMCS DMTC-7400-2400 Complete\\
+As-built documentation for Summit - Base Network is available.
 
 \subsubsection{Output Specification}
 
@@ -16282,16 +16285,126 @@ PMCS DMTC-7400-2400 Complete
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Disconnect fiber cable at an endpoint location on the base side of the
+Summit - Base fiber.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                LATISS, ComCAM, or FullCam data
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Fiber is disconnected and the fault is detected by the network
+monitoring system.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Measure the cable with the OTDR to locate the distance from the end
+point. Diagnose that it is a break.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                OTDR shows the fiber is disconnected (break).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Elapse time to simulate the following:
+
+\begin{itemize}
+\tightlist
+\item
+  Go to the most inaccessible place which would mean carrying all the
+  tools/splicer/generator/tent equipment some ~metres.
+\item
+  Erect a tent to make the splice
+\item
+  Start the generator
+\item
+  Do a splice on some random piece of cable
+\item
+  At an end point measure the cable again to ensure it is break free.
+\item
+  Take down and reinstall an isolated pole (not in the actual fiber
+  path)
+\item
+  Put the cable on the pole.
+\end{itemize}
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Wall clock advances by 24 hours.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Clean fiber connections. ~Restore connection (e.g. reconnect cable).
+~Cycle equipment as necessary to confirm fiber is connected.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network recovers and resumes sending data.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Measure with OTDR to ensure back to normal state.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                OTDR indicates normal state.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16302,7 +16415,7 @@ PMCS DMTC-7400-2400 Complete
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T187}{LVV-T187} in Jira } \\
 \end{longtable}
@@ -16314,18 +16427,12 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Transfer data between summit and base on primary equipment (LSST Summit
-- Base) over uninterrupted 1 day period. ~Simulate outage by
-disconnecting fiber from equipment on primary and verify that network
-fails over to secondary equipment. ~Demonstrate transfer of data at or
-exceeding rates specified in \citeds{LDM-142} between summit and base over
-secondary equipment uninterrupted 1 day period (except for
-\textless{}=60s to fail-over to secondary and recover to primary
-connection execution). Verify that ~link is capable of transferring 1
-night of raw data (nCalibExpDay + nRawExpNightMax = 450 + 2800 = ~3250
-exposures) within summToBaseNet2TransMax (72 hours). Restore connection
-between fiber and primary equipment (i.e. reconnect primary), verify
-that network recovers to primary.
+Verify automated fail-over from primary to secondary equipment in Rubin
+Observatory DWDM on simulated failure of primary. ~Verify bandwidth
+sufficiency on secondary. ~Verify automated recovery to primary
+equipment on simulated restoration of primary. ~Repeat for failure of
+Rubin Observatory fiber and fail-over to AURA fiber and DWDM.
+~Demonstrate use of secondary in ``catch-up'' mode.
 
 
 \subsubsection{Predecessors}
@@ -16340,7 +16447,8 @@ See pre-conditions.
 See pre-conditions.
 
 \subsubsection{Input Specification}
-PMCS DMTC-7400-2400 complete.
+PMCS DMTC-7400-2400 complete.\\
+As-built documentation for Summit - Base Network is available.
 
 \subsubsection{Output Specification}
 
@@ -16352,7 +16460,140 @@ PMCS DMTC-7400-2400 complete.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Transfer data between summit and base on primary equipment (LSST Summit
+- Base) over uninterrupted 1 day period. ~
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS, ComCAM, or FullCAM data.
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Normal operations.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate equipment outage by disconnecting power card from primary DWDM
+equipment on base side of Summit - Base Fiber.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network fails over to secondary equipment in \textless{}=60s.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Transfer data between summit and base over secondary equipment
+uninterrupted 1 day period while monitoring network.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Verify that secondary equipment is capable of transferring 1 night of
+raw data (nCalibExpDay + nRawExpNightMax = 450 + 2800 = ~3250 exposures)
+within summToBaseNet2TransMax (72 hours), i.e. at or exceeding rates
+specified in LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Restore ~primary equipment (i.e. reconnect power card to primary
+equipment.)
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network recovers to primary in \textless{}= 60s.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate fiber outage by disconnecting fiber from primary DWDM equipment
+on base side of Summit - Base Fiber.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network fails over to AURA DWDM and fiber.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Transfer data between summit and base over AURA fiber and equipment
+uninterrupted 1 day period while monitoring network.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS, ComCAM, or FullCAM data.
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Verify that AURA fiber and equipment is capable of transferring 1 night
+of raw data (nCalibExpDay + nRawExpNightMax = 450 + 2800 = ~3250
+exposures) within summToBaseNet2TransMax (72 hours), i.e. at or
+exceeding rates specified in LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 7 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Restore ~primary fiber (i.e. reconnect fiber to Rubin Observatory DWDM
+equipment.)
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -16362,6 +16603,33 @@ PMCS DMTC-7400-2400 complete.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network recovers to Rubin Observatory fiber and DWDM.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 8 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Demonstrate use of secondary in ``catch-up'' mode.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                DAQ data buffer full of images and associated meta-data
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Images from DAQ buffer and associated metadata are retrievable over
+secondary path while current observing data is being transferred over
+primary path.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16372,7 +16640,7 @@ PMCS DMTC-7400-2400 complete.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Inspection & Robert Gruendl
+Inspection & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T188}{LVV-T188} in Jira } \\
 \end{longtable}
@@ -16384,8 +16652,9 @@ Inspection & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Inspect construction and operations contracts and Indefeasible Rights to
-Use (IRUs).
+Verify Summit to Base Network Ownership and Operation by LSST and/or the
+operations entity by inspection of construction and operations contracts
+and Indefeasible Rights.
 
 
 \subsubsection{Predecessors}
@@ -16400,6 +16669,8 @@ None
 None
 
 \subsubsection{Input Specification}
+As-built documentation for all of the above contracts and IRUs is
+available.
 
 \subsubsection{Output Specification}
 
@@ -16411,7 +16682,8 @@ None
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Examine contracts with REUNA and telefonica for fiber ownership and
+maintenance terms.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -16421,6 +16693,15 @@ None
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Rubin Observatory is owner of fibers on AURA property and Summit - Base
+DWDM ~and has 15-year IRU for use of fibers on all segments. ~REUNA is
+owner of LS - SCL DWDM on AURA property and in Santiago, and is operator
+on all fibers and DWDM. ~Telefonica is contracted to maintain fibers not
+on AURA property.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16602,7 +16883,7 @@ at the Base Facility to support Commissioning.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T192}{LVV-T192} in Jira } \\
 \end{longtable}
@@ -16614,11 +16895,8 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify (a) plannned and (b) as-built wireless network at the Base
-Facility supports minBaseWiFi bandwidth (1000 Mbs). Test internet web
-browsing and file download, email at summit and base over wireless.
-Verify wireless signal strength meets or exceeds typical, and average
-and peak bandwidths meet or exceed minBaseWiFI bandwidth.
+Verify as-built wireless network at the Base Facility supports
+minBaseWiFi bandwidth (1000 Mbs).
 
 
 \subsubsection{Predecessors}
@@ -16634,7 +16912,8 @@ Desktop with WiFi NIC, email reader, internet browser.
 
 \subsubsection{Input Specification}
 Base Wireless LAN is installed/configured and Test Personnel have
-accounts for email, internet access.
+accounts for email, internet access.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -16646,16 +16925,26 @@ accounts for email, internet access.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Test internet web browsing and file download, email at summit and base
+over wireless.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                NA
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Verify as-built wireless network at the Base Facility supports
+minBaseWiFi bandwidth (1000 Mbs). Verify wireless signal strength meets
+or exceeds typical, and average and peak bandwidths meet or exceed
+minBaseWiFI bandwidth.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16666,7 +16955,7 @@ accounts for email, internet access.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T193}{LVV-T193} in Jira } \\
 \end{longtable}
@@ -16678,12 +16967,10 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Transfer data between base and archive over uninterrupted 1 day period
-(with repeated transfers on normal observing cadence). Analyze the
-network and show that data acquired by a DAQ can be transferred within
-the required time, i.e. verify that link is capable of transferring
-image for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}.
-Verify transfer of data at or exceeding rates specified in \citeds{LDM-142}.
+Verify that the data acquired by a DAQ can be transferred within the
+required time, i.e. verify that link is capable of transferring image
+for prompt processing in oArchiveMaxTransferTime = 5{[}second{]}, i.e.
+at or exceeding rates specified in \citeds{LDM-142}.
 
 
 \subsubsection{Predecessors}
@@ -16701,7 +16988,8 @@ See pre-conditions.
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
 loaded with simulated or pre-cursor data.\\
 Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.
+LDF, connected to Base - Archive Network.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -16713,7 +17001,31 @@ LDF, connected to Base - Archive Network.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Transfer data between base and archive while monitoring the network over
+uninterrupted 1 day period (with repeated transfers on normal observing
+cadence).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS, ComCAM, or FullCAM data.
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data transfers occur without significant delay or frequent latency
+spikes.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            ~Analyze the network logs and monitoring system to determine average and
+peak latency and packet loss statistics.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -16723,6 +17035,14 @@ LDF, connected to Base - Archive Network.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data can be transferred within the required time, i.e. verify that link
+is capable of transferring image for prompt processing in
+oArchiveMaxTransferTime = 5{[}second{]}. Verify transfer of data at or
+exceeding rates specified in LDM-142 at least 98\% of the time.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16733,7 +17053,7 @@ LDF, connected to Base - Archive Network.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T194}{LVV-T194} in Jira } \\
 \end{longtable}
@@ -16745,13 +17065,10 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Transfer data between base and archive over uninterrupted 1 week period.
-~Extrapolate to a full year to estimate if expect to meet
-baseToArchNetMTBF = 180{[}day{]}. ~Note that this is for complete loss
-of transfer service (all paths), not a single path failure with
-successful fail-over. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+Verify the availability of the Base to Archive Network communications by
+demonstrating that it meets or exceeds a mean time between failures,
+measured over a 1-yr period of MTBF \textgreater{} baseToArchNetMTBF
+(180{[}day{]})
 
 
 \subsubsection{Predecessors}
@@ -16767,7 +17084,10 @@ latency.
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
 loaded with simulated or pre-cursor data.\\
 Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.
+LDF, connected to Base - Archive Network.\\
+At least 6 months of historical monitoring data on this link is
+available.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -16779,16 +17099,45 @@ LDF, connected to Base - Archive Network.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Transfer data between base and archive over uninterrupted 1 week period.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                LATISS, ComCAM, or FullCAM data.
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data is successfully transferred during the entire week.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Analyze monitoring/performance data, compare to historical data, and
+extrapolate to a full year, average and peak throughput and latency.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Extrapolated network availability meets baseToArchNetMTBF =
+180{[}day{]}. ~Note that this is for complete loss of transfer service
+(all paths), not a single path failure with successful fail-over.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16799,7 +17148,7 @@ LDF, connected to Base - Archive Network.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T195}{LVV-T195} in Jira } \\
 \end{longtable}
@@ -16811,11 +17160,9 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Disconnect, reconnect and recover transfer of data between base and
-archive, after disconnecting fiber at an intermediate location between
-base and archive. Verify recovery can occur within baseToArchNetMTTR =
-48{[}hour{]}. Demonstrate reconnection and recovery to transfer of data
-at or exceeding rates specified in \citeds{LDM-142}.
+Verify Base to Archive Network Reliability by demonstrating that the
+network can recover from outages within baseToArchNetMTTR =
+48{[}hour{]}.
 
 
 \subsubsection{Predecessors}
@@ -16833,7 +17180,9 @@ See pre-conditions.
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
 loaded with simulated or pre-cursor data.\\
 Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.
+LDF, connected to Base - Archive Network.\\
+At least 6 months of monitoring data for this link is available.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -16845,7 +17194,69 @@ LDF, connected to Base - Archive Network.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Disconnect primary fiber on base side of Base - ~Archive network.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS, ComCAM, or FullCAM data.
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network fails over to secondary path.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate diagnosis and repair by elapsed time.\\[2\baselineskip]
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Wall clock advances by 48 hours. ~Data is successfully transferred over
+secondary path.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Reconnect primary fiber on base side of Base - Archive network.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network recovers to primary path.~
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Analyze fail-over and recovery times. ~Compare to historical data and
+extrapolate to MTTR.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -16855,6 +17266,13 @@ LDF, connected to Base - Archive Network.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Verify recovery can occur within baseToArchNetMTTR = 48{[}hour{]}.
+Demonstrate reconnection and recovery to transfer of data at or
+exceeding rates specified in LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -16865,7 +17283,7 @@ LDF, connected to Base - Archive Network.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T196}{LVV-T196} in Jira } \\
 \end{longtable}
@@ -16877,17 +17295,9 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
-Transfer data between base and archive on primary links over
-uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
-primary and verify that network fails over to secondary links. ~Transfer
-data between base and archive over secondary equipment uninterrupted 1
-day period. ~Restore connection on primary link verify that network
-recovers to primary. Transfer data between base and archive on primary
-links over uninterrupted 1 day period. Demonstrate transfer of data at
-or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
-except for \textless{}=60s fail-over fail-over to secondary and recover
-to primary connection execution.
+Verify Base to Archive Network Secondary Link failover and capacity, and
+subsequent recovery primary. Demonstrate the use of the secondary path
+in ``catch-up'' mode.
 
 
 \subsubsection{Predecessors}
@@ -16909,7 +17319,8 @@ See pre-conditions.
 Archiver/Forwarders are configured at Base, connected to REUNA DWDM,
 loaded with simulated or pre-cursor data.\\
 Archiver/Forwarder receivers or other capability is on configured at
-LDF, connected to Base - Archive Network.
+LDF, connected to Base - Archive Network.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -16921,16 +17332,110 @@ LDF, connected to Base - Archive Network.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Transfer data between base and archive on primary links over
+uninterrupted 1 day period.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                LATISS, ComCAM, or FullCAM data.
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data is successfully transferred over primary link at or exceeding rates
+specified in LDM-142 throughout period.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate outage by disconnecting fiber on primary fiber on Base side of
+Base - Archive Network.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network fails over to secondary links in \textless{}=60s
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Transfer data between base and archive over secondary equipment
+uninterrupted 1 day period.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS, ComCAM, or FullCAM data.
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data is successfully transferred over secondary link ~at or exceeding
+rates specified in LDM-142 throughout period.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Restore connection on primary link by reconnecting
+fiber.\\[2\baselineskip]
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network recovers to primary.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Demonstrate use of secondary in catch-up mode.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                DAQ buffer full of images and associated metadata.
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Images from DAQ buffer and associated metadata are retrievable over
+secondary path while current observing data is being transferred over
+primary path.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -17109,7 +17614,7 @@ Verify the Archive Center is located at an existing supported facility.
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T200}{LVV-T200} in Jira } \\
 \end{longtable}
@@ -17121,12 +17626,9 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Transfer data between archive and both DACs over uninterrupted 1 day
-period ~(data can be simulated, i.e. files of similar size and quantity
-to real data). ~Verify can meet archToDacBandwidth = 10000{[}megabit per
-second{]}. Analyze the network and show that data can be transferred
-within the required time. Demonstrate transfer of data at or exceeding
-rates specified in \citeds{LDM-142}.
+Verify archiving of data to Data Access Center Network at or exceeding
+rates specified in \citeds{LDM-142}, i.e at archToDacBandwidth = 10000{[}megabit
+per second{]}.
 
 
 \subsubsection{Predecessors}
@@ -17142,7 +17644,10 @@ See pre-conditions.
 
 \subsubsection{Input Specification}
 Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.
+Chilean DAC are in place.\\
+At least 6 months of historical monitoring data is available on these
+network links.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -17154,16 +17659,44 @@ Chilean DAC are in place.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Transfer data from Data Facility to US and Chilean DACs over an
+uninterrupted 1 week period.\\[2\baselineskip]
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                Data Release
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data transfers without significant failures or extended latency spikes
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Analyze network logs and compare with historical data on the links.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The networks can transfer data at archToDacBandwidth = 10000{[}megabit
+per second{]}, i.e. at or exceeding rates specified in LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -17175,7 +17708,7 @@ Availability}\label{lvv-t201}
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T201}{LVV-T201} in Jira } \\
 \end{longtable}
@@ -17187,11 +17720,8 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Transfer data between archive and DACs over uninterrupted 1 week period.
-~Extrapolate to 1 year to estimate can meet archToDacNetMTBF =
-180{[}day{]}. Demonstrate transfer of data at or exceeding rates
-specified in \citeds{LDM-142}, verify achieved average and peak throughput and
-latency.
+Verify availability of archiving to Data Access Center Network using
+test and historical data of or exceeding archToDacNetMTBF= 180{[}day{]}.
 
 
 \subsubsection{Predecessors}
@@ -17207,7 +17737,10 @@ See pre-conditions.
 
 \subsubsection{Input Specification}
 Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.
+Chilean DAC are in place.\\
+At least 6 months of historical monitoring data is available on these
+network links.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -17219,16 +17752,44 @@ Chilean DAC are in place.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Transfer data between archive and DACs over uninterrupted 1 week period.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                Data Release or petabyte-scale test data set
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data transfers without failures or extended latency spikes
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Analyze test data and compare to historical data. Extrapolate to 1 year
+testimate of MTBF.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Networks can meet archToDacNetMTBF = 180{[}day{]} at or exceeding rates
+specified in LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -17240,7 +17801,7 @@ Reliability}\label{lvv-t202}
 Version & Status & Priority & Verification Type & Owner
 \\\midrule
 1 & Draft & Normal &
-Test & Robert Gruendl
+Test & Jeff Kantor
 \\\bottomrule
 \multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T202}{LVV-T202} in Jira } \\
 \end{longtable}
@@ -17252,11 +17813,10 @@ Test & Robert Gruendl
 \end{itemize}
 
 \subsubsection{Test Items}
-Reconnect and recover transfer of data between archive and DACs, after
-disconnecting fiber at an intermediate location between archive and
-DACs. Verify can meet chToDacNetMTTR = 48{[}hour{]}. Demonstrate
-reconnection and recovery to transfer of data at or exceeding rates
-specified in \citeds{LDM-142}.
+Verify the reliability of Archive to Data Access Center Network by
+demonstrating successful failover and capacity to the secondary part and
+subsequent recovery to primary within or exceeding chToDacNetMTTR =
+48{[}hour{]}.
 
 
 \subsubsection{Predecessors}
@@ -17272,7 +17832,8 @@ See pre-conditions.
 
 \subsubsection{Input Specification}
 Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.
+Chilean DAC are in place.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -17284,7 +17845,28 @@ Chilean DAC are in place.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Networks
+            Simulate failure on primary paths by disconnecting fiber at an endpoint
+location in the archive on the Archive - ~DACs network.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Networks fail over to secondary paths.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Monitor transfers on secondary paths for 1 day.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -17294,6 +17876,35 @@ Chilean DAC are in place.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Transfers occur without extended failures or extended latency spikes.
+~Data transfers on secondary at rates at or above those specified in
+LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Simulate repair and recovery period by leaving primary fiber
+disconnected for at least 1 day, then reconnecting primary fiber.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Wall clock advances by 1 day. ~Network recovers to primary path. ~Verify
+entire process meets chToDacNetMTTR = 48{[}hour{]}.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -17317,17 +17928,9 @@ Test & Kian-Tat Lim
 \end{itemize}
 
 \subsubsection{Test Items}
-FOR EACH SEGMENT (LS ~- SCL, SCL - FL, FL - CHI, ~CHI - CHMPGN):
-Transfer data between base and archive on primary links over
-uninterrupted 1 day period. ~Simulate outage by disconnecting fiber on
-primary and verify that network fails over to secondary links. ~Transfer
-data between base and archive over secondary equipment uninterrupted 1
-day period. ~Restore connection on primary link verify that network
-recovers to primary. Transfer data between base and archive on primary
-links over uninterrupted 1 day period. Demonstrate transfer of data at
-or exceeding rates specified in \citeds{LDM-142} throughout fail-over period
-except for \textless{}=60s fail-over fail-over to secondary and recover
-to primary connection execution.
+Verify the Archive to Data Access Center Network via Secondary Link by
+simulating a failure on the primary path and capacity on the secondary
+path.
 
 
 \subsubsection{Predecessors}
@@ -17343,7 +17946,8 @@ See pre-conditions.
 
 \subsubsection{Input Specification}
 Data is staged in LDF and data transfer capabilities to US DAC and
-Chilean DAC are in place.
+Chilean DAC are in place.\\
+As-built documentation for all of the above is available.
 
 \subsubsection{Output Specification}
 
@@ -17355,58 +17959,88 @@ Chilean DAC are in place.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Take primary network link down
+            Transfer data between Archive and DACs on primary path over
+uninterrupted 1 week period.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                Data Release or other petabyte-scale test data set.
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data transfers without failures or extended latency spikes, at or
+exceeding rates specified in LDM-142 throughout fail-over period.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe operations support over secondary link
+            Simulate outage on primary path by disconnecting fiber on primary on
+Archive side of Archive - DACs networks.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                NA
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network fails over to secondary links in \textless{}=
+60s.\\[2\baselineskip]
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Bring primary network link back up
+            Transfer data between base and archive over secondary equipment
+uninterrupted 1 day period.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                Data Release or other petabyte-scale test data set.
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data transfers without failures or extended latency spikes, ~at or
+exceeding rates specified in LDM-142 throughout fail-over period.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Observe catch-up capability over secondary link
+            Restore connection on primary link (reconnect fiber).
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                NA
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Network recovers to primary in \textless{}= 60s.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -18123,17 +18757,11 @@ Test & Leanne Guy
 
 \subsubsection{Verification Elements}
 \begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-3401}{LVV-3401} - DMS-REQ-0359-V-01: RMS photometric repeatability in uzy
-
 \item \href{https://jira.lsstcorp.org/browse/LVV-9751}{LVV-9751} - DMS-REQ-0359-V-02: Max fraction of sensors with excess unusable pixels
 
 \item \href{https://jira.lsstcorp.org/browse/LVV-9757}{LVV-9757} - DMS-REQ-0359-V-08: Max cross-talk imperfections
 
 \item \href{https://jira.lsstcorp.org/browse/LVV-9755}{LVV-9755} - DMS-REQ-0359-V-06: Accuracy of photometric transformation
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-9754}{LVV-9754} - DMS-REQ-0359-V-05: Repeatability outlier limit in gri
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-9752}{LVV-9752} - DMS-REQ-0359-V-03: Max fraction of outliers among non-saturated sources
 
 \item \href{https://jira.lsstcorp.org/browse/LVV-9756}{LVV-9756} - DMS-REQ-0359-V-07: RMS width of zero point in u-band
 
@@ -18142,10 +18770,6 @@ Test & Leanne Guy
 \item \href{https://jira.lsstcorp.org/browse/LVV-9762}{LVV-9762} - DMS-REQ-0359-V-13: Max sky brightness error
 
 \item \href{https://jira.lsstcorp.org/browse/LVV-9760}{LVV-9760} - DMS-REQ-0359-V-11: Fraction of zero point outliers
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-9759}{LVV-9759} - DMS-REQ-0359-V-10: RMS photometric repeatability in gri
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-9758}{LVV-9758} - DMS-REQ-0359-V-09: Repeatability outlier limit in uzy
 
 \item \href{https://jira.lsstcorp.org/browse/LVV-9761}{LVV-9761} - DMS-REQ-0359-V-12: Max fraction of unusable pixels per sensor
 
@@ -18530,7 +19154,7 @@ Test Case).
         \\ \midrule
     \end{longtable}
 
-\subsection{LVV-T1097 - Verify Summit to Base Network Implementation}\label{lvv-t1097}
+\subsection{LVV-T1097 - Verify Summit Facility Network Implementation}\label{lvv-t1097}
 
 \begin{longtable}[]{llllll}
 \toprule
@@ -18549,10 +19173,8 @@ Test & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-Control the AuxTel through a night of Observing, read out data and
-transfer data to LSST Summit DWDM. Verify that data acquired by a AuxTel
-DAQ can be transferred to LSST Summit DWDM and loaded in EFD without
-problems.
+Verify that data acquired by a AuxTel DAQ can be transferred to Summit
+DWDM and loaded in the EFD without problems.
 
 
 \subsubsection{Predecessors}
@@ -18577,11 +19199,13 @@ See pre-conditions.\\[2\baselineskip]
   Summit - Base Network installed and operating properly.
 \item
   AuxTel hardware and control systems are functional with LATISS. AuxTel
-  TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected via LSST Control
-  Network on Summit to LSST DWDM (with at least 2 x 10 Gbps ethernet
-  port client cards).
+  TCS, AuxTel EFD, AuxTel CCS, AuxTel DAQ are connected via Control
+  Network on Summit to Rubin Observatory DWDM (with at least 2 x 10 Gbps
+  ethernet port client cards).
 \item
   AuxTel Archiver/forwarders installed in Summit and operating properly.
+\item
+  As-built documentation for all of the above is available.
 \end{enumerate}
 
 \subsubsection{Output Specification}
@@ -18594,19 +19218,62 @@ See pre-conditions.\\[2\baselineskip]
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify the available documentation in order to ensure that the Summit to
-Base Network has been set-up and is working.
+            Verify the pre-conditions have been satisfied
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Test Data &
             \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
+                NA
+
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
                 \begin{minipage}[t]{13cm}{\footnotesize
-                List of documents that demonstrate the network implementation
+                Pre-conditions are satisfied.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Control the AuxTel through a night of Observing. ~While observing, read
+out LATISS data and transfer to Rubin Observatory Summit DWDM while
+monitoring latency.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS images and metadata
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data is fed to DWDM without delays or errors.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that data acquired by a AuxTel DAQ can be transferred ~and loaded
+in EFD without problems.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                LATISS images and metadata
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Examine the EFD to ensure that the data has been loaded properly.
 
                 \vspace{\dp0}
                 } \end{minipage}
@@ -18632,27 +19299,11 @@ Inspection & Jeff Kantor
 \end{itemize}
 
 \subsubsection{Test Items}
-3 phases done (in collaboration with equipment/installation vendors):
-
-\begin{enumerate}
-\tightlist
-\item
-  Installation of fiber optic cables and Optical Time Domain Reflector
-  (OTDR) fiber testing (completed 20170602
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
-  deliverable RD10})
-\item
-  Installation of AURA DWDM and Data Transfer Node (DTN) (completed
-  20171218
-  \href{https://docushare.lsst.org/docushare/dsweb/Get/DMTR-82/DMTR-82.pdf}{DMTR-82})
-\item
-  Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
-  (completed 20190505
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743},
-  20191108
-  \href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-35302/DAQ\%20DWDM\%20connection\%20tests\%2020191109.pptx}{DAQ
-  DWDM Connection Tests})
-\end{enumerate}
+Verify the integration of the summit to base network by demonstrating a
+sustained and uninterrupted transfer of data between summit and base
+over 1 day period at or exceeding rates specified in \citeds{LDM-142}. Done in 3
+phases in collaboration with equipment/installation vendors (see test
+procedure).
 
 
 \subsubsection{Predecessors}
@@ -18699,7 +19350,11 @@ specifications.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Test optical fiber with OTDR
+            Test optical fiber with OTDR:\\
+Installation of fiber optic cables and Optical Time Domain Reflector
+(OTDR) fiber testing (completed 20170602
+\href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-26270/RD10\%20Report\%20of\%20delivery\%20of\%20LS\%20-\%20AG\%20fiber\%20from\%20Telefonica\%20to\%20REUNA.pdf}{REUNA
+deliverable RD10})
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -18719,7 +19374,10 @@ specifications.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Test AURA DWDM
+            Test AURA DWDM:\\
+Installation of AURA DWDM and Data Transfer Node (DTN) (completed
+20171218
+\href{https://docushare.lsst.org/docushare/dsweb/Get/DMTR-82/DMTR-82.pdf}{DMTR-82})
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -18739,7 +19397,13 @@ specifications.
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Test LSST DWDM
+            Test LSST DWDM:\\
+Installation of LSST DWDM and Bit Error Rate Tester (BERT) data
+(completed 20190505
+\href{https://docushare.lsstcorp.org/docushare/dsweb/View/Collection-7743}{collection-7743},
+20191108
+\href{https://docushare.lsstcorp.org/docushare/dsweb/Get/Document-35302/DAQ\%20DWDM\%20connection\%20tests\%2020191109.pptx}{DAQ
+DWDM Connection Tests})
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -22839,6 +23503,924 @@ demonstrating that PA2gri has been calculated (and that it used PF1).
         \\ \midrule
     \end{longtable}
 
+\subsection{LVV-T1830 - Verify Implementation of Scientific Visualization of Camera Image Data}\label{lvv-t1830}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Inspection & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1830}{LVV-T1830} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18465}{LVV-18465} - DMS-REQ-0395-V-01: Scientific Visualization of Camera Image Data\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that all scientific visualization of camera image data uses the
+coordinate systems defined in \href{https://lse-349.lsst.io/}{LSE-349}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1831 - Verify Implementation of Data Management Nightly Reporting}\label{lvv-t1831}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Demonstration & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1831}{LVV-T1831} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18295}{LVV-18295} - DMS-REQ-0394-V-01: Data Management Nightly Reporting\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the LSST Data Management subsystem produces a searchable -
+interactive nightly report(s), from information published in the EFD by
+each subsystem, summarizing performance and behavior over a user defined
+period of time (e.g. the previous 24 hours).
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1836 - Verify calculation of resolved-to-unresolved flux ratio errors}\label{lvv-t1836}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1836}{LVV-T1836} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9766}{LVV-9766} - DMS-REQ-0359-V-17: Max RMS of resolved/unresolved flux ratio
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system has provided code to assess whether the
+maximum RMS of the ratio of the error in integrated flux measurement
+between bright, isolated, resolved sources less than 10 arcsec in
+diameter and bright, isolated unresolved point sources is less than
+\textbf{ResSource = 2}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1837 - Verify calculation of band-to-band color zero-point accuracy}\label{lvv-t1837}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1837}{LVV-T1837} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9765}{LVV-9765} - DMS-REQ-0359-V-16: Accuracy of zero point for colors without u-band
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides code to assess whether the accuracy
+of absolute band-to-band color zero-points for all colors constructed
+from any filter pair, excluding the u-band, is less than \textbf{PA5 = 5
+millimagnitudes}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1838 - Verify calculation of image fraction affected by ghosts}\label{lvv-t1838}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1838}{LVV-T1838} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9764}{LVV-9764} - DMS-REQ-0359-V-15: Percentage of image area with ghosts
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides code to assess whether the percentage
+of image area that has ghosts with surface brightness gradient amplitude
+of more than 1/3 of the sky noise over 1 arcsec is less than
+\textbf{GhostAF = 1 percent}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1839 - Verify calculation of RMS width of photometric zeropoint}\label{lvv-t1839}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1839}{LVV-T1839} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9763}{LVV-9763} - DMS-REQ-0359-V-14: RMS width of zero point in all bands except u
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides code to assess whether the RMS width
+of the internal photometric zero-point (precision of system uniformity
+across the sky) for all bands except u-band is less than \textbf{PA3 =
+10 millimagnitudes}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1840 - Verify calculation of sky brightness precision}\label{lvv-t1840}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1840}{LVV-T1840} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9762}{LVV-9762} - DMS-REQ-0359-V-13: Max sky brightness error
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the
+maximum error in the precision of the sky brightness determination is
+less than \textbf{SBPrec = 1 percent.}
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1841 - Verify calculation of scientifically unusable pixel fraction}\label{lvv-t1841}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1841}{LVV-T1841} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9761}{LVV-9761} - DMS-REQ-0359-V-12: Max fraction of unusable pixels per sensor
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the
+maximum fraction of pixels scientifically unusable per sensor out of the
+total allowable fraction of sensors meeting this performance is less
+than~\textbf{PixFrac = 1 percent}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1842 - Verify calculation of zeropoint error fraction exceeding the outlier
+limit}\label{lvv-t1842}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1842}{LVV-T1842} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9760}{LVV-9760} - DMS-REQ-0359-V-11: Fraction of zero point outliers
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to calculate the fraction of
+zeropoint errors that exceed the zero point error outlier limit, and
+confirm that it is less than \textbf{PF2 = 10 percent.}
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1843 - Verify calculation of significance of imperfect crosstalk corrections}\label{lvv-t1843}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1843}{LVV-T1843} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9757}{LVV-9757} - DMS-REQ-0359-V-08: Max cross-talk imperfections
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the
+maximum local significance integrated over the PSF of imperfect
+crosstalk corrections is less than \textbf{Xtalk = 3 sigma}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1844 - Verify calculation of u-band photometric zero-point RMS}\label{lvv-t1844}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1844}{LVV-T1844} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9756}{LVV-9756} - DMS-REQ-0359-V-07: RMS width of zero point in u-band
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the RMS
+width of internal photometric zero-point (precision of system uniformity
+across the sky) in the u-band is less than \textbf{PA3u = 20
+millimagnitudes}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1845 - Verify accuracy of photometric transformation to physical scale}\label{lvv-t1845}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1845}{LVV-T1845} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9755}{LVV-9755} - DMS-REQ-0359-V-06: Accuracy of photometric transformation
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the
+accuracy of the transformation of internal LSST photometry to a physical
+scale (e.g. AB magnitudes) is less than \textbf{PA6 = 10
+millimagnitudes}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1846 - Verify calculation of band-to-band color zero-point accuracy including
+u-band}\label{lvv-t1846}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1846}{LVV-T1846} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9753}{LVV-9753} - DMS-REQ-0359-V-04: Accuracy of zero point for colors with u-band
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the
+accuracy of absolute band-to-band color zero-points for all colors
+constructed from any filter pair, including the u-band, is less than
+\textbf{PA5u = 10 millimagnitudes}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1847 - Verify calculation of sensor fraction with unusable pixels}\label{lvv-t1847}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1847}{LVV-T1847} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9751}{LVV-9751} - DMS-REQ-0359-V-02: Max fraction of sensors with excess unusable pixels
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DM system provides software to assess whether the
+maximum allowable fraction of sensors with \textbf{PixFrac
+\textgreater{} 1} percent scientifically unusable pixels is less
+than~\textbf{SensorFraction = 15 percent.}
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1862 - Verify determining effectiveness of dark current frame}\label{lvv-t1862}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1862}{LVV-T1862} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18881}{LVV-18881} - DMS-REQ-0282-V-02: Dark Current Correction Frame Effectiveness
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the DMS can determine the effectiveness of a dark correction
+and determine how often it should be updated.
+
+
+\subsubsection{Predecessors}
+Execution of
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T90}{LVV-T90}.
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify the path to a dataset containing dark frames (i.e., exposures
+taken with the shutter closed).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Execute the Calibration Products Production payload. The payload uses
+raw calibration images and information from the Transformed EFD to
+generate a subset of Master Calibration Images and Calibration Database
+entries in the Data Backbone.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-2
+                {\scriptsize from \hyperref[lvv-t1060]
+                {LVV-T1060} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Confirm that the expected Master Calibration images and Calibration
+Database entries are present and well-formed.
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Determining whether the dark correction is being done properly will
+require on-sky science data. The dark correction can be applied to these
+frames and the results inspected to ensure that the correction was
+correctly measured and applied.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Applying the dark correction to a dataset produces noticeable
+differences between the original frame(s) and the corrected outputs.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
 \newpage
 \section{Reusable Test Cases}
 
@@ -22881,50 +24463,48 @@ Must have a user account on the LSP.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Authenticate to the notebook aspect of the LSST Science Platform
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Authenticate to the notebook aspect of the LSST Science Platform
 (NB-LSP). ~This is currently at
 https://lsst-lsp-stable.ncsa.illinois.edu/nb.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Redirection to the spawner page of the NB-LSP allowing selection of the
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Redirection to the spawner page of the NB-LSP allowing selection of the
 containerized stack version and machine flavor.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Spawn a container by:\\
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Spawn a container by:\\
 1) choosing an appropriate stack version: e.g. the latest weekly.\\
 2) choosing an appropriate machine flavor: e.g. medium\\
 3) click ``Spawn''
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Redirection to the JupyterLab environment served from the chosen
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Redirection to the JupyterLab environment served from the chosen
 container containing the correct stack version.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -22959,47 +24539,45 @@ Authentication to the Notebook aspect.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Open a new launcher by navigating in the top menu bar ``File''
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Open a new launcher by navigating in the top menu bar ``File''
 -\textgreater{} ``New Launcher''
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                A launcher window with several sections, potentially with several kernel
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+A launcher window with several sections, potentially with several kernel
 versions for each.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Select the option under ``Notebook'' labeled ``LSST'' by clicking on the
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Select the option under ``Notebook'' labeled ``LSST'' by clicking on the
 icon.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                An empty notebook with a single empty cell. ~The kernel show up as
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+An empty notebook with a single empty cell. ~The kernel show up as
 ``LSST'' in the top right of the notebook.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23032,46 +24610,44 @@ Platform
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Navigate to the Portal Aspect endpoint. ~The stable version should be
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Navigate to the Portal Aspect endpoint. ~The stable version should be
 used for this test and is currently located at:
 https://lsst-lsp-stable.ncsa.illinois.edu/portal/app/ .
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                A credential-entry screen should be displayed.
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+A credential-entry screen should be displayed.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Enter a valid set of credentials for an LSST user with LSP access on the
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Enter a valid set of credentials for an LSST user with LSP access on the
 instance under test.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                The Portal Aspect UI should be displayed following authentication.
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+The Portal Aspect UI should be displayed following authentication.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23103,27 +24679,26 @@ Leave the portal aspect of the LSST Science Platform in a clean state
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Currently, there is no logout mechanism on the portal.\\
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Currently, there is no logout mechanism on the portal.\\
 This should be updated as the system matures.\\[2\baselineskip]Simply
 close the browser window.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Closed browser window. ~When navigating to the portal endpoint, expect
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Closed browser window. ~When navigating to the portal endpoint, expect
 to execute the steps in LVV-T849.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23158,10 +24733,11 @@ the Notebook aspect.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            The `path` that you will use depends on where you are running the
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+The `path` that you will use depends on where you are running the
 science pipelines. Options:\\[2\baselineskip]
 
 \begin{itemize}
@@ -23180,30 +24756,28 @@ science pipelines. Options:\\[2\baselineskip]
 From the command line, execute the commands below in the example
 code:\\[2\baselineskip]
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                source `path`\\
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& Example Code &
+\begin{minipage}[t]{13cm}{\footnotesize
+source `path`\\
 setup lsst\_distrib
 
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Science pipeline software is available for use. If additional packages
+\vspace{\dp0}
+} \end{minipage} \\ \cline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Science pipeline software is available for use. If additional packages
 are needed (for example, `obs' packages such as `obs\_subaru`), then
 additional `setup` commands will be necessary.\\[2\baselineskip]To check
 versions in use, type:\\
 eups list -s
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23238,45 +24812,43 @@ Prompt Products Database. ~~
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Perform the steps of Alert Production (including, but not necessarily
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Perform the steps of Alert Production (including, but not necessarily
 limited to, single frame processing, ISR, source detection/measurement,
 PSF estimation, photometric and astrometric calibration, difference
 imaging, DIASource detection/measurement, source association). During
 Operations, it is presumed that these are automated for a given
 dataset.~
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                An output dataset including difference images and DIASource and
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+An output dataset including difference images and DIASource and
 DIAObject measurements.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that the expected data products have been produced, and that
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Verify that the expected data products have been produced, and that
 catalogs contain reasonable values for measured quantities of interest.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23315,10 +24887,11 @@ services in
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Perform the steps of Moving Object Pipeline (MOPS) processing on newly
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Perform the steps of Moving Object Pipeline (MOPS) processing on newly
 detected DIASources, and generate Solar System data products including
 Solar System objects with associated Keplerian orbits, errors, and
 detected DIASources. This includes running processes to link DIASource
@@ -23328,37 +24901,34 @@ model to identify those tracks that are consistent with an asteroid
 orbit, to match these new orbits with existing SSObjects, and to update
 the SSObject table. ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~ ~~
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                An output dataset consisting of an updated SSObject database with
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+An output dataset consisting of an updated SSObject database with
 SSObjects both added and pruned as the orbital fits have been refined,
 and an updated DIASource database with DIASources assigned and
 unassigned to SSObjects.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that the expected data products have been produced, and that
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Verify that the expected data products have been produced, and that
 catalogs contain reasonable values for measured quantities of interest.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23393,34 +24963,33 @@ must be executed to initialize the science pipelines.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Identify the path to the data repository, which we will refer to as
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Identify the path to the data repository, which we will refer to as
 `DATA/path', then execute the following:
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                \begin{verbatim}
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& Example Code &
+\begin{minipage}[t]{13cm}{\footnotesize
+\begin{verbatim}
 import lsst.daf.persistence as dafPersist
 butler = dafPersist.Butler(inputs='DATA/path')
 \end{verbatim}
 
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Butler repo available for reading.
+\vspace{\dp0}
+} \end{minipage} \\ \cline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Butler repo available for reading.
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23453,37 +25022,35 @@ of Master Calibration images and Calibration Database entries.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the Daily Calibration Products Update payload. The payload uses
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Execute the Daily Calibration Products Update payload. The payload uses
 raw calibration images and information from the Transformed EFD to
 generate a subset of Master Calibration Images and Calibration Database
 entries in the Data Backbone.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Confirm that the expected Master Calibration images and Calibration
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Confirm that the expected Master Calibration images and Calibration
 Database entries are present and well-formed.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23516,37 +25083,35 @@ of Master Calibration images and Calibration Database entries.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute the Calibration Products Production payload. The payload uses
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Execute the Calibration Products Production payload. The payload uses
 raw calibration images and information from the Transformed EFD to
 generate a subset of Master Calibration Images and Calibration Database
 entries in the Data Backbone.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Confirm that the expected Master Calibration images and Calibration
+            \multirow{3}{*}{\parbox{1.3cm}{ 2
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Confirm that the expected Master Calibration images and Calibration
 Database entries are present and well-formed.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23579,21 +25144,20 @@ and producing science data products.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Process data with the Data Release Production payload, starting from raw
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Process data with the Data Release Production payload, starting from raw
 science images and generating science data products, placing them in the
 Data Backbone.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23628,23 +25192,21 @@ opened an empty notebook.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute a query in a notebook to select a small number of stars. In the
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Execute a query in a notebook to select a small number of stars. In the
 example code below, we query the WISE catalog, then extract the results
 to an Astropy table.
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                \begin{verbatim}
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& Example Code &
+\begin{minipage}[t]{13cm}{\footnotesize
+\begin{verbatim}
 import pandas
 import pyvo
 service = pyvo.dal.TAPService('http://lsst-lsp-stable.ncsa.illinois.edu/api/tap')
@@ -23655,9 +25217,10 @@ w3mpro\_ep FROM wise\_00.allwise\_p3as\_mep WHERE CONTAINS(POINT('ICRS',
 ra, decl), CIRCLE('ICRS', 192.85, 27.13, .2)) = 1'')\\
 tab = results.to\_table()
 
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
+\vspace{\dp0}
+} \end{minipage} \\ \cline{2-3}
+& {\small Expected Result} &
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23689,10 +25252,11 @@ Leave the notebook aspect of the LSST Science Platform in a clean state
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Under the `File' menu at the top of your Jupyter notebook session,
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Under the `File' menu at the top of your Jupyter notebook session,
 select one of the following:\\[2\baselineskip]
 
 \begin{itemize}
@@ -23703,21 +25267,19 @@ select one of the following:\\[2\baselineskip]
   Exit and Log Out Without Saving
 \end{itemize}
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                You will be returned to the LSP landing page:
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+You will be returned to the LSP landing page:
 \url{https://lsst-lsp-stable.ncsa.illinois.edu/} It is now safe to close
 the browser window.~
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
@@ -23750,33 +25312,32 @@ metrics that have been implemented in validate\_drp.
     %\toprule
     Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
     \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Execute `validate\_drp` on a repository containing precursor data.
+            \multirow{3}{*}{\parbox{1.3cm}{ 1
+} }
+& {\small Description} &
+\begin{minipage}[t]{13cm}{\scriptsize
+Execute `validate\_drp` on a repository containing precursor data.
 Identify the path to the data, which we will call `DATA/path', then
 execute the following (with additional flags specified as needed):
 
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-                & Example Code &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                validateDrp.py `DATA/path`
+\vspace{\dp0}
+} \end{minipage} \\ \cdashline{2-3}
+& {\small Test Data} &
+\\ \cdashline{2-3}
+& Example Code &
+\begin{minipage}[t]{13cm}{\footnotesize
+validateDrp.py `DATA/path`
 
-                \vspace{\dp0}
-                } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                JSON files (and associated figures) containing the Measurements and any
+\vspace{\dp0}
+} \end{minipage} \\ \cline{2-3}
+& {\small Expected Result} &
+\begin{minipage}[t]{13cm}{\scriptsize
+JSON files (and associated figures) containing the Measurements and any
 associated ``extras.''
 
-                \vspace{\dp0}
-                } \end{minipage}
+\vspace{\dp0}
+} \end{minipage}
+\\ \hdashline
         \\ \midrule
     \end{longtable}
 
