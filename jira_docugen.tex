@@ -535,6 +535,9 @@ u-band} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1847}{Verify calculation of sensor fraction with unusable pixels} \tabularnewline
     \hyperref[lvv-t1862]{LVV-T1862} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1862}{Verify determining effectiveness of dark current frame} \tabularnewline
+    \hyperref[lvv-t1863]{LVV-T1863} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1863}{Verify ability to process Special Programs data alongside normal
+processing} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -24418,6 +24421,63 @@ differences between the original frame(s) and the corrected outputs.
 
                 \vspace{\dp0}
                 } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1863 - Verify ability to process Special Programs data alongside normal
+processing}\label{lvv-t1863}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1863}{LVV-T1863} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18847}{LVV-18847} - DMS-REQ-0397-V-01: Prompt/DR Processing of Data from Special Programs\_1
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that Special Programs data can be processed alongside either
+prompt-products or data-release processing with little or no extra
+effort by DM staff.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
         \\ \midrule
     \end{longtable}
 
