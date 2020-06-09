@@ -538,6 +538,10 @@ u-band} \tabularnewline
     \hyperref[lvv-t1863]{LVV-T1863} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1863}{Verify ability to process Special Programs data alongside normal
 processing} \tabularnewline
+    \hyperref[lvv-t1865]{LVV-T1865} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1865}{Verify implementation of time to L1 public release for Special Programs} \tabularnewline
+    \hyperref[lvv-t1866]{LVV-T1866} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1866}{Verify latency of reporting optical transients from Special Programs} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -24447,6 +24451,117 @@ Test & Jeffrey Carlin
 Verify that Special Programs data can be processed alongside either
 prompt-products or data-release processing with little or no extra
 effort by DM staff.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1865 - Verify implementation of time to L1 public release for Special Programs}\label{lvv-t1865}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1865}{LVV-T1865} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18229}{LVV-18229} - DMS-REQ-0344-V-01: Time to L1 public release
+
+\end{itemize}
+
+\subsubsection{Test Items}
+~Verify that data from Special Programs are made available via public
+release within \textbf{L1PublicT = 24{[}hour{]}} from the acquisition of
+science data.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1866 - Verify latency of reporting optical transients from Special Programs}\label{lvv-t1866}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1866}{LVV-T1866} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-9744}{LVV-9744} - DMS-REQ-0344-V-02: Latency of reporting optical transients
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that optical transients (Level 1 data products) are reported
+within OTT1 = 1 minute of last image readout for Special Programs.
 
 
 \subsubsection{Predecessors}
