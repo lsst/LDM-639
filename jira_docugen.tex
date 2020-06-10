@@ -542,6 +542,10 @@ processing} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1865}{Verify implementation of time to L1 public release for Special Programs} \tabularnewline
     \hyperref[lvv-t1866]{LVV-T1866} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1866}{Verify latency of reporting optical transients from Special Programs} \tabularnewline
+    \hyperref[lvv-t1867]{LVV-T1867} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1867}{Verify implementation of at least numStreams alert streams supported} \tabularnewline
+    \hyperref[lvv-t1868]{LVV-T1868} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1868}{Verify implementation of alert streams distributed within latency limit} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -24562,6 +24566,118 @@ Test & Jeffrey Carlin
 \subsubsection{Test Items}
 Verify that optical transients (Level 1 data products) are reported
 within OTT1 = 1 minute of last image readout for Special Programs.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1867 - Verify implementation of at least numStreams alert streams supported}\label{lvv-t1867}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1867}{LVV-T1867} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18297}{LVV-18297} - DMS-REQ-0391-V-01: Alert Stream Distribution nStreams
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the LSST system supports the transmission of at least
+\textbf{numStreams=5} full alert streams out of the alert distribution
+system within \textbf{OTT1=1 minute}.~
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1868 - Verify implementation of alert streams distributed within latency limit}\label{lvv-t1868}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1868}{LVV-T1868} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18911}{LVV-18911} - DMS-REQ-0391-V-02: Alert Stream Distribution Latency
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the LSST system supports the transmission of full alert
+streams out of the alert distribution system within \textbf{OTT1=1
+minute}.
 
 
 \subsubsection{Predecessors}
