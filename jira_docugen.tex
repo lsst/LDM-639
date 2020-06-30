@@ -338,6 +338,8 @@ Availability} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T179}{Verify implementation of Compute Platform Heterogeneity} \tabularnewline
     \hyperref[lvv-t180]{LVV-T180} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T180}{Verify implementation of Data Management Unscheduled Downtime} \tabularnewline
+    \hyperref[lvv-t181]{LVV-T181} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{Verify Base Voice Over IP (VOIP)} \tabularnewline
     \hyperref[lvv-t182]{LVV-T182} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T182}{Verify implementation of Prefer Computing and Storage Down} \tabularnewline
     \hyperref[lvv-t183]{LVV-T183} &
@@ -464,6 +466,8 @@ cutouts} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1563}{Verify re-run on different system produces the same results} \tabularnewline
     \hyperref[lvv-t1564]{LVV-T1564} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1564}{Verify re-run on similar system produces the same results} \tabularnewline
+    \hyperref[lvv-t1612]{LVV-T1612} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1612}{Verify Summit - Base Network Integration (System Level)} \tabularnewline
     \hyperref[lvv-t1745]{LVV-T1745} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1745}{Verify calculation of median relative astrometric measurement error on
 20 arcminute scales} \tabularnewline
@@ -15997,6 +16001,103 @@ unplanned downtime
         \\ \midrule
     \end{longtable}
 
+\subsection{LVV-T181 - Verify Base Voice Over IP (VOIP)}\label{lvv-t181}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Jeff Kantor
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T181}{LVV-T181} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18491}{LVV-18491} - DMS-REQ-0352-V-02: Base Voice Over IP (VOIP)
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify as-built VOIP at the Base Facility is operational and performs as
+expected (i.e. sufficient number of extensions allocated properly, no
+frequent drop-outs, no frequent jaggies on video, etc.) on both voice
+calls and videoconferening.
+
+
+\subsubsection{Predecessors}
+PMCS DLP-465 Complete\\
+PMCS IT-702 Complete
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+See pre-conditions.
+
+\paragraph{Hardware}
+See pre-conditions.
+
+\subsubsection{Input Specification}
+Base VOIP is installed/configured and Test Personnel have phone sets.
+~Base Videoconference system is installed/configured. ~Summit,
+Headquarters, and/or LDF Videconference system is
+installed/configured.\\
+As-built documentation for all of the above is available.
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Test voice calls over VOIP system from Base Facility to locations in
+~Base and to other Rubin Observatory facilities.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                As-built VOIP at the Base Facility is operational and performs as
+expected (i.e. sufficient number of extensions allocated properly, no
+frequent drop-outs, etc.).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Test video conferences over ~system from Base Facility to locations in
+Base and to other Rubin Observatory facilities.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Verify (a) plannned and (b) as-built VOIP at the Base Facility is
+operational and performs as expected (i.e. no frequent drop-outs, no
+frequent audio glitches, no frequent jaggies on video, etc.).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
 \subsection{LVV-T182 - Verify implementation of Prefer Computing and Storage Down}\label{lvv-t182}
 
 \begin{longtable}[]{llllll}
@@ -21214,6 +21315,100 @@ produces the same results.~
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1612 - Verify Summit - Base Network Integration (System Level)}\label{lvv-t1612}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Inspection & Jeff Kantor
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1612}{LVV-T1612} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-73}{LVV-73} - DMS-REQ-0171-V-01: Summit to Base Network
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify ISO Layer 3 full (22 x 10 Gbps ethernet ports on DAQ side with
+test data from DAQ test stand, AURA, Camera DAQ team do test).
+Demonstrate transfer of data at or exceeding rates specified in \citeds{LDM-142}.
+
+
+\subsubsection{Predecessors}
+See pre-conditions.
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+See pre-conditions.
+
+\paragraph{Hardware}
+See pre-conditions.
+
+\subsubsection{Input Specification}
+PMCS DMTC-7400-2400 COMPLETE\\
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/1401}{LVV-T1168}
+Passed\\
+Full Camera DAQ installed on summit and loaded with data.\\
+Archiver/forwarders installed at Base.\\
+As-built documentation for all of the above is
+available.\\[2\baselineskip]
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify Pre-conditions are satisfied.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                NA
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Pre-conditions are satisfied.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Transfer data between summit and base over uninterrupted 1 day period.
+~Monitor transfer of data at or exceeding rates specified in LDM-142.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                DAQ pre-loaded data
+
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Data transfers at or exceeding rates specified in LDM-142.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
