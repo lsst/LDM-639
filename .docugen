@@ -1,0 +1,2 @@
+#!/bin/bash
+docsteady generate-spec "/Data Management/Acceptance|LDM-639" jira_docugen.tex
