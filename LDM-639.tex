@@ -17,9 +17,9 @@
 
 \title[Test Spec for \product]{\product~Acceptance Test Specification}
 
-\author{L.P.~Guy, W.M.~Wood-Vasey, E.~Bellm, J.F.~Bosch, J.L.~Carlin,
-G.P.~Dubois-Felsmann,  M.L.~Graham, R.~Gruendl,
-K.S.~Krughoff, K.-T.~Lim, R.H.~Lupton, C.~Slater, G.~Comoretto}
+\author{L.P.~Guy, W.M.~Wood-Vasey, E.~Bellm, J.F.~Bosch, M.~Butler, J.L.~Carlin,
+H.-F.~Chiang, G.~Comoretto, G.P.~Dubois-Felsmann, M.~Gower, M.L.~Graham, R.~Gruendl,
+K.S.~Krughoff, K.-T.~Lim, R.H.~Lupton, F.~Mueller, C.~Slater, J.D.~Swinbank }
 \setDocRef{\lsstDocType-\lsstDocNum}
 \setDocDate{\vcsdate}
 
@@ -30,8 +30,9 @@ This document describes the detailed acceptance test specification for the \prod
 % Most recent last
 \setDocChangeRecord{%
 	\addtohist{1.0}{2019-02-07}{Document first approved release. Approved on \jira{RFC-495}.}{L.~Guy}
-  \addtohist{2.0}{2019-07-29}{Add test cases for all Priority 1a requirements. Approved in \jira{RFC-622}.}{Document: J.~Carlin;\newline Approver: W.~O'Mullane}
-  \addtohist{2.1}{2020-02-17}{Consolidated test cases for DMTR-201 test activity. Approved in \jira{RFC-669}.}{J.~Carlin}
+        \addtohist{2.0}{2019-07-29}{Add test cases for all Priority 1a requirements. Approved in \jira{RFC-622}.}{Document: J.~Carlin;\newline Approver: W.~O'Mullane}
+        \addtohist{2.1}{2020-02-17}{Consolidated test cases for DMTR-201 test activity. Approved in \jira{RFC-669}.}{J.~Carlin}
+	\addtohist{X.X}{2020-07-09}{Merge test specifications LDM-534, LDM-534, LDM-538, LDM-538. Update author list.}{L.~Guy}
 }
 
 \setDocCurator{Leanne Guy}
@@ -43,27 +44,22 @@ This document describes the detailed acceptance test specification for the \prod
 \section{Introduction}
 \label{sec:intro}
 
-This document is intended to specify the acceptance test procedures for the \product{} System.  It is a work in progress; the
-current version provides Test Cases covering $\sim35$\% of the requirements. It does not yet provide full Test Plans for comprehensive testing
-nor identify the fraction of each requirement covered by the existing Test Cases.
-
-This document will be updated as work continues on completing Test Cases, Test Plans, and requirements coverage.
+This document specifies the acceptance test procedures for the \product{} System. 
+It is a living document that is updated as new functionality is delivered and acceptance testing proceeds. 
+A full description of the \product{} System is provided in the Data Management System Design document, \citeds{LDM-148} with
+the science requirements  detailed in  the LSST Science Requirements Document \citeds{LPM-17}.
 
 \subsection{Objectives}
 \label{sec:objectives}
 
-This document describes the test cases required to validate the Data Management System requirements
-described in the LSST DM Subsystem Requirements document \citeds{LSE-61}.
-It identifies test cases and procedures for the tests as well as the pass/fail criteria for each test.
+This document builds on the description of LSST Data Management's approach to testing as described in \citeds{LDM-503} to describe the detailed test cases that will be performed to verify the Data Management System.
 
-A full description of the \product{} System is provided in the Data Management System Design document, \citeds{LDM-148} with
-the science requirements  detailed in  the LSST Science Requirements Document \citeds{LPM-17}.
-% and \citeds{LSE-30}
+It provides test designs, test cases and procedures for the tests, and the corresponding pass/fail criteria for each test. 
 
 \subsection{Scope}
 \label{sec:scope}
 
-This document provides the acceptance test plan for the whole Data Management System (DMS), as described
+This document provides the acceptance test plan for the  Data Management System (DMS), as described
 by the Data Management System Requirements in \citeds{LSE-61}.
 
 \subsection{Applicable Documents}
@@ -75,8 +71,6 @@ by the Data Management System Requirements in \citeds{LSE-61}.
 \citeds{LPM-17} & LSST Science Requirements Document \\
 \citeds{LDM-148} & LSST Data Management System Design \\
 \citeds{LDM-294} & LSST DM Organization \& Management \\
-% This document will be merged to LDM-61
-% \citeds{LDM-502} & The Measurement and Verification of DM Key Performance Metrics \\
 \citeds{LDM-503} & LSST DM Test Plan \\
 \citeds{LSE-61}  & LSST DM Subsystem Requirements \\
 \citeds{LSE-163} & LSST Data Products Definition Document \\
@@ -99,23 +93,30 @@ by the Data Management System Requirements in \citeds{LSE-61}.
 \section{Approach}
 \label{sec:approach}
 
-This document describes the acceptance tests for the integrated Data Management System,
-with a focus on whether the data products and functionality provided satisfy the requirements described in \citeds{LSE-61}.
+This document describes the acceptance tests for the  Data Management System,
+with a focus on whether the data products, functionality and services satisfy the requirements described in \citeds{LSE-61}.
 
-The requirements from \citeds{LSE-61} are extracted into the Jira "LSST Verification and Validation'' Project, managed through the Jira Test Management Plugin system.  Each LSE-61 requirement leads to a "LSST Verification and Validation" (LVV) Element.  Each LVV Element comprises one or more more
-Test Cases.  Each Test Case describes a Test Script to be executed, the coverage, pre-conditions, configuration, test results, and other details as specified by \citeds{LDM-503}. Test Scripts may have common set up and analysis steps.  The Jira system allows for these steps to be shared by other Test Scripts.  This improves clarity and consistency across all Test Cases.
+The requirements from \citeds{LSE-61} are extracted into the Jira "LSST Verification and Validation'' Project, managed through the Jira Test Management Plugin system.  
+Each LSE-61 requirement leads to a "LSST Verification and Validation" (LVV) Element.  
+Each LVV Element comprises one or more more Test Cases.  
+Each Test Case describes a Test Script to be executed, the coverage, pre-conditions, configuration, test results, and other details as specified by \citeds{LDM-503}. 
+Test Scripts may have common set up and analysis steps. 
+The Jira system allows for these steps to be shared by other Test Scripts.  This improves clarity and consistency across all Test Cases.
 
-In this document, each Test Case is listed here with the LVV Element it tests, a summary of the Test Items exercised by the Test Case, and the detailed steps to be executed by the Test Case.  Shared steps between Test Scripts have been explicitly written out to appear fully in each Test Case.
+In this document, each Test Case is listed here with the LVV Element it tests, a summary of the Test Items exercised by the Test Case, and the detailed steps to be executed by the Test Case.  
+Shared steps between Test Scripts have been explicitly written out to appear fully in each Test Case.
 
 \subsection{Features to be tested}
 \label{sec:feat2test}
 
 All top-level requirements for the LSST Data Management System described in \citeds{LSE-61} are to be tested, including
 \begin{itemize}
-\item Data Products
-\item Alert, Calibration and Data Release Production
-\item LSST science pipeline software and middleware
-\item LSST facilities including the data archive, base, summit, and the communications between them to accept science and engineering data
+\item Rubin Data Products, including their production, scientific fidelity and persistence, 
+\item Alert, Calibration and Data Release Production pipelines and the execution of payloads, 
+\item Middleware,
+\item Qserv, the LSST parallel distributed database,
+\item Services provided by the Rubin Data Facility,
+\item Rubin facilities including the data archive, base, summit, and the communications between them to accept science and engineering data.
 \end{itemize}
 
 

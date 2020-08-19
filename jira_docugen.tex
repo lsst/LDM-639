@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
-% using template at <template>.
+% using template at /usr/local/lib/python3.7/site-packages/docsteady/templates/dm-spec.latex.jinja2.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 1.2rc13
+% using docsteady version 1.2rc22
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -50,7 +50,7 @@ Service} \tabularnewline
     \hyperref[lvv-t27]{LVV-T27} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T27}{Verify implementation of Data Availability} \tabularnewline
     \hyperref[lvv-t28]{LVV-T28} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T28}{Verify implementation of Measurements in catalogs} \tabularnewline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T28}{Verify implementation of measurements in catalogs from PVIs} \tabularnewline
     \hyperref[lvv-t29]{LVV-T29} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T29}{Verify implementation of Raw Science Image Data Acquisition} \tabularnewline
     \hyperref[lvv-t30]{LVV-T30} &
@@ -624,6 +624,10 @@ processing} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1867}{Verify implementation of at least numStreams alert streams supported} \tabularnewline
     \hyperref[lvv-t1868]{LVV-T1868} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1868}{Verify implementation of alert streams distributed within latency limit} \tabularnewline
+    \hyperref[lvv-t1946]{LVV-T1946} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1946}{Verify implementation of measurements in catalogs from coadds} \tabularnewline
+    \hyperref[lvv-t1947]{LVV-T1947} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1947}{Verify implementation of measurements in catalogs from difference images} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -3589,7 +3593,7 @@ verify delivery and test download.
         \\ \midrule
     \end{longtable}
 
-\subsection{LVV-T28 - Verify implementation of Measurements in catalogs}\label{lvv-t28}
+\subsection{LVV-T28 - Verify implementation of measurements in catalogs from PVIs}\label{lvv-t28}
 
 \begin{longtable}[]{llllll}
 \toprule
@@ -3608,7 +3612,8 @@ Test & Colin Slater
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that source measurements in catalogs are in flux units.
+Verify that source measurements in catalogs containing measurements from
+processed visit images are in flux units.
 
 
 \subsubsection{Predecessors}
@@ -3656,9 +3661,8 @@ Verify that source measurements in catalogs are in flux units.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Identify and read appropriate processed precursor datasets with the
-Butler, including one containing single-visit images, one with coadds,
-and one with difference imaging.~
+            Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3672,8 +3676,8 @@ and one with difference imaging.~
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that each of the single-visit, coadd, and difference image
-catalogs provide measurements in flux units.
+            Verify that the single-visit catalog provides measurements in flux
+units.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -4934,7 +4938,7 @@ flux on the image to physical flux units.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to Alert Production
+            Identify a dataset with processed visit images in multiple filters.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -4944,6 +4948,74 @@ flux on the image to physical flux units.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Extract the photometric zeropoint from the source catalog associated
+with a visit image. Repeat this for all available filters, and confirm
+that the zeropoint has been set, and has a reasonable value.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A zeropoint that enables one to convert the measured fluxes to
+magnitudes.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Extract fluxes for some sources, and convert them to magnitudes. Confirm
+that the distribution spans a reasonable range.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                In most cases, well-measured magnitudes (i.e., for high S/N
+measurements) should be between 12 to 28 for all bands.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14069,7 +14141,8 @@ testing.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to AP and DRP
+            Identify a dataset that has been (or can be readily) processed through
+single-frame processing and coaddition.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14079,6 +14152,116 @@ testing.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                The `calexp` and `deepCoadd\_calexp` images and their associated source
+catalogs are created.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Roughly determine the coordinates of a bounding box that is contained
+within the images that were processed.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                RA, Dec boundaries of a region in which to generate fake sources.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Generate a catalog in the correct format for `insertFakes` to accept.
+The catalog should specify positions and magnitudes of stars (and
+optionally, parameters specifying galaxy shape, if galaxies are also
+being inserted).
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                An input catalog of fake source positions and magnitudes to be inserted
+into the images.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Execute `insertFakes.py` on the repository, specifying the input catalog
+from the previous step.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A repository with images that have fake sources inserted.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 5 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Run `multiBandDriver.py` on the repository, specifying the fake-source
+repository as the input.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                `calexp` and coadd images containing the artificial sources and sources
+catalogs that contain their measurements along with the sources detected
+in the original run.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 6 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm that the injected sources appear in the images and the catalogs.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Fake sources and their measured properties are recoverable.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -14125,7 +14308,9 @@ exposures and coadds.
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Delegate to AP and DRP
+            Identify a repository containing data that have been processed through
+the difference imaging pipeline. (e.g., the HiTS 2015 data that are
+processed monthly for testing)
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -14135,6 +14320,82 @@ exposures and coadds.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A dataset containing calexps, difference images, and source catalogs (of
+diaSrcs).
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Extract a `calexp`, a `deepDiff\_differenceExp`, and the
+`deepDiff\_diaSrc` catalog of measurements.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Well-formed images and catalogs containing the calexp from the visit
+image and the difference image, and measurements of sources from the
+difference image.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+
+            \multirow{3}{*}{ 4 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Confirm (by visual inspection) that the difference image is mostly blank
+sky (i.e., has had a template of the same field subtracted), and that
+the source catalog contains sources with photometric and astrometric
+measurements.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                A mostly blank image (with perhaps some artifacts due to imperfect
+subtraction) and a catalog of sources detected/measured from that image.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
@@ -31257,6 +31518,209 @@ minute}.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1946 - Verify implementation of measurements in catalogs from coadds}\label{lvv-t1946}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1946}{LVV-T1946} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that source measurements in catalogs containing measurements from
+coadd images are in flux units.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that the coadd catalog provides measurements in flux units.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation of measurements in catalogs encoded in flux units.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1947 - Verify implementation of measurements in catalogs from difference images}\label{lvv-t1947}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1947}{LVV-T1947} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that source measurements in catalogs containing measurements from
+difference images are in flux units.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify and read an appropriate processed precursor dataset containing
+difference images with the Butler.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that the difference image source catalog provides measurements in
+flux units.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation of measurements in catalogs encoded in flux units.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
