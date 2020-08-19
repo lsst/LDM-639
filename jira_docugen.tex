@@ -50,7 +50,7 @@ Service} \tabularnewline
     \hyperref[lvv-t27]{LVV-T27} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T27}{Verify implementation of Data Availability} \tabularnewline
     \hyperref[lvv-t28]{LVV-T28} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T28}{Verify implementation of Measurements in catalogs} \tabularnewline
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T28}{Verify implementation of measurements in catalogs from PVIs} \tabularnewline
     \hyperref[lvv-t29]{LVV-T29} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T29}{Verify implementation of Raw Science Image Data Acquisition} \tabularnewline
     \hyperref[lvv-t30]{LVV-T30} &
@@ -624,6 +624,10 @@ processing} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1867}{Verify implementation of at least numStreams alert streams supported} \tabularnewline
     \hyperref[lvv-t1868]{LVV-T1868} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1868}{Verify implementation of alert streams distributed within latency limit} \tabularnewline
+    \hyperref[lvv-t1946]{LVV-T1946} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1946}{Verify implementation of measurements in catalogs from coadds} \tabularnewline
+    \hyperref[lvv-t1947]{LVV-T1947} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1947}{Verify implementation of measurements in catalogs from difference images} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -3589,7 +3593,7 @@ verify delivery and test download.
         \\ \midrule
     \end{longtable}
 
-\subsection{LVV-T28 - Verify implementation of Measurements in catalogs}\label{lvv-t28}
+\subsection{LVV-T28 - Verify implementation of measurements in catalogs from PVIs}\label{lvv-t28}
 
 \begin{longtable}[]{llllll}
 \toprule
@@ -3608,7 +3612,8 @@ Test & Colin Slater
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that source measurements in catalogs are in flux units.
+Verify that source measurements in catalogs containing measurements from
+processed visit images are in flux units.
 
 
 \subsubsection{Predecessors}
@@ -3656,9 +3661,8 @@ Verify that source measurements in catalogs are in flux units.
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Identify and read appropriate processed precursor datasets with the
-Butler, including one containing single-visit images, one with coadds,
-and one with difference imaging.~
+            Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -3672,8 +3676,8 @@ and one with difference imaging.~
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that each of the single-visit, coadd, and difference image
-catalogs provide measurements in flux units.
+            Verify that the single-visit catalog provides measurements in flux
+units.
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -31514,6 +31518,209 @@ minute}.
                 \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1946 - Verify implementation of measurements in catalogs from coadds}\label{lvv-t1946}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1946}{LVV-T1946} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that source measurements in catalogs containing measurements from
+coadd images are in flux units.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify and read an appropriate processed precursor dataset containing
+coadds with the Butler.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that the coadd catalog provides measurements in flux units.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation of measurements in catalogs encoded in flux units.
+
+                \vspace{\dp0}
+                } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T1947 - Verify implementation of measurements in catalogs from difference images}\label{lvv-t1947}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Approved & Normal &
+Test & Jeffrey Carlin
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1947}{LVV-T1947} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that source measurements in catalogs containing measurements from
+difference images are in flux units.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+                \multirow{3}{*}{\parbox{1.3cm}{ 1-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 2 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Identify and read an appropriate processed precursor dataset containing
+difference images with the Butler.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            Verify that the difference image source catalog provides measurements in
+flux units.
+
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+                \begin{minipage}[t]{13cm}{\footnotesize
+                Confirmation of measurements in catalogs encoded in flux units.
+
+                \vspace{\dp0}
+                } \end{minipage}
         \\ \midrule
     \end{longtable}
 
