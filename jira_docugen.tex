@@ -27266,9 +27266,9 @@ Demonstration & Michelle Butler
 \end{itemize}
 
 \subsubsection{Test Items}
-Verify that Comcam has all the services running and verified working for
-retrieving an image from the comcam DAQ and store it on file systems at
-the LDF for viewing by LSP. ~
+Verify that ComCam has all the services running and verified working for
+retrieving an image from the ComCam DAQ and store it on file systems at
+the LDF for viewing by RSP. ~
 
 
 \subsubsection{Predecessors}
@@ -27280,7 +27280,7 @@ the LDF for viewing by LSP. ~
 \paragraph{Hardware}
 
 \subsubsection{Input Specification}
-Comcam must be In LaSerena and producing images with proper headers. ~
+ComCam must be In LaSerena and producing images with proper headers. ~
 
 \subsubsection{Output Specification}
 
@@ -27292,7 +27292,7 @@ Comcam must be In LaSerena and producing images with proper headers. ~
 
             \multirow{3}{*}{ 1 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            CC-DAQ produces an image~
+            ComCam-DAQ produces an image~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -27312,8 +27312,8 @@ Comcam must be In LaSerena and producing images with proper headers. ~
 
             \multirow{3}{*}{ 2 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            Archiver and Forwarder build image with proper header from header
-service~
+            ComCam-archiver and ComCam-forwarder build image with proper header from
+ComCam-header service~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -27334,7 +27334,7 @@ images too. ~\\[2\baselineskip]
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            AT-archiver/forwarder transfers the file to the l1-handoff machine.~
+            ComCam-archiver/forwarder transfers the file to the l1-handoff machine.~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -27355,9 +27355,9 @@ file systems (OODS and DBB) services. ~\\[3\baselineskip]
 
             \multirow{3}{*}{ 4 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            OODS service running on L1-handoff machine ingests the image file into
-Butler/G3 and readies the file systems for the commissioning cluster at
-the Base to be able to mount and see the new files.~ ~~
+            OODS service running and ingests the image file into Butler/G3 (or Gen2)
+and readies the file systems for the commissioning cluster at the Base
+to be able to mount and see the new files. ~ ~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -27398,7 +27398,7 @@ nodes at the base.~~
             \multirow{3}{*}{ 6 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Files are ingested into the butler/G3 at NCSA and moved to file systems
-that are viewable by the LSP. ~
+that are viewable by the RSP. ~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
@@ -27409,7 +27409,7 @@ that are viewable by the LSP. ~
             } \end{minipage} \\ \cline{2-3}
             & Expected Result &
                 \begin{minipage}[t]{13cm}{\footnotesize
-                data can be seen and retrieved by LSP.~~
+                data can be seen and retrieved by RSP. ~
 
                 \vspace{\dp0}
                 } \end{minipage}
@@ -27556,7 +27556,7 @@ Demonstration & Michelle Butler
 \subsubsection{Test Items}
 Demonstrate the ability to transfer data from the SLAC test stand or
 CCOB with 21 rafts from SLAC and ingested at NCSA and make available
-through an instance of the LSP
+through an instance of the RSP
 
 
 \subsubsection{Predecessors}
@@ -27617,7 +27617,7 @@ environment that can read that data.~ ~
             & Expected Result &
                 \begin{minipage}[t]{13cm}{\footnotesize
                 Data is transferred to NCSA, and can now be see in file systems by the
-LSP. ~\\[2\baselineskip]
+RSP. ~\\[2\baselineskip]
 
                 \vspace{\dp0}
                 } \end{minipage}
@@ -27625,7 +27625,7 @@ LSP. ~\\[2\baselineskip]
 
             \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
-            using the LSP view the data in the ingested directory~
+            using the RSP view the data in the ingested directory~
 
             \vspace{\dp0}
             } \end{minipage} \\ \cline{2-3}
