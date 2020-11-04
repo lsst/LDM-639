@@ -4834,7 +4834,32 @@ signature has been removed.\\
             & Expected Result &
         \\ \midrule
 
-            \multirow{3}{*}{ 2 } & Description &
+                \multirow{3}{*}{\parbox{1.3cm}{ 2-1
+                {\scriptsize from \hyperref[lvv-t987]
+                {LVV-T987} } } }
+
+                & {\small Description} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                Identify the path to the data repository, which we will refer to as
+`DATA/path', then execute the following:
+
+                \vspace{\dp0}
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Test Data} &
+                \begin{minipage}[t]{13cm}{\scriptsize
+                } \end{minipage} \\ \cdashline{2-3}
+                & {\small Expected Result} &
+                    \begin{minipage}[t]{13cm}{\scriptsize
+                    Butler repo available for reading.
+
+                    \vspace{\dp0}
+                    } \end{minipage}
+                \\ \hdashline
+
+
+        \\ \midrule
+
+            \multirow{3}{*}{ 3 } & Description &
             \begin{minipage}[t]{13cm}{\footnotesize
             Run the Prompt Processing payload on these data. ~Verify that Processed
 Visit Images are generated at correct size and with significant
@@ -4851,43 +4876,6 @@ instrumental artifacts removed.
                 \begin{minipage}[t]{13cm}{\footnotesize
                 Raw precursor dataset images have been processed into Processed Visit
 Images, with instrumental artifacts corrected.
-
-                \vspace{\dp0}
-                } \end{minipage}
-        \\ \midrule
-
-            \multirow{3}{*}{ 3 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Run camera test stand data through full acquisition+backbone+ISR.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 4 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Run simulated LSST data with calibrations through prompt processing
-system and inspect Processed Visit images to verify that they have been
-cleaned of significant artifacts and are of the correct, shape, and
-described orientation.
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-                \begin{minipage}[t]{13cm}{\footnotesize
-                Raw images have been processed into Processed Visit Images, with
-instrumental artifacts corrected.
 
                 \vspace{\dp0}
                 } \end{minipage}
