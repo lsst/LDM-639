@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
 % using template at <template>.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 1.2rc24.post6+g778feb8
+% using docsteady version 1.2rc24.post10+g05696ce.d20201201
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -104,34 +104,6 @@ CCD-sized coadd cutouts} &  Defined \tabularnewline
     \hyperref[lvv-t1332]{LVV-T1332} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1332}{Verify implementation of maximum time for retrieval of CCD-sized coadd
 cutouts} &  Defined \tabularnewline
-    \hyperref[lvv-t10]{LVV-T10} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T10}{DRP-00-00: Installation of the Data Release Production v14.0 science
-payload} &  Approved \tabularnewline
-    \hyperref[lvv-t11]{LVV-T11} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{DRP-00-05: Execution of the DRP Science Payload by the Batch Production
-Service} &  Approved \tabularnewline
-    \hyperref[lvv-t12]{LVV-T12} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T12}{DRP-00-10: Data Release Includes Required Data Products} &  Approved \tabularnewline
-    \hyperref[lvv-t13]{LVV-T13} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T13}{DRP-00-15: Scientific Verification of Source Catalog} &  Approved \tabularnewline
-    \hyperref[lvv-t14]{LVV-T14} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T14}{DRP-00-25: Scientific Verification of Object Catalog} &  Approved \tabularnewline
-    \hyperref[lvv-t15]{LVV-T15} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T15}{DRP-00-30: Scientific Verification of Processed Visit Images} &  Approved \tabularnewline
-    \hyperref[lvv-t16]{LVV-T16} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{DRP-00-35: Scientific Verification of Coadd Images} &  Approved \tabularnewline
-    \hyperref[lvv-t17]{LVV-T17} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T17}{AG-00-00: Installation of the Alert Generation v16.0 science payload.} &  Approved \tabularnewline
-    \hyperref[lvv-t18]{LVV-T18} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T18}{AG-00-05: Alert Generation Produces Required Data Products} &  Approved \tabularnewline
-    \hyperref[lvv-t19]{LVV-T19} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T19}{AG-00-10: Scientific Verification of Processed Visit Images} &  Approved \tabularnewline
-    \hyperref[lvv-t20]{LVV-T20} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T20}{AG-00-15: Scientific Verification of Difference Images} &  Approved \tabularnewline
-    \hyperref[lvv-t21]{LVV-T21} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T21}{AG-00-20: Scientific Verification of DIASource Catalog} &  Approved \tabularnewline
-    \hyperref[lvv-t22]{LVV-T22} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T22}{AG-00-25: Scientific Verification of DIAObject Catalog} &  Approved \tabularnewline
     \hyperref[lvv-t28]{LVV-T28} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T28}{Verify implementation of measurements in catalogs from PVIs} &  Approved \tabularnewline
     \hyperref[lvv-t39]{LVV-T39} &
@@ -5200,2172 +5172,6 @@ images within~\textbf{ccdRetrievalTime = 15 seconds.}
 }
 
 \subsection{ Approved Test Cases}
-
-\subsubsection{LVV-T10 - DRP-00-00: Installation of the Data Release Production v14.0 science
-payload}\label{lvv-t10}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T10}{LVV-T10} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-139}{LVV-139} - DMS-REQ-0308-V-01: Software Architecture to Enable Community Re-Use
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check:
-
-\begin{itemize}
-\tightlist
-\item
-  That the Data Release Production science payload is available for
-  distribution from documented channels;
-\item
-  That the Data Release Production science payload can be installed on
-  LSST Data Facility-managed systems.
-\end{itemize}
-
-
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-All prerequisite packages listed at https://pipelines.lsst.io/install/
-prereqs/centos.html must be available on the test system and on the
-LSST-VC compute node.
-
-\subparagraph{Hardware}\mbox{}\\
-This test case shall be executed on a developer system at the LSST Data
-Facility which serves as the ``head node'' or otherwise provides access
-to filesystems shared by the LSST Verification Cluster (LSST-VC). We
-assume that this system will be lsst-dev01.ncsa.illinois.edu and the
-filesystem will be a GPFS-based system mounted at /software. The test
-also requires access to one LSST-VC compute node.
-
-\paragraph{Input Specification}\mbox{}\\
-No input data is required for this test case.
-
-\paragraph{Output Specification}\mbox{}\\
-The Data Release Production science payload will be made available on a
-shared filesystem accessible from LSST-VC compute notes.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Release 14.0 of the LSST Science Pipelines will be installed into the
-GPFS filesystem accessible at /software on lsst-dev01 following the
-instructions at https://pipelines.lsst. io/install/newinstall.html.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The lsst\_distrib top level package will be enabled:\\
-\hspace*{0.333em} ~ ~ ~source /software/lsstsw/stack3/loadLSST.bash\\
-\hspace*{0.333em} ~ ~ ~setup lsst\_distrib
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The ``LSST Stack Demo'' package will be downloaded onto the test system
-from https: //github.com/lsst/lsst\_dm\_stack\_demo/releases/tag/14.0
-and uncompressed.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The demo package will be executed by following the instructions in its
-``README`` file. The string ``Ok.`` should be returned.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 5
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A shell on an LSST-VC compute node will now be obtained by executing:\\
-\hspace*{0.333em} ~ ~ ~\$ srun -I --pty bash
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 6
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The demo package will be executed on the compute node and the same
-result obtained.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T11 - DRP-00-05: Execution of the DRP Science Payload by the Batch Production
-Service}\label{lvv-t11}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{LVV-T11} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-46}{LVV-46} - DMS-REQ-0106-V-01: Coadded Image Provenance
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-124}{LVV-124} - DMS-REQ-0293-V-01: Selection of Datasets
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-134}{LVV-134} - DMS-REQ-0303-V-01: Production Monitoring
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-133}{LVV-133} - DMS-REQ-0302-V-01: Production Orchestration
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-136}{LVV-136} - DMS-REQ-0305-V-01: Task Specification
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-137}{LVV-137} - DMS-REQ-0306-V-01: Task Configuration
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-62}{LVV-62} - DMS-REQ-0158-V-01: Provide Pipeline Construction Services
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the DRP Science Payload can be executed using
-a specific version of the Batch Production Service provided by the LSST
-Data Facility. Since the outputs are stored in the Data Backbone, it too
-is a component of this test.
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T10 (DRP-00-00)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-All the necessary software will be pre-installed. The software includes
-the science pipeline codes as well as the Data Management system codes
-(Batch Processing Service, Data Backbone).\\
-For LDM-503-2, Python 2 versions of software will be used. The science
-pipeline codes will be provided via the LSST DM Software Stack, release
-14.0. The Batch Processing Service and the Data Backbone are initial
-versions using the DESDM Framework packages. LSST-specific plugins as
-well as DRP pipeline integration codes are also pre-installed. All
-python DESDM Framework packages, plugins and integration codes exist in
-the lsst-dm github with tag 1.01. The DESDM prerequisites come from the
-official DESDM eups package firstcut Y4N+5. They are installed using
-DESDMâ\euro{}™s eups install process.\\
-The ticket branch tickets/DM-12291 of the LSST Software Stack packages
-meas\_base, pipe\_tasks, and obs\_subaru will be used to change the
-patch ID naming convention. This is due to issues of having commas in
-the filenames and data IDs, as discussed in RFC-361; the solution has
-been agreed in RFC-365 for future implementation in DM-11874, DM-11875,
-and DM-11876.\\
-For LDM-503-2, the software will be installed into the GPFS space at
-/project/production/ on LSST-VC. A single eups prototype package will be
-defined to encompass the above mentioned software.
-
-\subparagraph{Hardware}\mbox{}\\
-This test case shall be executed on a testbed at the LSST Data Facility.
-For LDM-503-2, this testbed includes:
-
-\begin{itemize}
-\tightlist
-\item
-  LSST Verification Cluster (LSST-VC) with Slurm Job Scheduler
-\item
-  Submit and compute nodes with read/write access to various GPFS shared
-  filesystems:
-
-  \begin{enumerate}
-  \tightlist
-  \item
-    Filesystem containing the software stack
-  \item
-    Filesystem for the submit side temporary outputs
-  \item
-    Filesystem being used by the prototype DataBackbone.(This means that
-    the frame-work can use a cp transfer protocol between the job and
-    the Data Backbone and does not require additional transfer services
-    to be running.)
-  \item
-    Filesystem for the individual job scratch directories.
-  \end{enumerate}
-\item
-  Single node Oracle database (version 12c)
-\item
-  Submit node (lsst-dev01.ncsa.illinois.edu) running the HTCondor
-  Central Manager (ver- sion 8.7.3).
-\end{itemize}
-
-\paragraph{Input Specification}\mbox{}\\
-A small number of selected tracts of the Hyper Suprime-Cam dataset will
-be used along with appropriate calibration datasets.\\
-For LDM-503-2, the three tracts of the Hyper Suprime-Cam ``RC1''
-dataset, as defined Appendix A.1.1, will be used. The calibration
-dataset will be the 20170105 version, defined as per DMTR- 31. Raw files
-known to fail processCcd will be blacklisted.\\[2\baselineskip]
-
-\paragraph{Output Specification}\mbox{}\\
-The output data products will be available from the Data Backbone.\\
-For LDM-503-2, the output data products will be available on the LSST-VC
-via a shared filesystem and advanced data discovery is done via SQL
-queries against the Oracle database.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Setup. The LSST Science Pipelines and the DESDM Framework, plugins, and
-integration codes as described in Environment - Software paragraph have
-already been installed. The Operator merely sets up the expanded stack
-using eups.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Input raw and calibration data must exist in the Data Backbone. If not,
-the data will be ingested into Data Backbone.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The operator tags and blacklists input data as appropriate for test (see
-Input Specifications ยง4.2.5).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Given the LSST Science Pipelines version, the operator will generate the
-full config files and schema files (Test Configuration ยง4.2.7), which
-are then ingested into the Data Backbone.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 5
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Write a DRP pipeline workflow definition file from scratch or modify an
-existing file from github making its operations- and dataset-specific
-inputs match this test.
-
-\begin{itemize}
-\tightlist
-\item
-  (a) For LDM-503-2, the pipeline workflow definition file is written in
-  a workflow control language (wcl) format as used by the DESDM
-  Framework.
-\end{itemize}
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 6
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Make special hardware requests (e.g., disk or compute node reservations)
-if needed.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 7
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Execution starts. If HTCondor processes are not already running, start
-HTCondor processes on compute nodes. This step makes the compute nodes
-join the HTCondor Central Manager to cre- ate a working HTCondor Pool.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 8
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The execution for each tract of the input data in the Input
-specification section (ยง4.2.5) will be submitted to the hardware
-specified in ``Environmental Needs - Hardware'' section (ยง4.2.4.1)
-using the configuration specified in ``Test configuration'' section
-(ยง4.2.7).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 9
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-During execution, the operator will use software to demonstrate the
-ability to check the processing status.
-
-\begin{itemize}
-\tightlist
-\item
-  (a) ForLDM-503-2,the available Batch Production Service monitoring
-  software consists of two commands: one to summarize currently
-  submitted processing, one to get more details of single submission.
-\end{itemize}
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 10
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-If the processing attempt completes, the attempt is marked as completed
-and tagged as potential for the next test steps. These campaign tags are
-used to make pre-release QA queries simpler.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 11
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-If the processing attempt fails, the attempt is marked as failed.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 12
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-If the processing attempt fails due to certain infrastructure
-configuration or transient instability (e.g., network blips), the
-processing of the tract can be tried again after the problem is
-resolved.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 13
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Checks.~When the execution finishes, the success of the execution will
-be verified by checking the existence of the expected output data.
-
-\begin{itemize}
-\tightlist
-\item
-  (a) For each of the expected data products types (listed in ยง4.3.2)
-  and each of the expected units (visits, patches, etc), verify the data
-  product is in the Data Backbone and has filesize greater than zero via
-  DB queries.
-\item
-  (b) Verify the physical and location information in Data Backbone DB
-  matches theData Backbone filesystem and vice-versa.
-\end{itemize}
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 14
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Check that for each data product type has appropriate metadata saved for
-each file as defined in ``Test Configuration'' section (ยง4.2.7).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 15
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Check provenance
-
-\begin{itemize}
-\tightlist
-\item
-  (a) Verify that each file can be linked with the step and processing
-  attempt that created it via the Data Backbone.
-\item
-  (b) Verify that the information linking input files to each step was
-  saved to the Oracle database.
-\end{itemize}
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 16
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Check runtime metrics, such as the number of executions of each code,
-wallclock per step, wallclock per tract, etc.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T12 - DRP-00-10: Data Release Includes Required Data Products}\label{lvv-t12}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T12}{LVV-T12} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-98}{LVV-98} - DMS-REQ-0267-V-01: Source Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-99}{LVV-99} - DMS-REQ-0268-V-01: Forced-Source Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-106}{LVV-106} - DMS-REQ-0275-V-01: Object Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-110}{LVV-110} - DMS-REQ-0279-V-01: Deep Detection Coadds
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-125}{LVV-125} - DMS-REQ-0294-V-01: Processing of Datasets
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the basic data products which should be in an
-data release are generated by execution of the science payload.\\
-These products will include:
-
-\begin{itemize}
-\tightlist
-\item
-  Source catalogs, derived from PVIs and coadded images (DMS-REQ-0267 \&
-  DMS-REQ-0277);
-\item
-  Forced source catalogs (DMS-REQ-0268);
-\item
-  Object catalogs (DMS-REQ-0275);
-\item
-  Processed visit images (PVIs; DMS-REQ-0069);
-\item
-  Coadded images (DMS-REQ-0279);
-\end{itemize}
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T10 (DRP-00-00)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in DRP-00-00)
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the Hyper Suprime-Cam ``RC1'' dataset (Appendix
-A.1.1 through the DRP Science Payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in DRP-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-For each of the expected data products types (listed in Test Items
-section ยง4.3.2) and each of the expected units (PVIs, coadds, etc), the
-data product will be retrieved from the Butler and verified to be
-non-empty.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T13 - DRP-00-15: Scientific Verification of Source Catalog}\label{lvv-t13}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T13}{LVV-T13} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-98}{LVV-98} - DMS-REQ-0267-V-01: Source Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the source catalogs delivered by the DRP
-science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Measurements in the catalog are presented in flux units
-  (DMS-REQ-0347);
-\item
-  Derived quantities are provided in pre-computed columns
-  (DMS-REQ-0331);
-\item
-  Aperture corrections for different photometry algorithms are
-  consistent.
-\item
-  Photometry measurements are consistent with reference catalog
-  photometry (including sources not used in photometric calibration).
-\item
-  Astrometry measurements are consistent with reference catalog
-  positions (including sources not used in astrometric calibration).
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead require for each test that we be able to quickly
-construct a plot in which such a target can be visualized.
-
-
-\paragraph{Predecessors}\mbox{}\\
-lvv-t10 (DRP-00-00), lvv-t12 (DRP-00-10)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in DRP-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the Hyper Suprime-Cam ``RC1'' dataset (Appendix
-A.1.1 through the DRP Science Payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T14 - DRP-00-25: Scientific Verification of Object Catalog}\label{lvv-t14}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T14}{LVV-T14} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-106}{LVV-106} - DMS-REQ-0275-V-01: Object Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the object catalogs delivered by the DRP
-science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Measurements in the catalog are presented in flux units
-  (DMS-REQ-0347);
-\item
-  Derived quantities are provided in pre-computed columns
-  (DMS-REQ-0331);
-\item
-  Aperture corrections for different photometry algorithms are
-  consistent.
-\item
-  PSF models correctly predict the ellipticities of stars over each
-  tract.
-\item
-  Photometry measurements are consistent with reference catalog
-  photometry (including sources not used in photometric calibration).
-\item
-  Astrometry measurements are consistent with reference catalog
-  positions (including sources not used in astrometric calibration).
-\item
-  Forced and unforced photometry measurements are consistent.
-\item
-  The slope of the stellar locus in color-color space is not a function
-  of position on the sky.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead re- quire for each test that we be able to quickly
-construct a plot in which such a target can be visualized.\\
-All science quality tests in this section shall distinguish between
-blended and isolated objects.
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T10 (DRP-00-00)\\
-LVV-T12 (DRP-00-10)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in DRP-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the Hyper Suprime-Cam ``RC1'' dataset (Appendix
-A.1.1 through the DRP Science Payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Scripts from the pipe\_analysis package will be run on every tract to
-check for the presence of data products and make plots
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T15 - DRP-00-30: Scientific Verification of Processed Visit Images}\label{lvv-t15}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T15}{LVV-T15} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-29}{LVV-29} - DMS-REQ-0069-V-01: Processed Visit Images
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-158}{LVV-158} - DMS-REQ-0327-V-01: Background Model Calculation
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-12}{LVV-12} - DMS-REQ-0029-V-01: Generate Photometric Zeropoint for Visit Image
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-30}{LVV-30} - DMS-REQ-0070-V-01: Generate PSF for Visit Images
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-13}{LVV-13} - DMS-REQ-0030-V-01: Absolute accuracy of WCS
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-31}{LVV-31} - DMS-REQ-0072-V-01: Processed Visit Image Content
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the Processed Visit Images (PVIs) delivered by
-the DRP science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Processed visit images have been generated and persisted during
-  payload execution;
-\item
-  Each PVI includes a background model (DMS-REQ-0327), photometric
-  zero-point (DMS- REQ-0029), spatially-varying PSF (DMS-REQ-0070) and
-  WCS (DMS-REQ-0030).
-\item
-  Saturated pixels are correctly masked.
-\item
-  Pixels affected by cosmic rays are correctly masked.
-\item
-  The background is not oversubtracted around bright objects.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead re- quire for each test that we be able to quickly
-construct a plot or display summary images that allow such a target can
-be visualized.
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T10\\
-LVV-T12
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in DRP-00-00).\\[2\baselineskip]
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the Hyper Suprime-Cam ``RC1'' dataset (Appendix
-A.1.1 through the DRP Science Payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-For each processed CCD, the PVI will be retrieved from the Butler, and
-the existence of all components described in section Test Items
-(ยง4.6.2) will be verified.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 5
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Five sensors will be chosen at random from each of two visits and
-inspected by eye for unmasked artifacts.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T16 - DRP-00-35: Scientific Verification of Coadd Images}\label{lvv-t16}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Jim Bosch
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{LVV-T16} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-110}{LVV-110} - DMS-REQ-0279-V-01: Deep Detection Coadds
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-109}{LVV-109} - DMS-REQ-0278-V-01: Coadd Image Method Constraints
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-20}{LVV-20} - DMS-REQ-0047-V-01: Provide PSF for Coadded Images
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the coadded images delivered by the DRP
-science payload meet the requirements laid down by \citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Coadds have been generated and persisted during payload execution;~
-\item
-  Each coadd provides a spatially varying PSF model (DMS-REQ-0047).
-\item
-  Saturated pixels are correctly masked.
-\item
-  Pixels affected by satellite trails and ghosts are rejected from the
-  coadd.
-\item
-  The background is not oversubtracted around bright objects.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria; we instead require for each test that we be able to quickly
-construct a plot or display summary images that allow such a target can
-be visualized.\\[2\baselineskip]
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T10 (DRP-00-00)\\
-LVV-T12 (DRP-00-10)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in DRP-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the Hyper Suprime-Cam ``RC1'' dataset (Appendix
-A.1.1 through the DRP Science Payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T10 - DRP-00-00)
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-For each combination of tract/patch/filter, the PVI will be retrieved
-from the Butler, and the existence of all components described in Test
-items section ยง4.6.2 will be verified.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Scripts from the pipe\_analysis package will be run on every visit to
-check for the presence of data products and make plots
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 5
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Ten patches will be chosen at random and inspected by eye for unmasked
-artifacts.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T17 - AG-00-00: Installation of the Alert Generation v16.0 science payload.}\label{lvv-t17}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T17}{LVV-T17} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-139}{LVV-139} - DMS-REQ-0308-V-01: Software Architecture to Enable Community Re-Use
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check:
-
-\begin{itemize}
-\tightlist
-\item
-  That the Alert Generation science payload is available for
-  distribution from documented channels;
-\item
-  That the Alert Generation science payload can be installed on LSST
-  Data Facility-managed systems.
-\end{itemize}
-
-
-\paragraph{Predecessors}\mbox{}\\
-None.
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-All prerequisite packages listed at
-https://pipelines.lsst.io/install/prereqs/centos.html must be available
-on the test system and on the LSST-VC compute node.
-
-\subparagraph{Hardware}\mbox{}\\
-This test case shall be executed on a developer system at NCSA which
-serves as the ``head node'' or otherwise provides access to filesystems
-shared by the LSST Verification Cluster (LSST-VC). We assume that this
-system will be lsst-dev01.ncsa.illinois.edu and the filesystem will be a
-GPFS-based system mounted at /software.\\
-The test also requires access to one LSST-VC compute node.
-
-\paragraph{Input Specification}\mbox{}\\
-No input data is required for this test case.
-
-\paragraph{Output Specification}\mbox{}\\
-The Alert Generation science payload will be made available on a shared
-filesystem accessible from LSST-VC compute notes.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Release 16.0 of the LSST Science Pipelines will be installed into the
-GPFS filesystem accessible at /software on lsst-dev01 following the
-instructions at \url{https://pipelines.lsst.io/install/newinstall.html}
-.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The lsst\_distrib top level package will be
-enabled:\\[2\baselineskip]\hspace*{0.333em} ~ ~ ~source
-/software/lsstsw/stack3/loadLSST.bash\\
-\hspace*{0.333em} ~ ~ ~setup lsst\_distrib
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The ``LSST Stack Demo'' package will be downloaded onto the test system
-from
-\href{https://github.com/lsst/lsst_dm_stack_demo/releases/tag/14.0}{https://github.com/lsst/lsst\_dm\_stack\_demo/releases/tag/16.0}
-and uncompressed.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The demo package will be executed by following the instructions in its
-``README`` file. The string ``Ok.`` should be returned. Specifically, we
-execute:\\
-\hspace*{0.333em} ~ ~ ~setup obs\_sdss\\
-\hspace*{0.333em} ~ ~ ~./bin/demo.sh\\
-\hspace*{0.333em} ~ ~ ~python bin/compare
-expected/Linux64/detected-sources.txt
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 5
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A shell on an LSST-VC compute node will now be obtained by executing:\\
-\hspace*{0.333em} ~ ~\$ srun -I --pty bash
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 6
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The demo package will be executed on the compute node and the same
-result obtained.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 7
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The Alert Production datasets and packages are not yet part of
-lsst\_distrib and so must be installed separately. They will be
-installed as follows on the GPFS
-filesystem:\\[2\baselineskip]\hspace*{0.333em} ~ setup git\_lfs\\
-\hspace*{0.333em} ~ git clone
-https://github.com/lsst/ap\_verify\_hits2015.git\\[2\baselineskip]\hspace*{0.333em}
-~ export AP\_VERIFY\_HITS2015\_DIR=\$PWD/ap\_verify\_hits2015 cd
-\$AP\_VERIFY\_HITS2015\_DIR\\
-\hspace*{0.333em} ~ setup -r .\\
-\hspace*{0.333em} ~ cd-\\
-\hspace*{0.333em} ~\\
-\hspace*{0.333em} ~ setup obs\_decam\\
-\hspace*{0.333em} ~ git clone
-https://github.com/lsst-dm/ap\_association\\
-\hspace*{0.333em} ~ cd ap\_association\\
-\hspace*{0.333em} ~ setup -k -r .\\
-\hspace*{0.333em} ~ scons\\
-\hspace*{0.333em} ~ cd-\\
-\hspace*{0.333em} ~\\
-\hspace*{0.333em} ~ git clone https://github.com/lsst-dm/ap\_pipe\\
-\hspace*{0.333em} ~ cd ap\_pipe\\
-\hspace*{0.333em} ~ setup -k -r .\\
-\hspace*{0.333em} ~ scons\\
-\hspace*{0.333em} ~ cd-\\
-\hspace*{0.333em} ~\\
-\hspace*{0.333em} ~ git clone https://github.com/lsst-dm/ap\_verify\\
-\hspace*{0.333em} ~ cd ap\_verify\\
-\hspace*{0.333em} ~ setup -k -r .\\
-\hspace*{0.333em} ~ scons\\
-\hspace*{0.333em} ~ cd-\\[2\baselineskip]and any errors or failures
-reported.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T18 - AG-00-05: Alert Generation Produces Required Data Products}\label{lvv-t18}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T18}{LVV-T18} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-29}{LVV-29} - DMS-REQ-0069-V-01: Processed Visit Images
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-7}{LVV-7} - DMS-REQ-0010-V-01: Difference Exposures
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-100}{LVV-100} - DMS-REQ-0269-V-01: DIASource Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-102}{LVV-102} - DMS-REQ-0271-V-01: Max nearby galaxies associated with DIASource
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the basic data products produced by Alert
-Generation are generated by execution of the science payload.\\
-These products will include:
-
-\begin{itemize}
-\tightlist
-\item
-  Processed visit images (PVIs; DMS-REQ-0069);
-\item
-  Difference Exposures (DMS-REQ-0010);
-\item
-  DIASource catalogs (DMS-REQ-0269);
-\item
-  DIAObject catalogs (DMS-REQ-0271);
-\end{itemize}
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T17 (AG-00-00)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 16.0 of the DM Software Stack will be pre-installed (following
-the procedure described in AG-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the DECam ``HiTS'' dataset, as defined at
-https://dmtn-039.lsst.io/ and
-https://github.com/lsst/ap\_verify\_hits2015, through the Alert
-Generation science payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack and Alert Processing packaged shall be initialized as
-described in LVT-T17 (AG-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The alert generation processing will be executed using the verification
-cluster:\\[2\baselineskip]```bash\\
-python ap\_verify/bin/prepare\_demo\_slurm\_files.py\\
-\# At present we must run a single ccd+visit to handle ingestion
-before\\
-\# parallel processing can begin\\
-./ap\_verify/bin/exec\_demo\_run\_1ccd.sh 410915 25\\
-ln -s ap\_verify/bin/demo\_run.sl\\
-ln -s ap\_verify/bin/demo\_cmds.conf\\
-sbatch demo\_run.sl\\
-```\\[2\baselineskip]and any errors or failures reported.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-For each of the expected data products types (listed in ยง4.2.2) and
-each of the expected units (PVIs, catalogs, etc.), the data product will
-be retrieved from the Butler and verified to be non-empty.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 5
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-DIAObjects are currently only stored in a database, without shims to the
-Butler, so the existence of the database table and its non-empty
-contents will be verified by directly accessing it using sqlite3 and
-executing appropriate SQL queries.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T19 - AG-00-10: Scientific Verification of Processed Visit Images}\label{lvv-t19}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T19}{LVV-T19} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-29}{LVV-29} - DMS-REQ-0069-V-01: Processed Visit Images
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-158}{LVV-158} - DMS-REQ-0327-V-01: Background Model Calculation
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-12}{LVV-12} - DMS-REQ-0029-V-01: Generate Photometric Zeropoint for Visit Image
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-30}{LVV-30} - DMS-REQ-0070-V-01: Generate PSF for Visit Images
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-13}{LVV-13} - DMS-REQ-0030-V-01: Absolute accuracy of WCS
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-31}{LVV-31} - DMS-REQ-0072-V-01: Processed Visit Image Content
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the Processed Visit Images (PVIs) delivered by
-the alert generation science payload meet the requirements laid down by
-\citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Processed visit images have been generated and persisted during
-  payload execution;
-\item
-  Each PVI includes a science pixel array, a mask array, and a variance
-  array. (DMS-REQ-0072).
-\item
-  Each PVI includes a background model (DMS-REQ-0327), photometric
-  zero-point (DMS- REQ-0029), spatially-varying PSF (DMS-REQ-0070) and
-  WCS (DMS-REQ-0030).
-\item
-  Saturated pixels are correctly masked.
-\item
-  Pixels affected by cosmic rays are correctly masked.
-\item
-  The background is not oversubtracted around bright objects.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria.
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVT-T17 (AG-00-00)\\
-LVT-T18 (AG-00-05)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in AG-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the DECam ``HiTS'' dataset, as defined at
-https://dmtn-039.lsst.io/ and
-https://github.com/lsst/ap\_verify\_hits2015, through the Alert
-Generation science payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T17 - AG-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-For each processed CCD, the PVI will be retrieved from the Butler, and
-the existence of all components described in ยง4.3.2 will be verified.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Five sensors will be chosen at random from each of two visits and
-inspected by eye for unmasked artifacts.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T20 - AG-00-15: Scientific Verification of Difference Images}\label{lvv-t20}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T20}{LVV-T20} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-7}{LVV-7} - DMS-REQ-0010-V-01: Difference Exposures
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-32}{LVV-32} - DMS-REQ-0074-V-01: Difference Exposure Attributes
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the difference images delivered by the Alert
-Generation science pay- load meet the requirements laid down by
-\citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  Difference images have been generated and persisted during payload
-  execution;
-\item
-  Each difference image includes information about the identity of the
-  input exposures, and metadata such as a representation of the PSF
-  matching kernel (DMS-REQ-0074);
-\item
-  Masks are correctly propagated from the input images.
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria.
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVV-T17 (AG-00-00)\\
-LVV-T18 (AG-00-05)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in AG-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the DECam ``HiTS'' dataset, as defined at
-https://dmtn-039.lsst. io/ and
-https://github.com/lsst/ap\_verify\_hits2015, through the Alert
-Generation science payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T-17 AG-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-For each processed CCD, the difference image will be retrieved from the
-Butler, and the existence of all components described in ยง4.4.2 will be
-verified.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 4
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-Five sensors will be chosen at random from each of two visits and the
-masks of the input and difference images compared by eye.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T21 - AG-00-20: Scientific Verification of DIASource Catalog}\label{lvv-t21}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T21}{LVV-T21} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-100}{LVV-100} - DMS-REQ-0269-V-01: DIASource Catalog
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-101}{LVV-101} - DMS-REQ-0270-V-01: Faint DIASource Measurements
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-18}{LVV-18} - DMS-REQ-0043-V-01: Provide Calibrated Photometry
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the difference image source catalogs delivered
-by the Alert Generation science payload meet the requirements laid down
-by \citeds{LSE-61}.
-
-\begin{itemize}
-\tightlist
-\item
-  Specifically, this will demonstrate that:
-\item
-  Measurements in the catalog are presented in flux units
-  (DMS-REQ-0347);
-\item
-  Each DIASource record contains an appropriate subset of the attributes
-  required by DMS-REQ-0269. In particular, the LDM-503-3-era pipeline is
-  expected to provide DIASource positions (sky and focal plane), fluxes,
-  and flags indicative of issues encountered during processing.
-\item
-  Faint DIASources satisfying additional criteria are stored
-  (DMS-REQ-0270).
-\item
-  Derived quantities are provided in pre-computed columns
-  (DMS-REQ-0331);
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria.\\[2\baselineskip]
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVT-T17 (AG-00-00)\\
-LVT-T18 (AG-00-05)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in AG-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the DECam ``HiTS'' dataset, as defined at
-https://dmtn-039.lsst. io/ and
-https://github.com/lsst/ap\_verify\_hits2015, through the Alert
-Generation science payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T17 - AG-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-A ``Data Butler'' will be initialized to access the repository.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 3
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-DIASource records will be accessed by querying the Butler, then examined
-interactively at a Python prompt.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\subsubsection{LVV-T22 - AG-00-25: Scientific Verification of DIAObject Catalog}\label{lvv-t22}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Approved & Normal &
-Test & Eric Bellm
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T22}{LVV-T22} in Jira } \\
-\end{longtable}
-
-\paragraph{Verification Elements}\mbox{}\\
-
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-116}{LVV-116} - DMS-REQ-0285-V-01: Level 1 Source Association
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-102}{LVV-102} - DMS-REQ-0271-V-01: Max nearby galaxies associated with DIASource
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-103}{LVV-103} - DMS-REQ-0272-V-01: DIAObject Attributes
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
-
-\item \href{https://jira.lsstcorp.org/browse/LVV-18}{LVV-18} - DMS-REQ-0043-V-01: Provide Calibrated Photometry
-
-\end{itemize}
-
-\paragraph{Test Items}\mbox{}\\
-
-This test will check that the DIAObject catalogs delivered by the Alert
-Generation science pay- load meet the requirements laid down by
-\citeds{LSE-61}.\\
-Specifically, this will demonstrate that:
-
-\begin{itemize}
-\tightlist
-\item
-  DIAObjects are recorded with unique identifiers (DMS-REQ-0271);
-\item
-  Measurements in the catalog are presented in flux units
-  (DMS-REQ-0347);
-\item
-  EachDIAObjectrecordcontainscontainsanappropriatesetofsummaryattributes(DMS-
-  REQ-0271 and DMS-REQ-0272). Note:
-
-  \begin{itemize}
-  \tightlist
-  \item
-    This test is executed independently of the Data Release Production
-    system. Hence, DIAObjects are not associated to Objects, and the
-    association metadata specified by DMS-REQ-0271 is not expected to be
-    available.
-  \item
-    TheLDM-503-3erapipelineisnotexpectedtocalculateorpersistallattributesspec-
-    ified by DMS-REQ-0272 requirement.
-  \end{itemize}
-\item
-  Relevant derived quantities are provided in pre-computed columns
-  (DMS-REQ-0331);~
-\end{itemize}
-
-This test does not include quantitative targets for the science quality
-criteria.
-
-
-\paragraph{Predecessors}\mbox{}\\
-LVT-T17 (AG-00-00)\\
-LVT-T18 (AG-00-05)
-
-\paragraph{Environment Needs}\mbox{}\\
-
-\subparagraph{Software}\mbox{}\\
-Release 14.0 of the DM Software Stack will be pre-installed (following
-the procedure described in AG-00-00).
-
-\subparagraph{Hardware}\mbox{}\\
-The test shall be carried out on a machine with at least 16 GB of RAM
-and multiple CPU cores which has access to the /datasets shared (GPFS)
-filesystem at the LSST Data Facility.
-
-\paragraph{Input Specification}\mbox{}\\
-A complete processing of the DECam ``HiTS'' dataset, as defined at
-https://dmtn-039.lsst. io/ and
-https://github.com/lsst/ap\_verify\_hits2015, through the Alert
-Generation science payload.\\
-This dataset shall be made available in a standard LSST data repository,
-accessible via the ``Data Butler''.\\
-It is not required that all combinations of visit and CCD have been
-processed successfully: a number of failures are expected. However,
-documentation to describe processing failures should be provided.
-
-\paragraph{Output Specification}\mbox{}\\
-None.
-
-\paragraph{Test Procedure}\mbox{}\\
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 1
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-The DM Stack shall be initialized using the loadLSST script (as
-described in LVV-T17 - AG-00-00).
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
-
-\begin{tabular}{p{4cm}p{12cm}}
-\toprule
-Step 2
-& Description \\ \hline
-\end{tabular}
-{\scriptsize
-sqlite3 or Pythonâ\euro{}™s sqlalchemy module will be used to access the
-Level 1 database.
-
-}
-\begin{tabular}{p{3cm}p{13cm}}
-\hline
-            & Expected Result \\ \hline
-\end{tabular}
 
 \subsubsection{LVV-T28 - Verify implementation of measurements in catalogs from PVIs}\label{lvv-t28}
 
@@ -29846,7 +27652,660 @@ This section includes all test cases that have been marked as deprecated.
 These test cases will never be executed again, but have been in the past.
 For this reason it is important to keep them in the baseline as a reference.
 
-  \textit{No deprecated test cases found.}
+
+
+\subsection{LVV-T10 - DRP-00-00: Installation of the Data Release Production v14.0 science
+payload}\label{lvv-t10}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T10}{LVV-T10} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-139}{LVV-139} - DMS-REQ-0308-V-01: Software Architecture to Enable Community Re-Use
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check:
+
+\begin{itemize}
+\tightlist
+\item
+  That the Data Release Production science payload is available for
+  distribution from documented channels;
+\item
+  That the Data Release Production science payload can be installed on
+  LSST Data Facility-managed systems.
+\end{itemize}
+
+
+
+\subsection{LVV-T11 - DRP-00-05: Execution of the DRP Science Payload by the Batch Production
+Service}\label{lvv-t11}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T11}{LVV-T11} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-46}{LVV-46} - DMS-REQ-0106-V-01: Coadded Image Provenance
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-124}{LVV-124} - DMS-REQ-0293-V-01: Selection of Datasets
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-134}{LVV-134} - DMS-REQ-0303-V-01: Production Monitoring
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-133}{LVV-133} - DMS-REQ-0302-V-01: Production Orchestration
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-136}{LVV-136} - DMS-REQ-0305-V-01: Task Specification
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-137}{LVV-137} - DMS-REQ-0306-V-01: Task Configuration
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-62}{LVV-62} - DMS-REQ-0158-V-01: Provide Pipeline Construction Services
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the DRP Science Payload can be executed using
+a specific version of the Batch Production Service provided by the LSST
+Data Facility. Since the outputs are stored in the Data Backbone, it too
+is a component of this test.
+
+
+
+\subsection{LVV-T12 - DRP-00-10: Data Release Includes Required Data Products}\label{lvv-t12}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T12}{LVV-T12} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-98}{LVV-98} - DMS-REQ-0267-V-01: Source Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-99}{LVV-99} - DMS-REQ-0268-V-01: Forced-Source Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-106}{LVV-106} - DMS-REQ-0275-V-01: Object Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-110}{LVV-110} - DMS-REQ-0279-V-01: Deep Detection Coadds
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-125}{LVV-125} - DMS-REQ-0294-V-01: Processing of Datasets
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the basic data products which should be in an
+data release are generated by execution of the science payload.\\
+These products will include:
+
+\begin{itemize}
+\tightlist
+\item
+  Source catalogs, derived from PVIs and coadded images (DMS-REQ-0267 \&
+  DMS-REQ-0277);
+\item
+  Forced source catalogs (DMS-REQ-0268);
+\item
+  Object catalogs (DMS-REQ-0275);
+\item
+  Processed visit images (PVIs; DMS-REQ-0069);
+\item
+  Coadded images (DMS-REQ-0279);
+\end{itemize}
+
+
+
+\subsection{LVV-T13 - DRP-00-15: Scientific Verification of Source Catalog}\label{lvv-t13}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T13}{LVV-T13} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-98}{LVV-98} - DMS-REQ-0267-V-01: Source Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the source catalogs delivered by the DRP
+science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Measurements in the catalog are presented in flux units
+  (DMS-REQ-0347);
+\item
+  Derived quantities are provided in pre-computed columns
+  (DMS-REQ-0331);
+\item
+  Aperture corrections for different photometry algorithms are
+  consistent.
+\item
+  Photometry measurements are consistent with reference catalog
+  photometry (including sources not used in photometric calibration).
+\item
+  Astrometry measurements are consistent with reference catalog
+  positions (including sources not used in astrometric calibration).
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead require for each test that we be able to quickly
+construct a plot in which such a target can be visualized.
+
+
+
+\subsection{LVV-T14 - DRP-00-25: Scientific Verification of Object Catalog}\label{lvv-t14}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T14}{LVV-T14} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-106}{LVV-106} - DMS-REQ-0275-V-01: Object Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the object catalogs delivered by the DRP
+science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Measurements in the catalog are presented in flux units
+  (DMS-REQ-0347);
+\item
+  Derived quantities are provided in pre-computed columns
+  (DMS-REQ-0331);
+\item
+  Aperture corrections for different photometry algorithms are
+  consistent.
+\item
+  PSF models correctly predict the ellipticities of stars over each
+  tract.
+\item
+  Photometry measurements are consistent with reference catalog
+  photometry (including sources not used in photometric calibration).
+\item
+  Astrometry measurements are consistent with reference catalog
+  positions (including sources not used in astrometric calibration).
+\item
+  Forced and unforced photometry measurements are consistent.
+\item
+  The slope of the stellar locus in color-color space is not a function
+  of position on the sky.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead re- quire for each test that we be able to quickly
+construct a plot in which such a target can be visualized.\\
+All science quality tests in this section shall distinguish between
+blended and isolated objects.
+
+
+
+\subsection{LVV-T15 - DRP-00-30: Scientific Verification of Processed Visit Images}\label{lvv-t15}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T15}{LVV-T15} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-29}{LVV-29} - DMS-REQ-0069-V-01: Processed Visit Images
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-158}{LVV-158} - DMS-REQ-0327-V-01: Background Model Calculation
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-12}{LVV-12} - DMS-REQ-0029-V-01: Generate Photometric Zeropoint for Visit Image
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-30}{LVV-30} - DMS-REQ-0070-V-01: Generate PSF for Visit Images
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-13}{LVV-13} - DMS-REQ-0030-V-01: Absolute accuracy of WCS
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-31}{LVV-31} - DMS-REQ-0072-V-01: Processed Visit Image Content
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the Processed Visit Images (PVIs) delivered by
+the DRP science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Processed visit images have been generated and persisted during
+  payload execution;
+\item
+  Each PVI includes a background model (DMS-REQ-0327), photometric
+  zero-point (DMS- REQ-0029), spatially-varying PSF (DMS-REQ-0070) and
+  WCS (DMS-REQ-0030).
+\item
+  Saturated pixels are correctly masked.
+\item
+  Pixels affected by cosmic rays are correctly masked.
+\item
+  The background is not oversubtracted around bright objects.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead re- quire for each test that we be able to quickly
+construct a plot or display summary images that allow such a target can
+be visualized.
+
+
+
+\subsection{LVV-T16 - DRP-00-35: Scientific Verification of Coadd Images}\label{lvv-t16}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Jim Bosch
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T16}{LVV-T16} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-165}{LVV-165} - DMS-REQ-0334-V-01: Persisting Data Products
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-110}{LVV-110} - DMS-REQ-0279-V-01: Deep Detection Coadds
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-109}{LVV-109} - DMS-REQ-0278-V-01: Coadd Image Method Constraints
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-20}{LVV-20} - DMS-REQ-0047-V-01: Provide PSF for Coadded Images
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the coadded images delivered by the DRP
+science payload meet the requirements laid down by \citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Coadds have been generated and persisted during payload execution;~
+\item
+  Each coadd provides a spatially varying PSF model (DMS-REQ-0047).
+\item
+  Saturated pixels are correctly masked.
+\item
+  Pixels affected by satellite trails and ghosts are rejected from the
+  coadd.
+\item
+  The background is not oversubtracted around bright objects.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria; we instead require for each test that we be able to quickly
+construct a plot or display summary images that allow such a target can
+be visualized.\\[2\baselineskip]
+
+
+
+\subsection{LVV-T17 - AG-00-00: Installation of the Alert Generation v16.0 science payload.}\label{lvv-t17}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T17}{LVV-T17} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-139}{LVV-139} - DMS-REQ-0308-V-01: Software Architecture to Enable Community Re-Use
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check:
+
+\begin{itemize}
+\tightlist
+\item
+  That the Alert Generation science payload is available for
+  distribution from documented channels;
+\item
+  That the Alert Generation science payload can be installed on LSST
+  Data Facility-managed systems.
+\end{itemize}
+
+
+
+\subsection{LVV-T18 - AG-00-05: Alert Generation Produces Required Data Products}\label{lvv-t18}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T18}{LVV-T18} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-29}{LVV-29} - DMS-REQ-0069-V-01: Processed Visit Images
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-7}{LVV-7} - DMS-REQ-0010-V-01: Difference Exposures
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-100}{LVV-100} - DMS-REQ-0269-V-01: DIASource Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-102}{LVV-102} - DMS-REQ-0271-V-01: Max nearby galaxies associated with DIASource
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the basic data products produced by Alert
+Generation are generated by execution of the science payload.\\
+These products will include:
+
+\begin{itemize}
+\tightlist
+\item
+  Processed visit images (PVIs; DMS-REQ-0069);
+\item
+  Difference Exposures (DMS-REQ-0010);
+\item
+  DIASource catalogs (DMS-REQ-0269);
+\item
+  DIAObject catalogs (DMS-REQ-0271);
+\end{itemize}
+
+
+
+\subsection{LVV-T19 - AG-00-10: Scientific Verification of Processed Visit Images}\label{lvv-t19}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T19}{LVV-T19} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-29}{LVV-29} - DMS-REQ-0069-V-01: Processed Visit Images
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-158}{LVV-158} - DMS-REQ-0327-V-01: Background Model Calculation
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-12}{LVV-12} - DMS-REQ-0029-V-01: Generate Photometric Zeropoint for Visit Image
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-30}{LVV-30} - DMS-REQ-0070-V-01: Generate PSF for Visit Images
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-13}{LVV-13} - DMS-REQ-0030-V-01: Absolute accuracy of WCS
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-31}{LVV-31} - DMS-REQ-0072-V-01: Processed Visit Image Content
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the Processed Visit Images (PVIs) delivered by
+the alert generation science payload meet the requirements laid down by
+\citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Processed visit images have been generated and persisted during
+  payload execution;
+\item
+  Each PVI includes a science pixel array, a mask array, and a variance
+  array. (DMS-REQ-0072).
+\item
+  Each PVI includes a background model (DMS-REQ-0327), photometric
+  zero-point (DMS- REQ-0029), spatially-varying PSF (DMS-REQ-0070) and
+  WCS (DMS-REQ-0030).
+\item
+  Saturated pixels are correctly masked.
+\item
+  Pixels affected by cosmic rays are correctly masked.
+\item
+  The background is not oversubtracted around bright objects.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria.
+
+
+
+\subsection{LVV-T20 - AG-00-15: Scientific Verification of Difference Images}\label{lvv-t20}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T20}{LVV-T20} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-7}{LVV-7} - DMS-REQ-0010-V-01: Difference Exposures
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-32}{LVV-32} - DMS-REQ-0074-V-01: Difference Exposure Attributes
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the difference images delivered by the Alert
+Generation science pay- load meet the requirements laid down by
+\citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  Difference images have been generated and persisted during payload
+  execution;
+\item
+  Each difference image includes information about the identity of the
+  input exposures, and metadata such as a representation of the PSF
+  matching kernel (DMS-REQ-0074);
+\item
+  Masks are correctly propagated from the input images.
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria.
+
+
+
+\subsection{LVV-T21 - AG-00-20: Scientific Verification of DIASource Catalog}\label{lvv-t21}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T21}{LVV-T21} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-100}{LVV-100} - DMS-REQ-0269-V-01: DIASource Catalog
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-101}{LVV-101} - DMS-REQ-0270-V-01: Faint DIASource Measurements
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-18}{LVV-18} - DMS-REQ-0043-V-01: Provide Calibrated Photometry
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the difference image source catalogs delivered
+by the Alert Generation science payload meet the requirements laid down
+by \citeds{LSE-61}.
+
+\begin{itemize}
+\tightlist
+\item
+  Specifically, this will demonstrate that:
+\item
+  Measurements in the catalog are presented in flux units
+  (DMS-REQ-0347);
+\item
+  Each DIASource record contains an appropriate subset of the attributes
+  required by DMS-REQ-0269. In particular, the LDM-503-3-era pipeline is
+  expected to provide DIASource positions (sky and focal plane), fluxes,
+  and flags indicative of issues encountered during processing.
+\item
+  Faint DIASources satisfying additional criteria are stored
+  (DMS-REQ-0270).
+\item
+  Derived quantities are provided in pre-computed columns
+  (DMS-REQ-0331);
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria.\\[2\baselineskip]
+
+
+
+\subsection{LVV-T22 - AG-00-25: Scientific Verification of DIAObject Catalog}\label{lvv-t22}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T22}{LVV-T22} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-116}{LVV-116} - DMS-REQ-0285-V-01: Level 1 Source Association
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-102}{LVV-102} - DMS-REQ-0271-V-01: Max nearby galaxies associated with DIASource
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-103}{LVV-103} - DMS-REQ-0272-V-01: DIAObject Attributes
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-178}{LVV-178} - DMS-REQ-0347-V-01: Measurements in catalogs
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-162}{LVV-162} - DMS-REQ-0331-V-01: Computing Derived Quantities
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-18}{LVV-18} - DMS-REQ-0043-V-01: Provide Calibrated Photometry
+
+\end{itemize}
+
+\subsubsection{Test Items}
+This test will check that the DIAObject catalogs delivered by the Alert
+Generation science pay- load meet the requirements laid down by
+\citeds{LSE-61}.\\
+Specifically, this will demonstrate that:
+
+\begin{itemize}
+\tightlist
+\item
+  DIAObjects are recorded with unique identifiers (DMS-REQ-0271);
+\item
+  Measurements in the catalog are presented in flux units
+  (DMS-REQ-0347);
+\item
+  EachDIAObjectrecordcontainscontainsanappropriatesetofsummaryattributes(DMS-
+  REQ-0271 and DMS-REQ-0272). Note:
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This test is executed independently of the Data Release Production
+    system. Hence, DIAObjects are not associated to Objects, and the
+    association metadata specified by DMS-REQ-0271 is not expected to be
+    available.
+  \item
+    TheLDM-503-3erapipelineisnotexpectedtocalculateorpersistallattributesspec-
+    ified by DMS-REQ-0272 requirement.
+  \end{itemize}
+\item
+  Relevant derived quantities are provided in pre-computed columns
+  (DMS-REQ-0331);~
+\end{itemize}
+
+This test does not include quantitative targets for the science quality
+criteria.
+
+
+
 
 \newpage
 \appendix
