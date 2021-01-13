@@ -600,6 +600,20 @@ processing} \tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1946}{Verify implementation of measurements in catalogs from coadds} \tabularnewline
     \hyperref[lvv-t1947]{LVV-T1947} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T1947}{Verify implementation of measurements in catalogs from difference images} \tabularnewline
+    \hyperref[lvv-t2091]{LVV-T2091} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2091}{Verify Fraction of Alerts Transmitted Within Latency Threshold} \tabularnewline
+    \hyperref[lvv-t2092]{LVV-T2092} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2092}{Verify Meeting Threshold for Max Fraction of Visits With Failed Alerts} \tabularnewline
+    \hyperref[lvv-t2093]{LVV-T2093} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2093}{Verify Latency of Reporting Transients} \tabularnewline
+    \hyperref[lvv-t2094]{LVV-T2094} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2094}{Verify Peak Number of Alerts Per Standard Visit} \tabularnewline
+    \hyperref[lvv-t2095]{LVV-T2095} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2095}{Verify Max Fraction of Visits With Alert Delays} \tabularnewline
+    \hyperref[lvv-t2096]{LVV-T2096} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2096}{Verify Handling of Peak Number of Alerts} \tabularnewline
+    \hyperref[lvv-t2097]{LVV-T2097} &
+    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2097}{Verify Handling of Average Number of Alerts} \tabularnewline
 \bottomrule
 \end{longtable}
 
@@ -29484,6 +29498,399 @@ flux units.
 
                 \vspace{\dp0}
                 } \end{minipage}
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2091 - Verify Fraction of Alerts Transmitted Within Latency Threshold}\label{lvv-t2091}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2091}{LVV-T2091} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18298}{LVV-18298} - DMS-REQ-0392-V-01: Fraction of Alerts Transmitted
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that at least \textbf{OTR1 = 98{[}percent{]}} of detectable
+alerts are actually transmitted within latency \textbf{OTT1 =
+1{[}minute{]}}.~
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2092 - Verify Meeting Threshold for Max Fraction of Visits With Failed Alerts}\label{lvv-t2092}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2092}{LVV-T2092} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19214}{LVV-19214} - DMS-REQ-0392-V-02: Max Alert Failure Fraction
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that no more than \textbf{sciVisitAlertFailure =
+0.1{[}percent{]}} of visits fail to generate or distribute alerts.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2093 - Verify Latency of Reporting Transients}\label{lvv-t2093}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2093}{LVV-T2093} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19215}{LVV-19215} - DMS-REQ-0392-V-03: Latency of Reporting Transients
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that transients are reported within \textbf{OTT1 =
+1{[}minute{]}~}following the completion of readout of the last image of
+a visit. At least \textbf{OTR1 = 98{[}percent{]}~}of the alerts should
+be transmitted within this latency period.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2094 - Verify Peak Number of Alerts Per Standard Visit}\label{lvv-t2094}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2094}{LVV-T2094} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19216}{LVV-19216} - DMS-REQ-0392-V-04: Peak Number of Alerts
+
+\item \href{https://jira.lsstcorp.org/browse/LVV-19217}{LVV-19217} - DMS-REQ-0393-V-02: Peak Number of Alerts Per Visit
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the instantaneous peak number of alerts per standard visit
+does not exceed~\textbf{nAlertVisitPeak = 40000{[}integer{]}}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2095 - Verify Max Fraction of Visits With Alert Delays}\label{lvv-t2095}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2095}{LVV-T2095} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19218}{LVV-19218} - DMS-REQ-0392-V-05: Max Fraction of Visits With Alert Delays
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that no more than \textbf{sciVisitAlertDelay = 1{[}percent{]}} of
+science visits have less than \textbf{OTR1 = 98{[}percent{]}} of the
+alerts distributed within \textbf{OTT1 = 1{[}minute{]}}.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2096 - Verify Handling of Peak Number of Alerts}\label{lvv-t2096}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2096}{LVV-T2096} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-19217}{LVV-19217} - DMS-REQ-0393-V-02: Peak Number of Alerts Per Visit
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the system can identify and distribute at least
+\textbf{nAlertVisitPeak}~\textbf{=} \textbf{40000{[}integer{]}~}alerts
+per standard visit.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
+        \\ \midrule
+    \end{longtable}
+
+\subsection{LVV-T2097 - Verify Handling of Average Number of Alerts}\label{lvv-t2097}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Draft & Normal &
+Test & Eric Bellm
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T2097}{LVV-T2097} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-18299}{LVV-18299} - DMS-REQ-0393-V-01: Average Number of Alerts Per Visit
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify that the system can identify and distribute an average
+of~\textbf{nAlertVisitAvg~= 10000{[}integer{]}~}alerts per standard
+visit over a given night.
+
+
+\subsubsection{Predecessors}
+
+\subsubsection{Environment Needs}
+
+\paragraph{Software}
+
+\paragraph{Hardware}
+
+\subsubsection{Input Specification}
+
+\subsubsection{Output Specification}
+
+\subsubsection{Test Procedure}
+    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
+    %\toprule
+    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
+    \endhead
+
+            \multirow{3}{*}{ 1 } & Description &
+            \begin{minipage}[t]{13cm}{\footnotesize
+            
+            \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Test Data &
+            \begin{minipage}[t]{13cm}{\footnotesize
+                No data.
+                \vspace{\dp0}
+            } \end{minipage} \\ \cline{2-3}
+            & Expected Result &
         \\ \midrule
     \end{longtable}
 
