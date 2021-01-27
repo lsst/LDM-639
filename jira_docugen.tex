@@ -27,9 +27,6 @@ Test Id & Test Name\tabularnewline
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T29}{Verify implementation of Raw Science Image Data Acquisition} \tabularnewline
     \hyperref[lvv-t30]{LVV-T30} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T30}{Verify implementation of Wavefront Sensor Data Acquisition} \tabularnewline
-    \hyperref[lvv-t31]{LVV-T31} &
-    \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T31}{Verify implementation of Crosstalk Corrected Science Image Data
-Acquisition} \tabularnewline
     \hyperref[lvv-t32]{LVV-T32} &
     \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T32}{Verify implementation of Raw Image Assembly} \tabularnewline
     \hyperref[lvv-t33]{LVV-T33} &
@@ -1618,105 +1615,6 @@ metadata.
         \\ \midrule
     \end{longtable}
 
-\subsection{LVV-T31 - Verify implementation of Crosstalk Corrected Science Image Data
-Acquisition}\label{lvv-t31}
-
-\begin{longtable}[]{llllll}
-\toprule
-Version & Status & Priority & Verification Type & Owner
-\\\midrule
-1 & Draft & Normal &
-Test & Kian-Tat Lim
-\\\bottomrule
-\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T31}{LVV-T31} in Jira } \\
-\end{longtable}
-
-\subsubsection{Verification Elements}
-\begin{itemize}
-\item \href{https://jira.lsstcorp.org/browse/LVV-10}{LVV-10} - DMS-REQ-0022-V-01: Crosstalk Corrected Science Image Data Acquisition
-
-\end{itemize}
-
-\subsubsection{Test Items}
-Verify successful ingestion of crosstalk corrected data from L1 Test
-Stand DAQ while simulating all modes.
-
-
-\subsubsection{Predecessors}
-
-\subsubsection{Environment Needs}
-
-\paragraph{Software}
-
-\paragraph{Hardware}
-
-\subsubsection{Input Specification}
-
-\subsubsection{Output Specification}
-
-\subsubsection{Test Procedure}
-    \begin{longtable}[]{p{1.3cm}p{2cm}p{13cm}}
-    %\toprule
-    Step & \multicolumn{2}{@{}l}{Description, Input Data and Expected Result} \\ \toprule
-    \endhead
-
-            \multirow{3}{*}{ 1 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Inject signals of different relative strength
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 2 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Apply Camera cross-talk correction
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 3 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that DMS sytem can import the cross-talk corrected images
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-
-            \multirow{3}{*}{ 4 } & Description &
-            \begin{minipage}[t]{13cm}{\footnotesize
-            Verify that images are corrected for crosstalk
-
-            \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Test Data &
-            \begin{minipage}[t]{13cm}{\footnotesize
-                No data.
-                \vspace{\dp0}
-            } \end{minipage} \\ \cline{2-3}
-            & Expected Result &
-        \\ \midrule
-    \end{longtable}
-
 \subsection{LVV-T32 - Verify implementation of Raw Image Assembly}\label{lvv-t32}
 
 \begin{longtable}[]{llllll}
@@ -2566,7 +2464,10 @@ Test & Eric Bellm
 Verify that the DMS\\
 1. Successfully produces Processed Visit Images, where the instrument
 signature has been removed.\\
-2. Successfully combines images obtained during a standard visit.
+2. Successfully combines images obtained during a standard
+visit.\\[2\baselineskip]The verification should include confirming that
+the images have been trimmed of the overscan, and that correction of the
+instrumental signature (including crosstalk) has been applied properly.
 
 
 \subsubsection{Predecessors}
@@ -31644,6 +31545,31 @@ Specifically, this will demonstrate that:
 
 This test does not include quantitative targets for the science quality
 criteria.
+
+
+
+\subsection{LVV-T31 - Verify implementation of Crosstalk Corrected Science Image Data
+Acquisition}\label{lvv-t31}
+
+\begin{longtable}[]{llllll}
+\toprule
+Version & Status & Priority & Verification Type & Owner
+\\\midrule
+1 & Deprecated & Normal &
+Test & Kian-Tat Lim
+\\\bottomrule
+\multicolumn{6}{c}{ Open \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T31}{LVV-T31} in Jira } \\
+\end{longtable}
+
+\subsubsection{Verification Elements}
+\begin{itemize}
+\item \href{https://jira.lsstcorp.org/browse/LVV-10}{LVV-10} - DMS-REQ-0022-V-01: Crosstalk Corrected Science Image Data Acquisition
+
+\end{itemize}
+
+\subsubsection{Test Items}
+Verify successful ingestion of crosstalk corrected data from L1 Test
+Stand DAQ while simulating all modes.
 
 
 
