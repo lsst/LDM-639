@@ -1,7 +1,7 @@
 % generated from JIRA project LVV
-% using template at /Library/Frameworks/Python.framework/Versions/3.10/lib/python3.10/site-packages/docsteady-2.2.9.post4+g0778ddd.d20220916-py3.10.egg/docsteady/templates/spec.latex.jinja2.
+% using template at /usr/share/miniconda/envs/docsteady-env/lib/python3.7/site-packages/docsteady/templates/spec.latex.jinja2.
 % Collecting ATM data from folder: "/Data Management/Acceptance|LDM-639"
-% using docsteady version 2.2.9.post4+g0778ddd.d20220916
+% using docsteady version 2.3.0
 % Please do not edit -- update information in Jira instead
 
 \section{Test Cases Summary}\label{test-cases-summary}
@@ -929,7 +929,7 @@ image metadata is present and queryable.
 
 \paragraph{Predecessors}\mbox{}\\
 \href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T29}{LVV-T29},
-​\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T32}{LVV-T32}​​​
+‚Äã\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T32}{LVV-T32}‚Äã‚Äã‚Äã
 
 
 
@@ -3518,7 +3518,7 @@ execution and production systems usage/load.
 
 
 \paragraph{Predecessors}\mbox{}\\
-\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{LVV-T140}​​​​
+\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T140}{LVV-T140}‚Äã‚Äã‚Äã‚Äã
 
 
 
@@ -5537,8 +5537,8 @@ code below).
 \end{tabular}
 {\scriptsize
 butler = Butler(\$REPOSITORY\_PATH)\\
-raw = butler.get(``raw'', visit=\$VISIT\_ID, detector=2)\\
-bias = butler.get(``bias'', visit=\$VISIT\_ID, detector=2)
+raw = butler.get(тАЬrawтАЭ, visit=\$VISIT\_ID, detector=2)\\
+bias = butler.get(тАЬbiasтАЭ, visit=\$VISIT\_ID, detector=2)
 
 }
 \begin{tabular}{p{3cm}p{13cm}}
@@ -7107,8 +7107,8 @@ results = service.search("SELECT coord_ra, coord_dec, g_cModelFlux, r_cModelFlux
 {\scriptsize
 Screen output from CELL 1:\\[2\baselineskip]The service endpoint for TAP
 in this environment is:\\
-âž¡ \url{https://data.lsst.cloud/api/tap}\\[2\baselineskip]Example
-screen output from CELL 2 (may not contain the same 10
+➡ \url{https://data.lsst.cloud/api/tap}\\[2\baselineskip]Example screen
+output from CELL 2 (may not contain the same 10
 entries):\\[2\baselineskip]\emph{Table length=5533}
 
 coord\_ra
@@ -7908,8 +7908,8 @@ filters.\\[2\baselineskip]Specifically, this will demonstrate that:\\
 
 
 \paragraph{Predecessors}\mbox{}\\
-​\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T216}{LVV-T216}​​​\\
-​\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T217}{LVV-T217}​​​
+‚Äã\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T216}{LVV-T216}‚Äã‚Äã‚Äã\\
+‚Äã\href{https://jira.lsstcorp.org/secure/Tests.jspa\#/testCase/LVV-T217}{LVV-T217}‚Äã‚Äã‚Äã
 
 \paragraph{Environment Needs}\mbox{}\\
 
@@ -8690,7 +8690,7 @@ inter-machine operability, then the hardware can be minimized to a
 single machine outside of the Level 1 test stand.
 
 \paragraph{Input Specification}\mbox{}\\
-​​​​​None
+вЂ‹вЂ‹вЂ‹вЂ‹вЂ‹None
 
 \paragraph{Output Specification}\mbox{}\\
 \begin{itemize}
@@ -9609,10 +9609,9 @@ Step 4
 \end{tabular}
 {\scriptsize
 Demonstrate that raw and bias data for visit \$VISIT\_ID have been made
-available in the repository. Load a Python interpreter (run
-â\euro{}œpython") and execute the
-following:\\[2\baselineskip]\hspace*{0.333em} ~from lsst.daf.persistence
-import Butler\\
+available in the repository. Load a Python interpreter (run ``python'')
+and execute the following:\\[2\baselineskip]\hspace*{0.333em} ~from
+lsst.daf.persistence import Butler\\
 \hspace*{0.333em} ~visit\_id = \$VISIT\_ID\\
 \hspace*{0.333em} ~b = Butler(\$OUTPUT\_DATA\_DIR)\\
 \hspace*{0.333em} ~b.get(``raw'', visit=visit\_id, detector=2)\\
@@ -14281,7 +14280,7 @@ Step 3
 \end{tabular}
 {\scriptsize
 For each of the expected data products types (listed in Test Items
-section ยง4.3.2) and each of the expected units (PVIs, coadds, etc),
+section §4.3.2) and each of the expected units (PVIs, coadds, etc),
 retrieve the data product from the Butler and verify that it is
 non-empty.
 
@@ -14503,7 +14502,7 @@ Step 3
 \end{tabular}
 {\scriptsize
 For each of the expected data product types (listed in Test Items
-section ยง4.3.2) and each of the expected units (PVIs, coadds, etc),
+section §4.3.2) and each of the expected units (PVIs, coadds, etc),
 retrieve the data product from the Butler and verify it to be non-empty.
 
 }
@@ -14761,7 +14760,7 @@ Step 3
 \end{tabular}
 {\scriptsize
 For each of the expected data product types (listed in Test Items
-section ยง4.3.2) and each of the expected units (PVIs, coadds, etc),
+section §4.3.2) and each of the expected units (PVIs, coadds, etc),
 retrieve the data product from the Butler and verify it to be non-empty.
 
 }
@@ -16121,7 +16120,8 @@ Step 4
 \end{tabular}
 {\scriptsize
 Inspect SSObject catalog and verify the presence of the required
-elements (​\href{https://jira.lsstcorp.org/browse/LVV-104}{LVV-104)}​​​.
+elements
+(‚Äã\href{https://jira.lsstcorp.org/browse/LVV-104}{LVV-104)}‚Äã‚Äã‚Äã.
 
 }
 \begin{tabular}{p{3cm}p{13cm}}
@@ -17506,7 +17506,7 @@ Step 5
 & Description \\ \hline
 \end{tabular}
 {\scriptsize
-​​​​Load data into DRP database
+вЂ‹вЂ‹вЂ‹вЂ‹Load data into DRP database
 
 }
 \begin{tabular}{p{3cm}p{13cm}}
@@ -26706,7 +26706,7 @@ None.
 
 Verify that the DMS can support at least postageStampRetrievalUsers = 10
 simuylataneous users retrieving a set of postage stamp images in
-postageStampRetrievalTime = 10sec.Â~
+postageStampRetrievalTime = 10sec.~
 
 
 
@@ -26927,7 +26927,7 @@ None.
 
 Verify that the radius within which an Object is considered to be near,
 and possibly coincident with, the DIASource is not greater that the
-maximum spcification of diaNearbyObjRadius = 6 arcsec.Â~
+maximum spcification of diaNearbyObjRadius = 6 arcsec.~
 
 
 
@@ -27046,7 +27046,7 @@ None.
 
 Verify that unarchived Level 1 and Level 2 data products can be
 regenerated on-demand using and IVOA-standards based service that usese
-archived inputs and provenance data.Â~
+archived inputs and provenance data.~
 
 
 
@@ -27087,9 +27087,9 @@ None.
 
 \paragraph{Test Items}\mbox{}\\
 
-Verufy that the Science Data Archive Â~contains all necessary
-engineering and calibration data for the full understanding of the
-performance and operation of the Observatory.
+Verufy that the Science Data Archive ~contains all necessary engineering
+and calibration data for the full understanding of the performance and
+operation of the Observatory.
 
 
 
@@ -27312,7 +27312,7 @@ visit.\\[2\baselineskip]The verification should include confirming that
 the images have been trimmed of the overscan, and that correction of the
 instrumental signature (including crosstalk) has been applied
 properly.\\[2\baselineskip]This test specifically tests the combination
-of snaps.Â~
+of snaps.~
 
 
 
@@ -27688,7 +27688,7 @@ None.
 \paragraph{Test Items}\mbox{}\\
 
 Verify that complex high-volume queries that involve full-sky spatial
-and temporal correlations can Â~be answered in less than
+and temporal correlations can ~be answered in less than
 \textbf{hvComplexQueryTime}.
 
 
@@ -28690,8 +28690,8 @@ results = service.search("SELECT coord_ra, coord_dec, g_cModelFlux, r_cModelFlux
 {\scriptsize
 Screen output from CELL 1:\\[2\baselineskip]The service endpoint for TAP
 in this environment is:\\
-âž¡ \url{https://data.lsst.cloud/api/tap}\\[2\baselineskip]Example
-screen output from CELL 2 (may not contain the same 10
+➡ \url{https://data.lsst.cloud/api/tap}\\[2\baselineskip]Example screen
+output from CELL 2 (may not contain the same 10
 entries):\\[2\baselineskip]\emph{Table length=5533}
 
 coord\_ra
