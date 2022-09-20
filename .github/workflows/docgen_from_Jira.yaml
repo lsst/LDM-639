@@ -28,8 +28,8 @@ jobs:
 
       - name: docugen
         env:
-          JIRA_USER: {% raw %}${{ secrets.JIRA_USER }} {% endraw %}
-          JIRA_PASSWORD: {% raw %}${{ secrets.JIRA_PASSWORD }} {% endraw %}
+          JIRA_USER: ${{ secrets.JIRA_USER }}
+          JIRA_PASSWORD: ${{ secrets.JIRA_PASSWORD }}
         run: |
           source ${CONDA}/bin/activate docsteady-env
           docsteady generate-spec "/Data Management/Acceptance|LDM-639" jira_docugen.tex
@@ -47,16 +47,23 @@ jobs:
         uses: docker/login-action@v1
         with:
           username: sqrereadonly
-          password: {% raw %}${{ secrets.DOCKERHUB_SQREREADONLY_TOKEN }}{% endraw %}
+          password: ${{ secrets.DOCKERHUB_SQREREADONLY_TOKEN }}
 
       - name: TeX build
         run: |
           docker run --rm -v `pwd`:/workspace -w /workspace lsstsqre/lsst-texmf:latest sh -c 'make'
 
+      - name: Download Pandoc
+        run: |
+          downloadUrl="https://github.com/jgm/pandoc/releases/download/2.19.2/pandoc-2.19.2-1-amd64.deb"
+          wget --no-verbose "$downloadUrl"
+          sudo dpkg -i "${downloadUrl##*/}"
+          pandoc --version
+
       - name: Landing page upload
         env:
-          LTD_PASSWORD: {% raw %}${{ secrets.LTD_PASSWORD }}{% endraw %}
-          LTD_USERNAME: {% raw %}${{ secrets.LTD_USERNAME }}{% endraw %}
+          LTD_PASSWORD: ${{ secrets.LTD_PASSWORD }}
+          LTD_USERNAME: ${{ secrets.LTD_USERNAME }}
         run: |
           lander --upload --pdf LDM-639.pdf --lsstdoc LDM-639.tex --ltd-product ldm-639
 
