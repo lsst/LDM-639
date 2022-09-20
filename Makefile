@@ -36,4 +36,9 @@ meta.tex: Makefile .FORCE
 acronyms.tex : ${TEX} myacronyms.txt skipacronyms.txt
 	echo ${TEXMFHOME}
 	python3 ${TEXMFHOME}/../bin/generateAcronyms.py   $(TEX)
+
+
+generate: .FORCE
+	docsteady generate-spec "/Data Management/Acceptance|LDM-639" jira_docugen.tex
+
     
